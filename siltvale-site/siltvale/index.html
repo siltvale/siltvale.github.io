@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siltvale SMP — Homepage</title>
+<meta name="description" content="Siltvale is a lore-focused, ARG-inspired Minecraft SMP. A Minecraft SMP built around its community, its stories, and the strange little world that developed between them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#141a21;
+  --slate-800:#1e252b;
+  --slate-700:#28313a;
+  --slate-600:#3a444d;
+  --slate-400:#6c7780;
+  --slate-200:#a9b0b5;
+  --bone:#d6d1c4;
+  --bone-dim:#b0aa9c;
+  --sienna:#b0733f;
+  --sepia:#c9ad84;
+  --serif:"IM Fell English","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sc:"IM Fell English SC","IM Fell English",Georgia,serif;
+  --pixel:"Silkscreen","Courier New",monospace;
+  --rail:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:clamp(15px, 0.5vw + 11px, 20px)}
+body{
+  margin:0;background:var(--navy);color:var(--bone);
+  font-family:var(--serif);font-size:1.0625rem;line-height:1.68;min-height:100vh;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(176,115,63,.09), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(169,176,181,.05), transparent 60%);
+  background-attachment:fixed;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:80;opacity:.2;mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.014 .9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .66 0 0 0 0 .69 0 0 0 0 .71 0 0 0 .12 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+a{color:var(--sienna);text-decoration:underline;text-underline-offset:.15em;text-decoration-thickness:1px}
+a:hover{color:var(--bone)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--sienna);outline-offset:2px}
+h1,h2,h3,h4{font-weight:400;margin:0;line-height:1.15}
+p{margin:0 0 1em;max-width:min(100%,74ch)}
+::selection{background:var(--sienna);color:var(--navy)}
+
+.cabinet{position:fixed;left:0;top:0;bottom:0;z-index:60;display:flex;align-items:stretch;
+  pointer-events:none}
+.cabinet .masthead{
+  position:relative;width:104px;flex:none;padding:38px 0 22px 20px;box-sizing:border-box;
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(90deg, #10151b 0%, var(--navy) 40%, #1b232c 100%);
+  pointer-events:auto;
+
+  clip-path:polygon(0 0, calc(100% - 30px) 0, calc(100% - 22px) 10px, calc(100% - 10px) 10px,
+                    calc(100% - 10px) 20px, 100% 20px, 100% 100%, 0 100%);
+  box-shadow:6px 0 16px -10px rgba(0,0,0,.9)}
+
+.cabinet .masthead::after{content:"";position:absolute;left:9px;top:46px;right:16px;bottom:14px;
+  border:1px solid rgba(214,209,196,.13);pointer-events:none}
+
+.peek{position:absolute;right:0;top:92px;bottom:80px;width:9px;display:flex;flex-direction:column;gap:7px;
+  pointer-events:none;transition:opacity .2s linear, transform .24s cubic-bezier(.25,.9,.3,1)}
+.peek i{flex:1;background:var(--c);opacity:.7;border-left:1px solid rgba(0,0,0,.5);
+  box-shadow:inset -2px 0 3px -2px rgba(0,0,0,.6);margin-right:calc(var(--o,0) * 1px)}
+.peek i:nth-child(odd){--o:2}
+.peek i:nth-child(3n){--o:3}
+.cabinet.open .peek,.cabinet:focus-within .peek{opacity:0;transform:translateX(8px)}
+.cabinet .masthead .big{writing-mode:vertical-rl;transform:rotate(180deg);
+  font-family:var(--sc);font-size:clamp(26px,2.6vw,46px);line-height:.92;letter-spacing:.02em;color:var(--bone)}
+.cabinet .masthead .sub{writing-mode:vertical-rl;transform:rotate(180deg);
+  font-family:var(--pixel);font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--slate-400);margin-top:14px}
+.cabinet .masthead .foot{font-family:var(--pixel);font-size:.5rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--slate-400);white-space:nowrap;padding-right:14px}
+
+.stack{position:relative;flex:none;pointer-events:none;
+  width:min(1330px, calc(100vw - 110px))}
+
+.slot{position:absolute;top:20px;bottom:20px;width:164px;
+  left:calc(6px + var(--i) * 96px);
+  z-index:calc(2 + var(--i));
+  transform:translate3d(0,0,0);
+  transition:transform .15s cubic-bezier(.25,.9,.3,1), width .15s cubic-bezier(.25,.9,.3,1);
+  will-change:transform}
+.file{position:absolute;inset:0;text-decoration:none;color:#23221a;background:var(--stock);
+  opacity:0;transform:translate3d(-26px,10px,0);
+  clip-path:polygon(0 0,40px 0,52px 22px,100% 22px,100% 100%,0 100%);
+  transition:opacity .22s linear, transform .28s cubic-bezier(.25,.9,.3,1), box-shadow .18s;
+  transition-delay:calc(var(--i) * 22ms);
+  pointer-events:none;will-change:transform,opacity;backface-visibility:hidden}
+.cabinet:not(.open) .file{transition-delay:0s;transition-duration:.16s}
+
+.file,.file:hover,.file:focus,.file:active{color:#23221a;text-decoration:none}
+.file.out,.file.out:hover,.file.out:focus{color:#f4ece0}
+.cabinet.open .file,.cabinet:focus-within .file{
+  opacity:1;transform:translate3d(0,0,0);pointer-events:auto;
+  box-shadow:-7px 0 20px -10px rgba(0,0,0,.8)}
+
+.cabinet.open .slot:hover,.slot:focus-within{width:280px;z-index:30;transition-delay:0s}
+.cabinet.open .slot:hover .file,.slot:focus-within .file{transform:translate3d(0,-10px,0);transition-delay:0s}
+.cabinet.open .slot:hover ~ .slot,.slot:focus-within ~ .slot{transform:translate3d(116px,0,0);transition-delay:0s}
+
+.cabinet.forceshut .file{opacity:0!important;transform:translate3d(-26px,10px,0)!important;
+  pointer-events:none!important;transition:none!important;box-shadow:none!important}
+.cabinet.forceshut .slot{width:164px!important;transform:none!important;z-index:calc(2 + var(--i))!important}
+.cabinet.forceshut .peek{opacity:.7!important;transform:none!important}
+.slot.opening{width:280px!important;z-index:40!important;transition-delay:0s!important}
+.slot.opening .file{transform:translate3d(0,-8px,0) scale(1.03)!important;opacity:0!important;
+  transition:transform .3s cubic-bezier(.2,.85,.3,1),opacity .28s .12s!important}
+.file .rule{position:absolute;left:6px;top:29px;right:6px;bottom:6px;border:1px solid rgba(0,0,0,.18);pointer-events:none}
+.file .lbl{position:absolute;left:15px;top:40px;z-index:3;writing-mode:vertical-rl;transform:rotate(180deg);
+  font-family:var(--pixel);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.file .lbl .c{opacity:.55}
+.file .body{position:absolute;left:50px;top:42px;right:12px;bottom:12px;display:flex;flex-direction:column;gap:10px}
+.file .bars{height:20px;flex:none;background:repeating-linear-gradient(90deg,currentColor 0 2px,transparent 2px 5px,currentColor 5px 8px,transparent 8px 14px);opacity:.6}
+.file .shot{flex:1;min-height:0;border:1px solid rgba(0,0,0,.28);background:#1a1f18;overflow:hidden}
+.file .shot img{width:100%;height:100%;object-fit:cover;display:block;image-rendering:pixelated}
+.file .cap{flex:none;align-self:flex-start;border:1px solid currentColor;padding:4px 7px;
+  font-family:var(--pixel);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.file .nm{flex:none;font-family:var(--pixel);font-size:.78rem;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
+.file[aria-current="page"]{box-shadow:inset 0 -5px 0 var(--sienna)}
+.file[aria-current="page"] .cap{background:var(--sienna);border-color:var(--sienna);color:#f4ece0}
+
+.sheet{
+  margin-left:var(--rail);padding:1.8rem clamp(1.25rem,3vw,3.5rem) 3rem;max-width:none;width:auto;min-height:100vh;
+
+  --navy:#cbbd9c;
+  --slate-800:rgba(255,249,232,.30);
+  --slate-700:rgba(255,249,232,.48);
+  --slate-600:#a2926f;
+  --slate-400:#5f5340;
+  --slate-200:#6b5e48;
+  --bone:#241f18;
+  --bone-dim:#4b4234;
+  --sienna:#8e4f20;
+  --sepia:#6d5a3b;
+  color:var(--bone);
+  background:
+    linear-gradient(rgba(227,218,198,.52), rgba(227,218,198,.52)),
+    #dbd0b6 url("assets/paper.jpg") center top / 100% auto repeat-y;
+  background-blend-mode:normal, luminosity;
+  box-shadow:0 0 0 1px rgba(0,0,0,.35), 8px 0 24px -14px rgba(0,0,0,.8);
+  position:relative;
+}
+
+.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.20;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .25 0 0 0 0 .20 0 0 0 0 .12 0 0 0 .10 0'/></filter><rect width='100%' height='100%' filter='url(%23p)'/></svg>")}
+.sheet::after{content:"";position:absolute;inset:0;pointer-events:none;background:rgba(229,220,201,.34)}
+.sheet > *{position:relative;z-index:1}
+.sheet a{color:var(--sienna)}
+.sheet a:hover{color:#111}
+.banner{position:relative;height:clamp(130px,12vw,280px);max-width:min(100%,84rem);margin-inline:auto;border:1px solid var(--slate-600);background:#d9cdb0;overflow:hidden;box-shadow:inset 0 0 0 4px #d9cdb0, inset 0 0 0 5px rgba(162,146,111,.6)}
+.banner .plates img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;mix-blend-mode:multiply;
+  opacity:0;transition:opacity 14s linear;image-rendering:pixelated}
+.banner .plates img.on{opacity:1}
+.banner .plates::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(217,205,176,.75), rgba(217,205,176,.08) 60%),
+             radial-gradient(ellipse 55% 55% at 50% 62%, rgba(217,205,176,.72), transparent 72%)}
+.banner .title{position:absolute;left:0;right:0;bottom:.9rem;text-align:center;pointer-events:none}
+.banner h1{font-size:clamp(2.4rem,5vw,5.4rem);letter-spacing:.07em;line-height:1;color:#241f18;
+  text-shadow:0 1px 0 rgba(255,250,235,.5)}
+.banner .title small{display:block;font-family:var(--pixel);font-size:.6rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#6d5a3b;margin-top:.5rem}
+.banner .stamp{position:absolute;top:.7rem;left:.8rem;font-family:var(--pixel);font-size:.58rem;
+  letter-spacing:.06em;text-transform:uppercase;color:#7b6d54;text-shadow:none}
+
+.view{display:none}
+.view.active{display:block}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  margin:1.6rem 0 .2rem;padding-bottom:.5rem;position:relative}
+.head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--slate-600)}
+.head h2{font-family:var(--pixel);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--bone)}
+.head span{font-family:var(--pixel);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400)}
+.wrap{padding:1.6rem 0 0;max-width:min(100%,84rem);margin-inline:auto}
+section{padding:0 0 2.4rem}
+section + section{padding-top:2.4rem;border-top:1px solid rgba(214,209,196,.10)}
+.record{font-family:var(--pixel);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400);margin-bottom:.7rem}
+.page-title{font-size:clamp(2rem,3.4vw,3.4rem);margin-bottom:.7rem}
+.page-title i{color:var(--sienna)}
+.lede{font-size:clamp(1.05rem,1.15vw,1.3rem);color:var(--bone-dim);font-style:italic;max-width:min(100%,62ch)}
+h2.section-title{font-size:clamp(1.5rem,2.2vw,2.2rem);margin-bottom:.8rem}
+h3{font-size:1.25rem;margin-bottom:.35rem}
+.status-strip{display:flex;flex-wrap:wrap;gap:.35rem;margin:1.2rem 0 0}
+.status-strip span{font-family:var(--pixel);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--slate-600);background:rgba(255,250,235,.35);padding:.35rem .5rem;color:var(--slate-200)}
+.status-strip b{font-weight:400;color:var(--sienna)}
+
+.index{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.6rem;margin-top:.4rem}
+.index a{display:flex;gap:.7rem;align-items:flex-start;padding:.9rem 1rem;text-decoration:none;
+  border:1px solid var(--slate-600);background:rgba(160,140,100,.14);color:var(--bone)}
+.index a:hover{border-color:var(--sienna);background:var(--slate-700)}
+.index .no{font-family:var(--pixel);font-size:.7rem;line-height:1;background:#241f18;color:#d9cdb0;
+  padding:5px 5px 4px;flex:none;box-shadow:2px 2px 0 rgba(80,64,40,.5)}
+.index strong{display:block;font-family:var(--pixel);font-size:.78rem;letter-spacing:.02em;text-transform:uppercase;margin-bottom:.25rem}
+.index span{display:block;color:var(--bone-dim);font-size:.92rem;line-height:1.35}
+
+figure.plate{margin:1.4rem 0;max-width:520px;border:1px solid var(--slate-600);background:rgba(255,250,235,.3);padding:5px}
+figure.plate img{display:block;width:100%;height:auto;image-rendering:pixelated}
+figure.plate figcaption{font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--slate-400);padding:.45rem .2rem 0;line-height:1.5}
+figure.plate.side{float:right;width:clamp(200px,22vw,340px);margin:.2rem 0 1rem 2.2rem}
+@media (max-width:760px){figure.plate.side{float:none;width:100%;margin:1.2rem 0}}
+.clear{clear:both}
+
+.panel{border:1px solid var(--slate-600);background:rgba(160,140,100,.16);padding:1rem 1.2rem}
+.panel h4{font-family:var(--pixel);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--sepia);margin-bottom:.7rem}
+.panel p:last-child{margin-bottom:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.6rem;margin-top:1.4rem}
+.card{border:1px solid var(--slate-600);background:rgba(160,140,100,.16);padding:1rem}
+.card h3{font-family:var(--pixel);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--sepia);margin-bottom:.4rem}
+.card p{color:var(--bone-dim);margin:0;font-size:.95rem}
+.card ul{list-style:none;margin:0;padding:0}
+.card li{border-top:1px solid rgba(214,209,196,.1);padding:.3rem 0;font-size:.95rem;color:var(--bone-dim)}
+.card li:first-child{border-top:0}
+blockquote{margin:1.4rem 0;padding:.7rem 1.1rem;border-left:3px solid var(--sienna);background:rgba(160,140,100,.16);
+  font-size:1.1rem;font-style:italic;max-width:52ch}
+blockquote cite{display:block;font-style:normal;font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--slate-400);margin-top:.5rem}
+.offer{counter-reset:offer}
+.offer > div{display:grid;grid-template-columns:2.6rem 1fr;gap:.9rem;padding:1.1rem 0;border-top:1px solid rgba(214,209,196,.1)}
+.offer > div::before{counter-increment:offer;content:counter(offer,decimal-leading-zero);
+  font-family:var(--pixel);font-size:.8rem;color:var(--sepia);line-height:1.6}
+.offer h3{font-size:1.2rem;margin-bottom:.2rem}
+.offer p{margin:0;color:var(--bone-dim);font-size:.97rem}
+.goal{margin-top:2rem;padding:1.6rem;border:1px solid var(--slate-600);background:rgba(160,140,100,.16);text-align:center}
+.goal h3{font-size:clamp(1.25rem,2.6vw,1.6rem);font-style:italic;max-width:34ch;margin:0 auto}
+.goal .glyph,.fate .glyph{color:var(--sepia);letter-spacing:.3em;margin-bottom:.6rem}
+
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;margin:1.6rem 0 2rem}
+.legend a{display:block;padding:.85rem 1rem;border:1px solid var(--slate-600);background:rgba(160,140,100,.16);color:var(--bone);text-decoration:none}
+.legend a:hover{border-color:var(--sienna)}
+.legend a small{display:block;font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400);margin-bottom:.3rem}
+.legend a strong{display:block;font-weight:400;font-size:1.1rem}
+.legend a span{color:var(--bone-dim);font-style:italic;font-size:.9rem}
+.ages{margin-top:.6rem}
+.age{padding:2.2rem 0;border-top:1px solid rgba(214,209,196,.12);scroll-margin-top:1rem}
+.age .num{font-family:var(--pixel);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400)}
+.age .num b{font-weight:400;color:var(--sienna);margin-left:.6rem}
+.age h3{font-size:clamp(1.4rem,3vw,1.9rem);margin:.4rem 0 .8rem}
+.age .aside{margin-top:1.2rem;padding:.9rem 1.1rem;background:rgba(160,140,100,.16);border:1px solid var(--slate-600);max-width:54ch}
+.age .aside small{display:block;font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400);margin-bottom:.35rem}
+.age .aside strong{display:block;font-weight:400;font-size:1.1rem;margin-bottom:.3rem}
+.age .aside p{margin:0;color:var(--bone-dim);font-size:.95rem}
+.age .aside.wraith{border-color:var(--sienna)}
+.age .aside.wraith small{color:var(--sienna)}
+.questions{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.2rem;max-width:60ch}
+.questions div{border-top:1px solid var(--slate-600);padding-top:.6rem}
+.questions .qn{display:block;font-family:var(--pixel);font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400);margin-bottom:.3rem}
+.questions strong{display:block;font-weight:400;font-size:1.05rem;margin-bottom:.2rem}
+.questions p{margin:0;color:var(--bone-dim);font-size:.93rem;font-style:italic}
+.fate{text-align:center;padding:2.4rem 0 .5rem;border-top:1px solid rgba(214,209,196,.12)}
+.fate h3{font-size:clamp(1.5rem,3.6vw,2.2rem);font-style:italic;margin-bottom:.8rem}
+.fate p{margin:0 auto .6em;max-width:42ch;color:var(--bone-dim)}
+.fate .q{color:var(--bone);font-size:1.1rem}
+
+.frame{position:relative;margin:1.6rem 0 0;background:#0d0f0d;border:1px solid #0d0f0d;max-width:720px;box-shadow:0 6px 18px -10px rgba(0,0,0,.7)}
+.frame .pane{position:relative;aspect-ratio:16/9;overflow:hidden}
+.frame .pane img{width:100%;height:100%;object-fit:cover;display:block;image-rendering:pixelated;
+  transform:scale(1.02);animation:breathe 45s ease-in-out infinite alternate}
+.frame .pane::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.2) 0 1px, transparent 1px 3px),
+             radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.7) 100%)}
+.frame .pillar{position:absolute;top:0;bottom:0;width:8%;background:#000;z-index:2}
+.frame .pillar.l{left:0}.frame .pillar.r{right:0}
+.frame .hud{position:absolute;z-index:3;font-family:var(--pixel);font-size:.58rem;letter-spacing:.08em;
+  text-transform:uppercase;color:rgba(214,209,196,.8);text-shadow:0 0 6px #000}
+.frame .hud.tl{top:.6rem;left:10%}.frame .hud.br{bottom:.6rem;right:10%}
+.frame .rec{color:var(--sienna);animation:rec 2.6s steps(1) infinite}
+.frame .caption{max-width:none;margin:0;padding:.5rem .8rem;border-top:1px solid #2a2f2a;
+  font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:#8a9083}
+@keyframes breathe{from{transform:scale(1.02)}to{transform:scale(1.07) translateY(-1.5%)}}
+@keyframes rec{0%,60%{opacity:1}61%,100%{opacity:.15}}
+
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.6rem;margin:1.2rem 0}
+.role{padding:1.1rem;border:1px solid var(--slate-600);background:rgba(160,140,100,.16);display:flex;flex-direction:column;gap:.2rem}
+.role .eye{font-size:1.4rem;color:var(--sienna);line-height:1}
+.rnum{font-family:var(--pixel);font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400);margin:.3rem 0 .1rem}
+.role h3{font-size:1.2rem;margin:0}
+.role p{color:var(--bone-dim);margin:.3rem 0 .9rem;flex:1;font-size:.95rem}
+.role a{font-family:var(--pixel);font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;
+  border:1px solid var(--sienna);padding:.5rem .7rem;align-self:flex-start;color:var(--sienna);text-decoration:none}
+.role a:hover{background:var(--sienna);color:var(--navy)}
+.note{border:1px dashed var(--slate-400);padding:1rem 1.1rem;max-width:60ch;margin-top:1.4rem}
+.note h4{font-family:var(--pixel);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--sepia);margin-bottom:.4rem}
+.note p{margin:0;color:var(--bone-dim);font-size:.95rem}
+
+.faq-group{margin-top:2rem}
+.faq-group h3{font-family:var(--pixel);font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:var(--sepia);
+  margin-bottom:.3rem;padding-bottom:.5rem;border-bottom:1px solid var(--slate-600)}
+details{border-bottom:1px solid rgba(214,209,196,.1)}
+summary{cursor:pointer;list-style:none;padding:.75rem 1.8rem .75rem 0;font-size:1.05rem;position:relative;color:var(--bone)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:.2rem;top:.7rem;font-family:var(--pixel);font-size:.8rem;color:var(--slate-400)}
+details[open] summary::after{content:"-";color:var(--sienna)}
+details[open] summary{color:var(--sienna)}
+details .a{padding:0 0 1rem;color:var(--bone-dim);font-size:.97rem;max-width:60ch}
+details .a p:last-child{margin-bottom:0}
+.reader{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:1.6rem 0}
+@media (max-width:760px){.reader{grid-template-columns:1fr}}
+.reader .panel p{font-size:1.02rem;font-style:italic;color:var(--bone)}
+
+.ack-list{margin:1rem 0 1.6rem}
+.ack{display:grid;grid-template-columns:2.2rem 1fr;gap:.7rem;padding:1.2rem 0;border-top:1px solid rgba(214,209,196,.1)}
+.ack .n{font-family:var(--pixel);font-size:.72rem;color:var(--sepia);line-height:1.8}
+.ack h3{font-size:1.2rem;margin-bottom:.1rem}
+.ack .role-tag{font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--sienna);margin-bottom:.5rem}
+.ack p{color:var(--bone-dim);margin-bottom:.6em;font-size:.97rem}
+.ack p:last-child{margin-bottom:0}
+.ack.pending p{font-style:italic;color:var(--slate-400)}
+.ack-status{font-family:var(--pixel);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400);margin:2rem 0 .6rem}
+.ack-status b{font-weight:400;color:var(--sepia);margin-left:.5rem}
+.names{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-style:italic;color:var(--bone-dim);margin:.6rem 0 1.2rem}
+.message{padding:1.2rem;border:1px solid var(--slate-600);background:rgba(160,140,100,.16);max-width:60ch;margin:1.8rem 0}
+.message h4{font-family:var(--pixel);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--sepia);margin-bottom:.5rem}
+.message p{margin:0;font-style:italic;font-size:1.05rem}
+
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.6rem;margin:1.4rem 0}
+.review{padding:1.1rem 1.2rem;background:rgba(160,140,100,.16);border:1px solid var(--slate-600)}
+.review h3{font-size:1.1rem;margin:0 0 .5rem}
+.review p{color:var(--bone-dim);font-size:.95rem}
+.review cite{display:block;font-style:normal;font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--sienna);margin-top:.5rem}
+.review cite::before{content:"— "}
+
+footer{margin-top:2.5rem;padding-top:1rem;max-width:min(100%,84rem);margin-inline:auto;border-top:1px solid var(--slate-600);
+  font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400)}
+footer p{margin:0 0 .3rem;max-width:none}
+footer .last{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--bone-dim);margin:.8rem 0}
+footer summary{font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;padding:.4rem 0;color:var(--slate-400)}
+footer summary::after{display:none}
+footer details{border:0}
+footer .credits{font-family:var(--serif);font-size:.88rem;line-height:1.5;text-transform:none;letter-spacing:0;
+  color:var(--bone-dim);columns:2;column-gap:2rem;padding-top:.4rem}
+footer .credits p{margin:0 0 .4em;break-inside:avoid;max-width:none}
+@media (max-width:640px){footer .credits{columns:1}}
+
+@media (max-width:1100px){
+  :root{--rail:84px}
+  .cabinet .masthead{width:84px}
+  .stack{width:min(820px, calc(100vw - 96px))}
+  .slot{width:150px;left:calc(6px + var(--i) * 84px)}
+  .cabinet.open .slot:hover,.slot:focus-within{width:250px}
+  .cabinet.open .slot:hover ~ .slot,.slot:focus-within ~ .slot{transform:translate3d(108px,0,0)}
+}
+@media (max-width:820px){
+  :root{--rail:0px}
+  .cabinet{position:static;display:block;pointer-events:auto}
+  .cabinet .masthead{width:auto;flex-direction:row;align-items:center;gap:1rem;padding:.7rem 1rem;
+    border-right:0;border-bottom:1px solid rgba(214,209,196,.12)}
+  .cabinet .masthead .big,.cabinet .masthead .sub{writing-mode:horizontal-tb;transform:none;margin:0}
+  .cabinet .masthead .big{font-size:1.5rem;letter-spacing:.16em}
+  .cabinet .masthead .foot{display:none}
+  .stack{width:auto;height:auto;display:flex;gap:4px;overflow-x:auto;padding:.6rem 1rem 1rem;background:var(--navy)}
+  .slot{position:relative;left:auto;top:auto;bottom:auto;flex:0 0 132px;width:132px;height:190px;transform:none!important}
+  .cabinet.open .slot:hover,.slot:focus-within{width:132px}
+  .file{opacity:1!important;transform:none!important;pointer-events:auto!important;transition-delay:0s!important;box-shadow:none!important}
+  .file .lbl{left:12px;top:38px;font-size:.58rem;letter-spacing:.12em}
+  .file .body{left:34px;top:40px;bottom:10px;right:8px;gap:8px}
+  .file .bars{height:16px}
+  .file .cap,.file .nm{font-size:.5rem}
+  .sheet{margin-left:0}
+}
+
+.wrap.home{max-width:min(100%,92rem)}
+.desk{display:grid;grid-template-columns:13rem minmax(0,1fr) 14rem;gap:.7rem;align-items:start}
+.col-l,.col-r{display:flex;flex-direction:column;gap:.7rem;min-width:0}
+.col-m{min-width:0}
+.col-m section{padding:0 0 1.6rem}
+.col-m section + section{padding-top:1.6rem}
+@media (max-width:1180px){
+  .desk{grid-template-columns:12rem minmax(0,1fr)}
+  .col-r{grid-column:1 / -1;flex-direction:row;flex-wrap:wrap}
+  .col-r .pan{flex:1 1 15rem}
+}
+@media (max-width:820px){
+  .desk{grid-template-columns:1fr}
+  .col-l{order:2;flex-direction:row;flex-wrap:wrap}
+  .col-l .pan{flex:1 1 14rem}
+  .col-r{order:3}
+}
+
+.pan{border:1px solid var(--slate-600);background:rgba(160,140,100,.13)}
+.pan > h4{display:flex;align-items:center;gap:.4rem;margin:0;
+  padding:.3rem .5rem;font-family:var(--pixel);font-size:.56rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--bone);background:rgba(70,58,38,.22);
+  border-bottom:1px solid var(--slate-600)}
+.pan .nav{display:flex;gap:2px;margin-left:auto;flex:none}
+.pan > h4 > b{font-weight:400;display:block}
+.pan .nav button{font-family:var(--pixel);font-size:.6rem;line-height:1;border:1px solid var(--slate-600);
+  background:rgba(255,250,235,.25);color:var(--bone-dim);padding:2px 4px;cursor:pointer}
+.pan .nav button:hover{background:var(--sienna);border-color:var(--sienna);color:#f4ece0}
+.pan .in{padding:.5rem .55rem}
+.pan .in p{margin:0 0 .4em;max-width:none}
+.pan .in p:last-child{margin-bottom:0}
+.tiny{font-family:var(--pixel);font-size:.5rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--slate-400);line-height:1.7}
+.pan-btn{display:block;text-align:center;text-decoration:none;margin-top:.4rem;
+  font-family:var(--pixel);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--sienna);color:var(--sienna);padding:.4rem}
+.pan-btn:hover{background:var(--sienna);color:#f4ece0}
+
+.cal table{width:100%;border-collapse:collapse;font-family:var(--pixel);font-size:.56rem}
+.cal th{color:var(--slate-400);font-weight:400;padding:2px 0 4px;text-align:center}
+.cal td{text-align:center;padding:3px 0;color:var(--bone-dim);position:relative}
+.cal td.out{color:rgba(120,106,80,.45)}
+.cal td.today{background:var(--sienna);color:#f6efe2}
+.cal td.ev{color:var(--bone);font-weight:700}
+.cal td.ev::after{content:"";position:absolute;left:50%;bottom:1px;width:3px;height:3px;
+  transform:translateX(-50%);background:var(--sienna)}
+.cal td.today.ev::after{background:#f6efe2}
+.cal-key{margin:.35rem 0 .3rem!important;font-family:var(--pixel);font-size:.46rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--slate-400)}
+.cal-key b{display:inline-block;width:4px;height:4px;background:var(--sienna);vertical-align:middle;margin-right:4px}
+.events{list-style:none;margin:0;padding:.3rem 0 0;border-top:1px solid rgba(120,106,80,.3)}
+.events li{padding:.25rem 0;font-size:.8rem;line-height:1.35;color:var(--bone-dim);
+  border-top:1px solid rgba(120,106,80,.18)}
+.events li:first-child{border-top:0}
+.events li b{display:block;font-weight:400;font-family:var(--pixel);font-size:.5rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--sienna)}
+.events li.none{color:var(--slate-400);font-style:italic}
+
+.badge88{display:flex;flex-direction:column;justify-content:center;align-items:center;
+  width:88px;height:31px;margin:0 auto .4rem;border:1px solid var(--bone-dim);background:var(--navy);
+  text-decoration:none;box-shadow:2px 2px 0 rgba(80,64,40,.45)}
+.badge88 span{font-family:var(--sc);font-size:.68rem;letter-spacing:.16em;color:var(--bone);line-height:1}
+.badge88 small{font-family:var(--pixel);font-size:.4rem;letter-spacing:.1em;color:var(--sepia);line-height:1.6}
+.badge88:hover{background:var(--sienna)}
+.snip{font-family:var(--pixel);font-size:.46rem;letter-spacing:.04em;color:var(--slate-400);
+  border:1px dashed rgba(120,106,80,.5);padding:3px 4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nb{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.nb span{font-family:var(--pixel);font-size:.42rem;letter-spacing:.04em;text-align:center;
+  padding:9px 3px;border:1px solid var(--slate-600);background:var(--navy);color:var(--bone-dim);
+  line-height:1.4;display:block}
+.nb span:hover{border-color:var(--sienna);color:var(--sepia)}
+.tally{text-align:center}
+.counter{font-family:var(--pixel);letter-spacing:.16em;font-size:.72rem;display:inline-block;
+  padding:3px 5px;background:var(--navy);border:1px solid var(--slate-400);color:var(--bone)}
+
+.art-frame{border:1px solid var(--slate-600);background:var(--navy);padding:3px;aspect-ratio:4/5;overflow:hidden}
+.art-frame img{width:100%;height:100%;object-fit:contain;display:block;image-rendering:pixelated}
+.art-cap{margin:.35rem 0 .1rem!important;font-size:.85rem;line-height:1.3;color:var(--bone)}
+
+.quote p{min-height:3.4em;font-style:italic;font-size:.92rem;line-height:1.4;color:var(--bone)}
+.quote p.flick{animation:flick .4s steps(1) 1}
+@keyframes flick{0%,100%{opacity:1}20%{opacity:.15}40%{opacity:1}60%{opacity:.3}80%{opacity:1}}
+
+.player .pl-row{display:flex;align-items:center;justify-content:space-between;gap:.4rem;margin-bottom:.35rem}
+.player button{font-family:var(--pixel);font-size:.6rem;line-height:1;border:1px solid var(--slate-600);
+  background:var(--navy);color:var(--sepia);padding:5px 7px;cursor:pointer}
+.player button:hover{background:var(--sienna);color:#f6efe2;border-color:var(--sienna)}
+.pl-track{flex:1;font-size:.86rem;color:var(--bone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pl-bar{height:5px;border:1px solid var(--slate-600);background:var(--navy);overflow:hidden}
+.pl-bar i{display:block;height:100%;width:0;background:var(--sienna)}
+.pl-skip{cursor:pointer}
+.pl-skip:hover{color:var(--sienna)}
+
+.scope{position:relative;overflow:hidden;background:#12160f;border:1px solid #0d0f0d;
+  cursor:grab;touch-action:none;user-select:none}
+.scope.drag{cursor:grabbing}
+.scope img{position:absolute;left:0;top:0;display:block;image-rendering:pixelated;
+  max-width:none;will-change:transform;pointer-events:none}
+.scope::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;
+  background:repeating-linear-gradient(to bottom,rgba(0,0,0,.24) 0 1px,transparent 1px 3px),
+             radial-gradient(ellipse at center,transparent 38%,rgba(0,0,0,.72) 100%)}
+.scope .hud{position:absolute;z-index:4;font-family:var(--pixel);letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(214,209,196,.85);text-shadow:0 0 5px #000;pointer-events:none}
+.scope .hud.tl{top:5px;left:7px}
+.scope .hud.br{bottom:5px;right:7px}
+.scope .hud .rec{color:var(--sienna);animation:rec 2.6s steps(1) infinite}
+.scope .grab-hint{position:absolute;z-index:4;left:50%;bottom:7px;transform:translateX(-50%);
+  font-family:var(--pixel);font-size:.46rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(214,209,196,.6);text-shadow:0 0 5px #000;pointer-events:none;
+  transition:opacity .3s}
+.scope.touched .grab-hint{opacity:0}
+.scope-nav{display:flex;align-items:center;justify-content:space-between;gap:.4rem;
+  padding:.35rem .5rem;border-top:1px solid var(--slate-600);
+  font-family:var(--pixel);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--slate-400)}
+.scope-nav button{font-family:var(--pixel);font-size:.55rem;line-height:1;border:1px solid var(--slate-600);
+  background:rgba(255,250,235,.2);color:var(--bone-dim);padding:3px 6px;cursor:pointer}
+.scope-nav button:hover{background:var(--sienna);border-color:var(--sienna);color:#f6efe2}
+
+.pan .scope{aspect-ratio:16/10}
+.pan .scope .hud{font-size:.46rem}
+
+.frame .scope{aspect-ratio:16/9}
+.frame .scope .hud{font-size:.58rem}
+.frame .scope .pillar{position:absolute;top:0;bottom:0;width:8%;background:#000;z-index:2}
+.frame .scope .pillar.l{left:0}.frame .scope .pillar.r{right:0}
+
+.peek-frame{position:relative;border:1px solid #0d0f0d;background:#0d0f0d;aspect-ratio:16/10;overflow:hidden}
+.peek-frame img{width:100%;height:100%;object-fit:cover;display:block;image-rendering:pixelated}
+.peek-frame::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(to bottom,rgba(0,0,0,.22) 0 1px,transparent 1px 3px),
+             radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.7) 100%)}
+.peek-hud{position:absolute;z-index:2;top:4px;left:6px;font-family:var(--pixel);font-size:.46rem;
+  letter-spacing:.1em;color:rgba(214,209,196,.85);text-shadow:0 0 5px #000}
+.peek-hud .rec{color:var(--sienna);animation:rec 2.6s steps(1) infinite}
+
+.doing ul{list-style:none;margin:0;padding:0}
+.doing li{display:flex;justify-content:space-between;gap:.4rem;padding:.25rem 0;font-size:.84rem;
+  border-top:1px solid rgba(120,106,80,.2)}
+.doing li:first-child{border-top:0}
+.doing li b{font-weight:400;color:var(--bone)}
+.doing li i{font-style:normal;font-family:var(--pixel);font-size:.46rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--slate-400);align-self:center}
+
+.sheet .w{display:inline;border:0;padding:0;margin:0;background:none;box-shadow:none;
+  color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;line-height:inherit}
+.writing .w{opacity:0;display:inline-block}
+.writing .w.on{animation:ink .14s steps(3,end) both}
+@keyframes ink{from{opacity:0;clip-path:inset(-2px 100% -2px 0);transform:translateY(1px)}
+               to{opacity:1;clip-path:inset(-2px 0 -2px 0);transform:none}}
+.writing .dr{opacity:0}
+.writing .dr.on{animation:sketch .85s steps(14,end) both}
+@keyframes sketch{0%{opacity:.9;clip-path:polygon(0 0,0 0,0 100%,0 100%);filter:contrast(1.4) brightness(1.1)}
+                  100%{opacity:1;clip-path:polygon(0 0,100% 0,100% 100%,0 100%);filter:none}}
+.writing .rl::after{transform:scaleX(0);transform-origin:left}
+.writing .rl.on::after{animation:rule .5s steps(10,end) both}
+@keyframes rule{to{transform:scaleX(1)}}
+.view.leaving{animation:foldaway .34s ease-in both}
+@keyframes foldaway{to{opacity:0;transform:translateY(14px);filter:blur(2px)}}
+
+.laid{position:fixed;z-index:85;transform-origin:top left;pointer-events:none;
+  box-shadow:0 18px 40px -18px rgba(20,14,6,.75), 0 2px 0 rgba(255,250,235,.25);
+  transition:transform .58s cubic-bezier(.22,.86,.26,1), opacity .34s linear;
+  will-change:transform,opacity;background:#ded4bc}
+.laid img{width:100%;height:100%;object-fit:fill;display:block;image-rendering:pixelated}
+.laid.fade{opacity:0}
+.shot.emptied img{opacity:0;transition:opacity .16s linear}
+.shot.emptied{box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+
+.film{position:fixed;inset:-8%;z-index:78;pointer-events:none;
+  backdrop-filter:blur(.22px) saturate(.99);-webkit-backdrop-filter:blur(.22px) saturate(.99)}
+.film::after{content:"";position:absolute;inset:0;opacity:.14;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+  animation:filmshift .8s steps(4,end) infinite}
+@keyframes filmshift{
+  0%{transform:translate3d(0,0,0)}
+  25%{transform:translate3d(-1.2%,.8%,0)}
+  50%{transform:translate3d(.9%,-1.1%,0)}
+  75%{transform:translate3d(-.7%,-.6%,0)}
+  100%{transform:translate3d(0,0,0)}}
+
+.burn{position:fixed;inset:0;z-index:90;pointer-events:none;transition:opacity .5s ease}
+.burn.gone{opacity:0}
+body.burning{overflow:hidden}
+body.burning .cabinet,body.burning .cabinet *{pointer-events:none!important}
+body.burning .hint-skip{opacity:0!important}
+.hint-skip{position:fixed;right:1rem;bottom:1rem;z-index:65;font-family:var(--pixel);font-size:.55rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--slate-200);opacity:0;transition:opacity .4s;pointer-events:none}
+.hint-skip.show{opacity:.8}
+
+@media (prefers-reduced-motion:reduce){
+  .film::after{animation:none}
+  .writing .w,.writing .dr,.writing .rl,.writing .rl::after{opacity:1;transform:none;animation:none!important;clip-path:none}
+  .view.leaving{animation:none}
+  .banner .plates img{transition:opacity 4s linear}
+  .frame .pane img,.frame .rec{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="cabinet" aria-label="Files">
+  <div class="masthead">
+    <span class="peek" aria-hidden="true">
+      <i style="--c:#a9b0b5"></i><i style="--c:#d9d3c6"></i><i style="--c:#8e9aa4"></i><i style="--c:#c9ad84"></i>
+      <i style="--c:#b8b0a1"></i><i style="--c:#9aa38f"></i><i style="--c:#c7a986"></i><i style="--c:#b0733f"></i>
+    </span>
+    <div>
+      <div class="big">SILTVALE</div>
+      <div class="sub">Archive // 01–07</div>
+    </div>
+    <div class="foot">FILE__01//</div>
+  </div>
+  <div class="stack">
+      <span class="slot" style="--i:0">
+        <a class="file" href="#home" style="--stock:#a9b0b5">
+        <span class="rule"></span>
+        <span class="lbl"><span class="c">FILE_01 //</span> Home</span>
+        <span class="body">
+          <span class="bars"></span>
+          <span class="shot"><img src="assets/dither/prev-home.png" alt="" loading="lazy"></span>
+          <span class="cap">Main index</span>
+          <span class="nm">Home</span>
+        </span>
+      </a>
+      </span>
+      <span class="slot" style="--i:1">
+        <a class="file" href="#smp-info" style="--stock:#d9d3c6">
+        <span class="rule"></span>
+        <span class="lbl"><span class="c">FILE_02 //</span> SMP Info</span>
+        <span class="body">
+          <span class="bars"></span>
+          <span class="shot"><img src="assets/dither/prev-info.png" alt="" loading="lazy"></span>
+          <span class="cap">Information</span>
+          <span class="nm">SMP Info</span>
+        </span>
+      </a>
+      </span>
+      <span class="slot" style="--i:2">
+        <a class="file" href="#history" style="--stock:#8e9aa4">
+        <span class="rule"></span>
+        <span class="lbl"><span class="c">FILE_03 //</span> History</span>
+        <span class="body">
+          <span class="bars"></span>
+          <span class="shot"><img src="assets/dither/prev-history.png" alt="" loading="lazy"></span>
+          <span class="cap">Archive</span>
+          <span class="nm">History</span>
+        </span>
+      </a>
+      </span>
+      <span class="slot" style="--i:3">
+        <a class="file" href="#applications" style="--stock:#c9ad84">
+        <span class="rule"></span>
+        <span class="lbl"><span class="c">FILE_04 //</span> Apply</span>
+        <span class="body">
+          <span class="bars"></span>
+          <span class="shot"><img src="assets/dither/prev-apply.png" alt="" loading="lazy"></span>
+          <span class="cap">Applications</span>
+          <span class="nm">Apply</span>
+        </span>
+      </a>
+      </span>
+      <span class="slot" style="--i:4">
+        <a class="file" href="#faq" style="--stock:#b8b0a1">
+        <span class="rule"></span>
+        <span class="lbl"><span class="c">FILE_05 //</span> FAQ</span>
+        <span class="body">
+          <span class="bars"></span>
+          <span class="shot"><img src="assets/dither/prev-faq.png" alt="" loading="lazy"></span>
+          <span class="cap">Questions</span>
+          <span class="nm">FAQ</span>
+        </span>
+      </a>
+      </span>
+      <span class="slot" style="--i:5">
+        <a class="file" href="#acknowledgements" style="--stock:#9aa38f">
+        <span class="rule"></span>
+        <span class="lbl"><span class="c">FILE_06 //</span> Acknowledge</span>
+        <span class="body">
+          <span class="bars"></span>
+          <span class="shot"><img src="assets/dither/prev-credits.png" alt="" loading="lazy"></span>
+          <span class="cap">Credits</span>
+          <span class="nm">Acknowledge</span>
+        </span>
+      </a>
+      </span>
+      <span class="slot" style="--i:6">
+        <a class="file" href="#reviews" style="--stock:#c7a986">
+        <span class="rule"></span>
+        <span class="lbl"><span class="c">FILE_07 //</span> Reviews</span>
+        <span class="body">
+          <span class="bars"></span>
+          <span class="shot"><img src="assets/dither/prev-reviews.png" alt="" loading="lazy"></span>
+          <span class="cap">Community</span>
+          <span class="nm">Reviews</span>
+        </span>
+      </a>
+      </span>
+      <span class="slot" style="--i:7">
+        <a class="file" href="https://discord.gg/MQCfkwVxP5" target="_blank" rel="noopener" style="--stock:#b0733f;color:#f4ece0">
+        <span class="rule"></span>
+        <span class="lbl"><span class="c">LINK_OUT //</span> Discord</span>
+        <span class="body">
+          <span class="bars"></span>
+          <span class="shot"><img src="assets/dither/prev-discord.png" alt="" loading="lazy"></span>
+          <span class="cap">Join Discord</span>
+          <span class="nm">Discord</span>
+        </span>
+      </a>
+      </span>
+  </div>
+</nav>
+
+<div class="film" aria-hidden="true"></div>
+
+<div class="sheet">
+
+  <div class="banner" aria-label="Siltvale">
+    <div class="plates" aria-hidden="true">
+      <img src="assets/dither/carta-marina-banner-p.png" alt="">
+      <img src="assets/dither/codex-banner-p.png" alt="">
+      <img src="assets/dither/trumpeters-banner-p.png" alt="">
+      <img src="assets/dither/lichenes-banner-p.png" alt="">
+      <img src="assets/dither/ship-banner-p.png" alt="">
+      <img src="assets/dither/four-horsemen-banner-p.png" alt="">
+      <img src="assets/dither/plague-doctor-banner-p.png" alt="">
+      <img src="assets/dither/melencolia-banner-p.png" alt="">
+    </div>
+    <div class="stamp">Siltvale SMP // Official</div>
+    <div class="title">
+      <h1>SILTVALE</h1>
+      <small>Siltvale SMP Official</small>
+    </div>
+  </div>
+
+  <div class="view" id="v-home">
+    <div class="head"><h2>Home</h2><span>File_01 // Main index</span></div>
+  <div class="wrap home">
+    <div class="desk">
+
+      <aside class="col-l">
+        <div class="pan">
+          <h4><b><span id="cal-title">Month</span></b>
+            <span class="nav"><button type="button" id="cal-prev" aria-label="Previous month">&#8592;</button><button type="button" id="cal-next" aria-label="Next month">&#8594;</button></span>
+          </h4>
+          <div class="in cal">
+            <table id="cal" aria-label="Calendar"><thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead><tbody></tbody></table>
+            <p class="cal-key"><b></b> marked days carry an event</p>
+            <ul class="events" id="cal-events"></ul>
+          </div>
+        </div>
+
+        <div class="pan">
+          <h4><b>Link us</b></h4>
+          <div class="in linkus">
+            <a class="badge88" href="#home"><span>SILTVALE</span><small>archive</small></a>
+            <p class="snip">&lt;a href="siltvalesmp.github.io"&gt;</p>
+            <p class="tiny">Feel free to hotlink.</p>
+          </div>
+        </div>
+
+        <div class="pan">
+          <h4><b>Founders</b></h4>
+          <div class="in nb">
+            <span>ELLY</span><span>FUNDERSTORM / ARDEN</span>
+            <span>TIMFINN (SILVER)</span><span>ZAY</span>
+            <span>FLUTTER</span><span>PHAZMA</span>
+            <span>BREADZYY</span><span>VI</span>
+            <span>SUI</span>
+          </div>
+        </div>
+
+        <div class="pan">
+          <h4><b>Records</b></h4>
+          <div class="in tally">
+            <span class="counter" id="hits">0000000</span>
+            <p class="tiny">files recovered</p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="col-m">
+        <section>
+          <p class="record">Welcome to the official website</p>
+          <h1 class="page-title">Silt<i>vale</i></h1>
+          <p class="lede">A Minecraft SMP built around its community, its stories, and the strange little world that developed between them.</p>
+          <div class="status-strip">
+            <span>Status <b>Active</b></span>
+            <span>Server <b>Online</b></span>
+            <span>Access <b>Community</b></span>
+          </div>
+        </section>
+
+        <section>
+          <p class="record">About Siltvale</p>
+          <h2 class="section-title">What is Siltvale?</h2>
+          <p>Siltvale is a Minecraft survival multiplayer server built around its players and the world they create together.</p>
+          <p>This website serves as an archive of the server: its history, community, information, and everything that makes Siltvale what it is.</p>
+          <p>More information about the SMP will be added here once the official details are available.</p>
+          <div class="grid">
+            <div class="card"><h3>Community</h3><p>A server is nothing without the people who inhabit it.</p></div>
+            <div class="card"><h3>Lore</h3><p>Every world has a history. Siltvale is no different.</p></div>
+            <div class="card"><h3>World</h3><p>Explore the world, settlements, builds and stories of Siltvale.</p></div>
+            <div class="card"><h3>People</h3><p>Meet the players who make Siltvale what it is.</p></div>
+          </div>
+        </section>
+
+        <section>
+          <p class="record">Explore</p>
+          <div class="index">
+            <a href="#smp-info"><span class="no">02</span><span><strong>SMP Info</strong><span>Server information / features / details</span></span></a>
+            <a href="#history"><span class="no">03</span><span><strong>History</strong><span>The history and development of Siltvale</span></span></a>
+            <a href="#applications"><span class="no">04</span><span><strong>Apply</strong><span>Find out how to become part of the community</span></span></a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="col-r">
+        <div class="pan">
+          <h4><b>Art from the vale</b>
+            <span class="nav"><button type="button" id="art-prev" aria-label="Previous">&#8592;</button><button type="button" id="art-next" aria-label="Next">&#8594;</button></span>
+          </h4>
+          <div class="in art">
+            <div class="art-frame"><img id="art-img" src="assets/dither/carta-marina-p.png" alt="Artwork from the Siltvale community"></div>
+            <p class="art-cap" id="art-cap">Untitled</p>
+            <p class="tiny" id="art-by">— unattributed</p>
+          </div>
+        </div>
+
+        <div class="pan">
+          <h4><b>Overheard</b></h4>
+          <div class="in quote"><p id="quote">&nbsp;</p></div>
+        </div>
+
+        <div class="pan">
+          <h4><b>Wax cylinder</b></h4>
+          <div class="in player">
+            <div class="pl-row">
+              <button type="button" id="pl-btn" aria-label="Play">&#9654;</button>
+              <span class="pl-track" id="pl-track">Silt Wind</span>
+            </div>
+            <div class="pl-bar"><i id="pl-fill"></i></div>
+            <div class="pl-row tiny"><span id="pl-time">0:00</span><span id="pl-next" class="pl-skip" role="button" tabindex="0">next &#8594;</span></div>
+          </div>
+        </div>
+
+        <div class="pan">
+          <h4><b>Sneak peek</b></h4>
+          <div class="in peekbox" style="padding:0">
+            <div class="scope" data-scope="peek" data-zoom="2.2">
+              <img src="assets/dither/vale-01.png" alt="A view of the Siltvale server">
+              <span class="hud tl"><span class="rec">&#9679;</span> REC</span>
+              <span class="grab-hint">drag to look</span>
+            </div>
+            <div class="scope-nav">
+              <button type="button" data-step="-1" aria-label="Previous view">&#8592;</button>
+              <span data-cap>Undercroft</span>
+              <button type="button" data-step="1" aria-label="Next view">&#8594;</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pan">
+          <h4><b>In the vale</b></h4>
+          <div class="in doing">
+            <ul>
+              <li><b>Settlements</b><i>5 standing</i></li>
+              <li><b>Biome</b><i>Pale / Dark Forest</i></li>
+              <li><b>Wraiths</b><i>nocturnal</i></li>
+              <li><b>Weather</b><i>fog, inland</i></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pan">
+          <h4><b>Join</b></h4>
+          <div class="in">
+            <p class="tiny">Applications and the server IP go through the Discord.</p>
+            <a class="pan-btn" href="https://discord.gg/MQCfkwVxP5" target="_blank" rel="noopener">Join the Discord</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  </div>
+  <div class="view" id="v-smp-info">
+    <div class="head"><h2>SMP Info</h2><span>File_02 // Information</span></div>
+  <div class="wrap">
+    <section>
+      <p class="record">Siltvale SMP / Document 02 — File 02 / 07</p>
+      <h1 class="page-title">Survive <i>the Silt.</i></h1>
+      <p class="lede">Siltvale is a lore-focused, ARG-inspired Minecraft server built around environmental storytelling, mystery, and immersive roleplay.</p>
+
+      <figure class="plate side">
+        <img src="assets/dither/ramelli-p.png" alt="Dithered title page of a 16th-century book of machines" loading="lazy">
+        <figcaption>Diverse and artificial machines — a book passed down between generations</figcaption>
+      </figure>
+
+      <p>The world is filled with forgotten settlements, abandoned places, hidden records, and clues left behind by those who came before. Rather than simply telling its story, Siltvale allows players to discover it for themselves.</p>
+      <p>Explore the world, uncover strange records, solve puzzles and ciphers, and slowly piece together the history of a world that has been lost to time.</p>
+      <p>Every ruin, journal, and landmark may hold a piece of something larger.</p>
+      <div class="clear"></div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Server type</h3>
+          <ul><li>Lore-focused</li><li>ARG-inspired</li><li>Survival</li></ul>
+        </div>
+        <div class="card">
+          <h3>Core themes</h3>
+          <ul><li>Environmental storytelling</li><li>Mystery</li><li>Exploration</li><li>Roleplay</li><li>Community</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="record">What we offer</p>
+      <div class="offer">
+        <div><div><h3>Immersive Roleplay</h3><p>Take part in collaborative storytelling where players help shape the world and its unfolding narrative.</p></div></div>
+        <div><div><h3>Environmental Lore</h3><p>Discover stories hidden within the environment, from forgotten settlements and landmarks to records left behind by earlier inhabitants.</p></div></div>
+        <div><div><h3>Puzzles &amp; Ciphers</h3><p>Follow clues, decipher strange messages, and solve ARG-inspired puzzles scattered throughout the world.</p></div></div>
+        <div><div><h3>A World to Explore</h3><p>Explore a post-apocalyptic world shaped by discovery, player exploration, and the traces of a civilization that came before.</p></div></div>
+        <div><div><h3>A Welcoming Community</h3><p>Siltvale is built around its players, creating a community-driven experience where people can explore, create, and tell stories together.</p></div></div>
+      </div>
+
+      <div class="goal">
+        <p class="record">The goal of Siltvale</p>
+        <h3>To create a world players will remember, and a place they'll always want to return to.</h3>
+      </div>
+    </section>
+  </div>
+
+  </div>
+  <div class="view" id="v-history">
+    <div class="head"><h2>History</h2><span>File_03 // Archive</span></div>
+  <div class="wrap">
+    <section>
+      <p class="record">Siltvale archive / Record 003</p>
+      <h1 class="page-title">The History <i>of Siltvale.</i></h1>
+      <p class="lede">A record of the world before the Plague, the fall of Siltvale, and the generations that eventually returned to reclaim it.</p>
+
+      <div class="frame">
+        <div class="scope" data-scope="record" data-zoom="1.9">
+          <img src="assets/dither/vale-05.png" alt="Recovered footage of the vale: an overgrown structure beneath a great tree, fog across the ground">
+          <span class="pillar l" aria-hidden="true"></span>
+          <span class="pillar r" aria-hidden="true"></span>
+          <span class="hud tl"><span class="rec">&#9679;</span> REC <span id="tc">00:00:00</span></span>
+          <span class="hud br" data-cap>Siltvale — Mainland</span>
+          <span class="grab-hint">drag to look around</span>
+        </div>
+        <div class="scope-nav">
+          <button type="button" data-step="-1" aria-label="Previous view">&#8592; prev</button>
+          <span>Recovered footage — the vale as the returning parties found it</span>
+          <button type="button" data-step="1" aria-label="Next view">next &#8594;</button>
+        </div>
+      </div>
+
+      <div class="legend">
+        <a href="#age-2"><small>01 / Legend</small><strong>The Silt Plague</strong><span>The disaster that consumed the old world.</span></a>
+        <a href="#age-3"><small>02 / Residue</small><strong>The Siltwraiths</strong><span>The dead, changed into something beyond death.</span></a>
+        <a href="#age-5"><small>03 / Return</small><strong>The Reclaiming</strong><span>Descendants return to the homeland generations later.</span></a>
+      </div>
+
+      <p class="record">Historical record</p>
+      <div class="ages">
+
+        <div class="age" id="age-1">
+          <div class="num">Age I <b>Before the Silt</b></div>
+          <h3>The Age of Discovery</h3>
+          <p>Eons ago, during what descendants would eventually call the Renaissance period, the world stood on the brink of an age defined by knowledge and machinery.</p>
+          <p>The enlightenment shaped the lives of countless peoples. New discoveries were being made, and technology was beginning to move the world toward a future built upon machinery.</p>
+          <p>That momentum would never reach its conclusion.</p>
+        </div>
+
+        <div class="age" id="age-2">
+          <div class="num">Age II <b>The Plague</b></div>
+          <h3>The Silt</h3>
+          <figure class="plate side">
+            <img src="assets/dither/lichenes-p.png" alt="Dithered plate of pale lichens and mosses" loading="lazy">
+            <figcaption>Natural record / Silt — pale moss</figcaption>
+          </figure>
+          <p>The Silt Plague spread across the world. Gray and faintly fine beneath the sun, the Silt moved across continents and swallowed the homes of different races.</p>
+          <p>It brought tides of disease with it. Biomes withered, settlements disappeared, and the vibrance of the world slowly faded beneath the spreading Silt.</p>
+          <div class="aside">
+            <small>Natural record / Silt</small>
+            <strong>Pale Moss</strong>
+            <p>Pale moss became one of the remnants associated with the Silt. Life continued to grow within the ruins of the old world, intertwining with abandoned structures and forgotten machinery.</p>
+          </div>
+          <div class="clear"></div>
+        </div>
+
+        <div class="age wraith" id="age-3">
+          <div class="num">Age III <b>The Creaking</b></div>
+          <h3>The Siltwraiths</h3>
+          <figure class="plate side">
+            <img src="assets/dither/trumpeters-p.png" alt="Dithered woodcut of skeletons sounding trumpets" loading="lazy">
+            <figcaption>Entity record — the Creaking</figcaption>
+          </figure>
+          <p>The Silt did not merely consume lives. Over decades, it acquired enough consciousness — enough residue from those it had claimed — to become something new.</p>
+          <p>From the drifting haze emerged creatures unlike anything the world had previously known.</p>
+          <blockquote>Never turn your back.<cite>An old warning passed between survivors</cite></blockquote>
+          <blockquote>Don't look away.<cite>The Creaking</cite></blockquote>
+          <div class="aside wraith">
+            <small>Entity record</small>
+            <strong>The Creaking</strong>
+            <p>Siltwraiths became the beginning of the apocalypse. They emerged from the haze as the world was already being consumed, turning the remains of the dead against the living.</p>
+          </div>
+          <div class="clear"></div>
+        </div>
+
+        <div class="age" id="age-4">
+          <div class="num">Age IV <b>The Fall</b></div>
+          <h3>The End of Siltvale</h3>
+          <p>The Silt Plague and the apocalypse of the Siltwraiths eventually consumed Siltvale.</p>
+          <p>The survivors had little choice. They fled the choking Silt and scattered across distant islands.</p>
+          <p>Those scattered populations began forging a thalassocracy — bound together by the ocean and by a shared history that could not be forgotten.</p>
+          <blockquote>The homeland was lost, but its history travelled with those who survived.</blockquote>
+        </div>
+
+        <div class="age" id="age-5">
+          <div class="num">Age V <b>Generations later</b></div>
+          <h3>The Reclaiming</h3>
+          <figure class="plate side">
+            <img src="assets/dither/ship-p.png" alt="Dithered wash drawing of a ship caught among ice" loading="lazy">
+            <figcaption>The crossing — a vessel of the scattering</figcaption>
+          </figure>
+          <p>Generations passed. The descendants of those populations who survived eventually turned their attention back toward the mainland.</p>
+          <blockquote>The Plague has ended and the Siltwraiths have become nocturnal. The mainland — our homeland — is to be reclaimed.</blockquote>
+          <p>Word spread across the islands. The homeland that had been abandoned was no longer unreachable.</p>
+          <p>The descendants would return to Siltvale and attempt to reclaim what had been lost.</p>
+          <div class="clear"></div>
+        </div>
+
+        <div class="age wraith" id="age-6">
+          <div class="num">Age VI <b>The Return</b></div>
+          <h3>What Remains</h3>
+          <p>The Siltwraiths still thrive at night. Their existence raises questions that remain unanswered.</p>
+          <div class="questions">
+            <div><small class="qn">Question / 001</small><strong>Residue</strong><p>Are the Siltwraiths simply residue left behind by death, or is there something more within them?</p></div>
+            <div><small class="qn">Question / 002</small><strong>Behavior</strong><p>Do they possess patterns, behaviors, communication, or even emotions?</p></div>
+          </div>
+          <p style="margin-top:1.2rem">Whatever the answer may be, the Siltwraiths remain a reminder of the lives lost during the Plague.</p>
+        </div>
+
+        <div class="age" id="age-7">
+          <div class="num">Age VII <b>The New World</b></div>
+          <h3>A Shattered World</h3>
+          <figure class="plate side">
+            <img src="assets/dither/codex-p.png" alt="Dithered page of machine studies" loading="lazy">
+            <figcaption>Machine studies — knowledge from before the Plague</figcaption>
+          </figure>
+          <p>The reclaiming of Siltvale is not simply a battle against monsters. It is a struggle to survive within a world that no longer resembles the one remembered by history.</p>
+          <p>Machinery lies abandoned and overgrown, remnants of knowledge from an age that existed before the Plague.</p>
+          <p>Descendants rediscover these machines and technologies through knowledge passed down between generations.</p>
+          <p>Nature has grown over the remains of civilization. Ruins, machinery, moss, and forgotten technology now exist together.</p>
+          <div class="clear"></div>
+        </div>
+
+      </div>
+
+      <div class="fate">
+        <div class="glyph">&#8761; &#8330; &#10030; . &#8761; &#8330; &#729; &#8901;&#729; &#8761; &#2410; &#734;</div>
+        <h3>What awaits your fate?</h3>
+        <p>Islands foreign to one another, yet bound by the same history, set sail toward the land they once all called home.</p>
+        <p class="q">Will you trust another foreign soul?</p>
+        <p class="q">Will you meet a friend?</p>
+        <p class="q">Or an enemy?</p>
+      </div>
+    </section>
+  </div>
+
+  </div>
+  <div class="view" id="v-applications">
+    <div class="head"><h2>Apply</h2><span>File_04 // Applications</span></div>
+  <div class="wrap">
+    <section>
+      <p class="record">Siltvale archive / Record 004</p>
+      <h1 class="page-title">Applications.</h1>
+      <p class="lede">Help build the world of Siltvale and become part of the community behind it.</p>
+
+      <p class="record" style="margin-top:2rem">We're looking for</p>
+      <div class="roles">
+        <div class="role">
+          <div class="eye" aria-hidden="true">&#x13099;</div>
+          <p class="rnum">01 / Builder</p>
+          <h3>Builders</h3>
+          <p>Tell stories through architecture, atmosphere, and detail.</p>
+          <a href="https://discord.gg/MQCfkwVxP5" target="_blank" rel="noopener">Apply on Discord</a>
+        </div>
+        <div class="role">
+          <div class="eye" aria-hidden="true">&#x13099;</div>
+          <p class="rnum">02 / Visionary</p>
+          <h3>Visionaries</h3>
+          <p>Help write lore, mysteries, puzzles, ciphers, and environmental storytelling.</p>
+          <a href="https://discord.gg/MQCfkwVxP5" target="_blank" rel="noopener">Apply on Discord</a>
+        </div>
+        <div class="role">
+          <div class="eye" aria-hidden="true">&#x13099;</div>
+          <p class="rnum">03 / Moderator</p>
+          <h3>Moderators</h3>
+          <p>Help keep the community engaged and structured for everyone.</p>
+          <a href="https://discord.gg/MQCfkwVxP5" target="_blank" rel="noopener">Apply on Discord</a>
+        </div>
+      </div>
+
+      <div class="note">
+        <h4>Please note</h4>
+        <p>All staff positions are voluntary and unpaid. We're looking for people who genuinely enjoy collaborating and creating something special together.</p>
+      </div>
+
+      <div class="goal">
+        <div class="glyph">&#8761; &#8330; &#10030; . &#8761; &#8330; &#729; &#8901;&#729;</div>
+        <h3>Build something worth remembering.</h3>
+        <p style="margin:1rem auto 0;max-width:46ch;color:var(--bone-dim)">If you want to help build a world people will remember and a community they'll want to come back to, we'd love to have you.</p>
+      </div>
+    </section>
+  </div>
+
+  </div>
+  <div class="view" id="v-faq">
+    <div class="head"><h2>FAQ</h2><span>File_05 // Questions</span></div>
+  <div class="wrap">
+    <section>
+      <p class="record">Frequently asked questions / Siltvale community archive</p>
+      <h1 class="page-title">FAQ</h1>
+
+      <div class="reader">
+        <div class="panel">
+          <h4>Reader's note</h4>
+          <p>If you're new to Siltvale, this record should answer most of the questions you might have.</p>
+        </div>
+        <div class="panel">
+          <h4>Before you enter</h4>
+          <p>Siltvale is a community-driven world. There isn't one story waiting for you to follow. You help create it.</p>
+        </div>
+      </div>
+
+      <div class="faq-group">
+        <h3>General questions</h3>
+        <details><summary>When will Siltvale launch?</summary><div class="a"><p>Siltvale is currently in development. An official launch date will be announced once we're confident everything is ready.</p><p>Accepted players will receive the server IP before launch.</p></div></details>
+        <details><summary>Are there main characters or antagonists?</summary><div class="a"><p>No. Siltvale is a community-driven Minecraft server where players contribute to an evolving world through their characters, stories, and interactions.</p><p>It's up to you how you make your story matter.</p></div></details>
+        <details><summary>Can I stream or make videos?</summary><div class="a"><p>Yes! Content creation is encouraged. We love seeing players create videos, streams, screenshots, artwork, and other content inspired by Siltvale.</p></div></details>
+        <details><summary>Do I need roleplay experience?</summary><div class="a"><p>Not at all! Previous roleplay experience is helpful but not required.</p><p>We welcome both experienced and new roleplayers.</p></div></details>
+        <details><summary>How will we communicate while roleplaying?</summary><div class="a"><p>We use both VC and Minecraft chats depending on preference and availability.</p></div></details>
+      </div>
+
+      <div class="faq-group">
+        <h3>The world</h3>
+        <details><summary>What's the biome of Siltvale's setting? Is it fully dead?</summary><div class="a"><p>Siltvale's settlements have the following biomes: Pale Biome, Dark Forest, Birch Forest, Old Growth Spruce Taiga, and a snowy mountain.</p><p>Therefore, Siltvale is not fully dead, considering it's been eons since the Plague and Apocalypse.</p><p>"We will start where most descendants first arrived at Siltvale."</p></div></details>
+        <details><summary>Are races fully cosmetic?</summary><div class="a"><p>There are exceptions, as long as the race is not used to make the OC overpowered or turn them into a "chosen one" type of character.</p></div></details>
+        <details><summary>Where will the first RP session begin?</summary><div class="a"><p>We will start where most descendants first arrived at Siltvale.</p></div></details>
+      </div>
+
+      <div class="faq-group">
+        <h3>Groups &amp; civilizations</h3>
+        <details><summary>Can players create their own groups?</summary><div class="a"><p>For groups, what actually matters is the lore and background.</p><p>It depends on the situation. For example, a group could have originally disbanded and your OC decides to recruit people to make it active again.</p><p>Or it could simply be a group your OC decides to establish from scratch.</p><p>Naturally, a recruitment post can then be made for it.</p></div></details>
+        <details><summary>Will there be player-made civilizations and factions?</summary><div class="a"><p>Since the theme is reclamation, the settlements where players can reside are already made.</p><p>Players can add their own builds there. Groups can also create their own bases.</p></div></details>
+        <details><summary>How do the settlement roles work?</summary><div class="a"><p>Settlements already exist as part of Siltvale's reclaimation theme.</p><p>Roles such as Settler, Drifter, Pathfinder and others help define how characters interact with the world.</p></div></details>
+      </div>
+
+      <div class="faq-group">
+        <h3>Roleplay</h3>
+        <details><summary>How does roleplay actually work? Is it instant?</summary><div class="a"><p>As long as you're around people, yes. However, it's completely okay to be idle if you're by yourself.</p><p>Roleplay naturally happens around the people and situations you're interacting with.</p></div></details>
+        <details><summary>Can I play multiple roles?</summary><div class="a"><p>Yes! You can apply for multiple roles, such as lore writer, builder, moderator, and player at the same time.</p><p>We encourage it as long as you're up for the additional responsibility.</p></div></details>
+        <details><summary>Will players be able to trade?</summary><div class="a"><p>Yes. What players trade for is their choice.</p><p>For example, you could trade one item for another player's item that you need.</p></div></details>
+      </div>
+
+      <div class="faq-group">
+        <h3>Need more help?</h3>
+        <details><summary>Who do I contact if I have questions?</summary><div class="a"><p>Feel free to open a <a href="https://discord.gg/MQCfkwVxP5" target="_blank" rel="noopener">Ticket</a> or contact a member of the <a href="https://discord.gg/MQCfkwVxP5" target="_blank" rel="noopener">staff team</a>.</p></div></details>
+      </div>
+
+      <div class="goal">
+        <h3>Still have a question?</h3>
+        <p style="margin:1rem auto 0;max-width:48ch;color:var(--bone-dim)">Siltvale is still being built. Some answers will change as the world, community, and story continue to develop. If something isn't covered here, ask the community.</p>
+      </div>
+    </section>
+  </div>
+
+  </div>
+  <div class="view" id="v-acknowledgements">
+    <div class="head"><h2>Acknowledge</h2><span>File_06 // Credits</span></div>
+  <div class="wrap">
+    <section>
+      <p class="record">Siltvale / People who helped make this possible</p>
+      <h1 class="page-title">Acknowledgements</h1>
+      <p class="lede">No effort goes unseen.</p>
+
+      <div class="ack-status">Early Acknowledgements <b>Finished</b></div>
+      <p>Siltvale will continue to grow from here on out, and I want to acknowledge the people who helped carry it. Even when Siltvale was still uncertain, messy, an idea slowly becoming real, these were the people who stayed, created, contributed, and believed in what it could become.</p>
+
+      <div class="ack-list">
+        <div class="ack"><div class="n">01</div><div>
+          <h3>Rogue [Vi]</h3><div class="role-tag">Overseer</div>
+          <p>Thank you for all of your support behind the scenes within Siltvale. "We're in this together." That genuinely meant a lot more than I could put into words!</p>
+          <p>Thank you for trusting in me and keeping up despite my messy pace, for always understanding, hearing me out, and choosing to stay and listen no matter how complicated things seem. I want you to always remember that I appreciate your hard work and I see your efforts.</p>
+        </div></div>
+        <div class="ack"><div class="n">02</div><div>
+          <h3>Timfinn [Silver]</h3><div class="role-tag">Visionary</div>
+          <p>Thank you for being one of the earliest people to help shape the direction and atmosphere of Siltvale. Your ideas, support, and presence during development genuinely mattered more than you probably realize.</p>
+        </div></div>
+        <div class="ack"><div class="n">03</div><div>
+          <h3>breadzyy_</h3><div class="role-tag">Builder</div>
+          <p>Thank you for constantly showing up and bringing life into Siltvale through your assistance and builds. The abandoned factory, sewer entrance, and the atmosphere you helped create became part of what makes the world feel real.</p>
+        </div></div>
+        <div class="ack"><div class="n">04</div><div>
+          <h3>Phasma</h3><div class="role-tag">Craftwright / Visionary</div>
+          <p>Thank you for contributing not only through builds, but also through the ideas you brought into the world. Your contributions helped expand Siltvale beyond just structures and into something with depth and story.</p>
+          <p>Thank you for pouring your passion in creating into Siltvale! I'm so proud of everything you've built. I genuinely appreciate you taking initiatives and contributing so much help!</p>
+        </div></div>
+        <div class="ack"><div class="n">05</div><div>
+          <h3>Zay</h3><div class="role-tag">Keeper / Visionary / Builder</div>
+          <p>Thank you for the creativity and energy you brought into Siltvale. You pushed yourself to learn a lot of things you didn't know and gained a lot of experience. Be proud of your achievements!</p>
+          <p>You've helped lay the foundation of Siltvale in more ways than you realize.</p>
+        </div></div>
+      </div>
+
+      <div class="message">
+        <h4>A message to everyone</h4>
+        <p>Siltvale continues to grow because of everyone's hard work in turning ideas into action. I'm so proud of what our team has achieved so far, so I genuinely wanted to make sure your efforts did not go unseen. Thank you all for helping turn this project into something real.</p>
+      </div>
+
+      <div class="ack-status">Acknowledgements <b>Work in progress</b></div>
+      <div class="ack-list">
+        <div class="ack"><div class="n">01</div><div>
+          <h3>Mel</h3><div class="role-tag">Foreman</div>
+          <p>Thank you for bringing much more stable and reliable hosting to Siltvale. Your support and work within the server have genuinely made the launch much more possible. You took a huge part in taking actions towards launch, and thank you for teaching me a lot as well!</p>
+        </div></div>
+        <div class="ack"><div class="n">02</div><div>
+          <h3>Garcalarci [Garlic]</h3><div class="role-tag">Visionary</div>
+          <p>Thank you for bringing more life into Siltvale, not just through its lore but especially within the community. Knowing that you chose to take on this role partly because you believed in me, in Siltvale, and in everything I've worked for means more than I can put into words.</p>
+          <p>I know you've given up being "simply a player" to help with something that matters so much to me, and I don't take that lightly. It means the world to me.</p>
+        </div></div>
+        <div class="ack pending"><div class="n">03</div><div><h3>Elly</h3><div class="role-tag">Visionary</div><p>Your acknowledgement is currently being written.</p></div></div>
+        <div class="ack pending"><div class="n">04</div><div><h3>Arden</h3><div class="role-tag">Funder / Visionary</div><p>Your acknowledgement is currently being written.</p></div></div>
+        <div class="ack pending"><div class="n">05</div><div><h3>Jade</h3><p>Your acknowledgement is currently being written.</p></div></div>
+        <div class="ack pending"><div class="n">06</div><div><h3>Flutter</h3><p>Your acknowledgement is currently being written.</p></div></div>
+        <div class="ack pending"><div class="n">07</div><div><h3>Fish</h3><p>Your acknowledgement is currently being written.</p></div></div>
+        <div class="ack pending"><div class="n">08</div><div><h3>Jan</h3><p>Your acknowledgement is currently being written.</p></div></div>
+        <div class="ack pending"><div class="n">09</div><div><h3>Pickel</h3><p>Your acknowledgement is currently being written.</p></div></div>
+      </div>
+
+      <div class="ack-status">More acknowledgements to come</div>
+      <div class="names"><span>Elly</span><span>Arden</span><span>Jade</span><span>Flutter</span><span>Fish</span><span>Jan</span><span>Pickel</span></div>
+      <p class="record">No effort goes unseen. This page is still being built.</p>
+    </section>
+  </div>
+
+  </div>
+  <div class="view" id="v-reviews">
+    <div class="head"><h2>Reviews</h2><span>File_07 // Community</span></div>
+  <div class="wrap">
+    <section>
+      <p class="record">Siltvale / Community archive</p>
+      <h1 class="page-title">Reviews</h1>
+      <p class="lede">Words from the people who experienced Siltvale.</p>
+      <p>Siltvale is built around the people who choose to become part of it. These are some of the thoughts, experiences, and words shared by members of the community.</p>
+
+      <div class="ack-status">Community Reviews <b>05 recorded reviews</b></div>
+      <div class="reviews">
+        <div class="review">
+          <p class="rnum">Review 01</p>
+          <h3>Easily one of the best!</h3>
+          <p>Siltvale is such a unique SMP, especially because of how much thought goes into the lore. It actually feels like you're part of a world with a history rather than just another Minecraft server.</p>
+          <p>The community is great, the atmosphere is amazing, and there's always something to look forward to. Definitely a server I'd recommend joining if you're looking for an SMP you can actually get invested in!</p>
+          <cite>fluttersnow</cite>
+        </div>
+        <div class="review">
+          <p class="rnum">Review 02</p>
+          <h3>Siltvale SMP</h3>
+          <p>Guys guys you should 100% join this super cool Minecraft server! Everyone's really welcoming and fun and the lore + builds are suuuuper duper awesome!</p>
+          <cite>phasmanthusz</cite>
+        </div>
+        <div class="review">
+          <p class="rnum">Review 03</p>
+          <h3>10/10</h3>
+          <p>The people are all so friendly and nice, especially that Garlic fella! Also the OOC events are fun!</p>
+          <cite>garcalarci</cite>
+        </div>
+        <div class="review">
+          <p class="rnum">Review 04</p>
+          <h3>IT'S AMAZING!!!</h3>
+          <p>Great moderation, NO CLUTTER, constant OOC events and did I mention that the moderation's great?</p>
+          <p>Like, literally, this server's mods are the most helpful people I've ever met. I haven't been a part of this server for too long and I already know that it's great.</p>
+          <p>You should absolutely join!!! We're going to have the best lore there is out there!</p>
+          <cite>lejek63</cite>
+        </div>
+        <div class="review">
+          <p class="rnum">Review 05</p>
+          <h3>My Siltvale experience</h3>
+          <p>Everyone there is friendly and it is nice to work on something creative with others following the same goal.</p>
+          <cite>funderstorm630tre</cite>
+        </div>
+      </div>
+
+      <div class="goal">
+        <p class="record">Your experience matters</p>
+        <h3 style="font-style:normal;font-size:1.15rem;max-width:54ch">Every person who joins Siltvale becomes part of its story. Whether you've been here from the beginning or just arrived, your experience helps shape the community and the world we're building together.</h3>
+      </div>
+    </section>
+  </div>
+
+  </div>
+
+  <footer>
+    <p>© Siltvale SMP · This site is a community website</p>
+    <p class="last">The Siltwraiths still thrive at night. Never turn your back.</p>
+    <details>
+      <summary>Art credits</summary>
+      <div class="credits">
+        <p>Olaus Magnus, <em>Carta Marina</em> (1539). Public domain, via Wikimedia Commons.</p>
+        <p>Leonardo da Vinci, <em>Codex Atlanticus</em>, f. 26v. Biblioteca Ambrosiana. Public domain, via Wikimedia Commons.</p>
+        <p>Ernst Haeckel, <em>Lichenes</em>, from <em>Kunstformen der Natur</em> (1904). Public domain, via Wikimedia Commons.</p>
+        <p>Hans Holbein the Younger, <em>The Trumpeters of Death</em>, from the Dance of Death. Cleveland Museum of Art, CC0.</p>
+        <p>Gustave Doré, <em>Navire pris dans les glaces</em>. Public domain, via Wikimedia Commons.</p>
+        <p>Albrecht Dürer, <em>The Four Horsemen</em> (1498). National Gallery of Art, CC0.</p>
+        <p>Albrecht Dürer, <em>Melencolia I</em> (1514). National Gallery of Art, CC0.</p>
+        <p>Paul Fürst, <em>Der Doctor Schnabel von Rom</em> (c. 1656). Public domain, via Wikimedia Commons.</p>
+        <p>Agostino Ramelli, <em>Le diverse et artificiose machine</em> (1588), title page. Public domain, via Wikimedia Commons / DPLA.</p>
+        <p>All plates reproduced as 1-bit dithers. Footage frame: Siltvale SMP.</p>
+      </div>
+    </details>
+  </footer>
+
+</div>
+<div class="hint-skip" aria-hidden="true">click the page to finish writing</div>
+
+<script>
+(function(){
+  if('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  var views = document.querySelectorAll('.view');
+  var links = document.querySelectorAll('.file[href^="#"]');
+  var pages = {};
+  views.forEach(function(v){ pages[v.id.slice(2)] = v; });
+
+  var routedOnce = false;
+  function route(){
+
+    if(routedOnce) slamShut();
+    routedOnce = true;
+    var hash = (location.hash || '#home').slice(1);
+    var target = hash, anchor = null;
+    if(!pages[target]){
+      var el = document.getElementById(hash);
+      var owner = el && el.closest('.view');
+      if(owner){ target = owner.id.slice(2); anchor = el; } else { target = 'home'; }
+    }
+    views.forEach(function(v){ v.classList.toggle('active', v.id === 'v-' + target); });
+    links.forEach(function(a){
+      if(a.getAttribute('href') === '#' + target) a.setAttribute('aria-current','page');
+      else a.removeAttribute('aria-current');
+    });
+    if(anchor) anchor.scrollIntoView({block:'start'});
+    else window.scrollTo(0,0);
+    document.title = 'Siltvale SMP — ' + (target === 'home' ? 'Homepage'
+      : target.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}));
+    var fresh = pages[target];
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ writeIn(fresh); });
+    else writeIn(fresh);
+  }
+  window.addEventListener('hashchange', route);
+
+  document.querySelectorAll('.file[target]').forEach(function(a){
+    a.addEventListener('click', function(e){ if(e.detail) a.blur(); });
+  });
+
+  function burnAway(){
+    if(reduced) return;
+    var cv = document.createElement('canvas');
+    cv.className = 'burn'; cv.setAttribute('aria-hidden','true');
+    document.body.appendChild(cv); document.body.classList.add('burning');
+    var ctx = cv.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W, H, sw, sh, noise, mc, mctx, ec, ectx;
+    var paper = new Image(); var paperOk = false;
+    paper.onload = function(){ paperOk = true; }; paper.src = 'assets/paper.jpg';
+
+    function field(){
+      sw = Math.max(90, Math.round(window.innerWidth / 5));
+      sh = Math.max(70, Math.round(window.innerHeight / 5));
+      noise = new Float32Array(sw * sh);
+      var oct = [5, 13, 31], amp = [0.52, 0.3, 0.18];
+      for(var o = 0; o < 3; o++){
+        var gw = oct[o], gh = Math.max(3, Math.round(oct[o] * sh / sw)) + 2;
+        var g = new Float32Array(gw * gh);
+        for(var i = 0; i < g.length; i++) g[i] = Math.random();
+        for(var y = 0; y < sh; y++){
+          var fy = y / sh * (gh - 1), y0 = fy | 0, y1 = Math.min(gh - 1, y0 + 1), ty = fy - y0;
+          ty = ty * ty * (3 - 2 * ty);
+          for(var x = 0; x < sw; x++){
+            var fx = x / sw * (gw - 1), x0 = fx | 0, x1 = Math.min(gw - 1, x0 + 1), tx = fx - x0;
+            tx = tx * tx * (3 - 2 * tx);
+            var a = g[y0*gw+x0], b = g[y0*gw+x1], c = g[y1*gw+x0], d = g[y1*gw+x1];
+            var top = a + (b - a) * tx, bot = c + (d - c) * tx;
+            noise[y*sw+x] += amp[o] * (top + (bot - top) * ty);
+          }
+        }
+      }
+
+      var seeds = [], n = 3;
+      for(var k = 0; k < n; k++) seeds.push([ (0.15 + 0.35 * k + Math.random() * 0.2) * sw, sh * (0.94 + Math.random() * 0.1) ]);
+      var maxd = Math.sqrt(sw*sw + sh*sh), mn = 1e9, mx = -1e9;
+      for(var y = 0; y < sh; y++) for(var x = 0; x < sw; x++){
+        var best = 1e9;
+        for(var k = 0; k < seeds.length; k++){
+          var dx = x - seeds[k][0], dy = (y - seeds[k][1]) * 0.82;
+          var d = Math.sqrt(dx*dx + dy*dy); if(d < best) best = d;
+        }
+        var i = y*sw + x;
+        noise[i] = noise[i] * 0.42 + (best / maxd) * 1.25;
+        if(noise[i] < mn) mn = noise[i]; if(noise[i] > mx) mx = noise[i];
+      }
+      var range = (mx - mn) || 1;
+      for(var i = 0; i < noise.length; i++) noise[i] = (noise[i] - mn) / range;
+      mc = document.createElement('canvas'); mc.width = sw; mc.height = sh; mctx = mc.getContext('2d');
+      ec = document.createElement('canvas'); ec.width = sw; ec.height = sh; ectx = ec.getContext('2d');
+    }
+    function size(){
+      W = cv.width = Math.round(window.innerWidth * dpr);
+      H = cv.height = Math.round(window.innerHeight * dpr);
+      cv.style.width = window.innerWidth + 'px'; cv.style.height = window.innerHeight + 'px';
+      field();
+    }
+    size();
+    window.addEventListener('resize', size);
+
+    var EAT = 0.030, RIM = 0.028, CHAR = 0.055;
+    var t0 = null, DUR = 4200;
+    function frame(ts){
+      if(t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / DUR);
+      var p = -0.04 + (k * k * (3 - 2 * k)) * 1.16;
+
+      ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,W,H);
+
+      if(paperOk){
+        var r = Math.max(W / paper.width, H / paper.height);
+        var pw = paper.width * r, ph = paper.height * r;
+        ctx.drawImage(paper, (W - pw) / 2, 0, pw, ph);
+        ctx.fillStyle = 'rgba(216,205,178,.35)'; ctx.fillRect(0,0,W,H);
+      } else {
+        ctx.fillStyle = '#d9cdb0'; ctx.fillRect(0,0,W,H);
+      }
+
+      var md = mctx.createImageData(sw, sh), m = md.data;
+      var ed = ectx.createImageData(sw, sh), e = ed.data;
+      for(var i = 0, j = 0; i < noise.length; i++, j += 4){
+        var n = noise[i], dn = n - p;
+        if(dn < -EAT){ m[j+3] = 255; }
+        else if(dn < 0){
+          m[j+3] = Math.round(255 * (1 - (-dn) / EAT));
+        }
+        if(dn > -EAT * 0.6 && dn < RIM){
+          var q = 1 - Math.abs(dn) / RIM;
+          e[j]   = 255;
+          e[j+1] = Math.round(90 + 120 * q);
+          e[j+2] = Math.round(20 + 40 * q);
+          e[j+3] = Math.round(235 * Math.max(0, q));
+        } else if(dn >= RIM && dn < RIM + CHAR){
+          var c = 1 - (dn - RIM) / CHAR;
+          e[j] = 58; e[j+1] = 42; e[j+2] = 26;
+          e[j+3] = Math.round(200 * c * c);
+        }
+      }
+      mctx.putImageData(md, 0, 0); ectx.putImageData(ed, 0, 0);
+
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.drawImage(ec, 0, 0, W, H);
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.drawImage(mc, 0, 0, W, H);
+      ctx.globalCompositeOperation = 'source-over';
+
+      if(k < 1) requestAnimationFrame(frame);
+      else {
+        cv.classList.add('gone'); document.body.classList.remove('burning');
+        setTimeout(function(){ cv.remove(); window.removeEventListener('resize', size); }, 600);
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  var Pencil = (function(){
+    var ctx = null, master = null, noiseBuf = null, armed = false;
+    function ensure(){
+      if(ctx) return true;
+      var AC = window.AudioContext || window.webkitAudioContext; if(!AC) return false;
+      ctx = new AC(); master = ctx.createGain(); master.gain.value = .55; master.connect(ctx.destination);
+      var len = ctx.sampleRate * 2, buf = ctx.createBuffer(1, len, ctx.sampleRate), d = buf.getChannelData(0);
+      for(var i=0;i<len;i++) d[i] = (Math.random()*2-1) * (0.6 + 0.4*Math.random());
+      noiseBuf = buf; return true;
+    }
+    function arm(){ if(!ensure()) return; if(ctx.state !== 'running') ctx.resume(); armed = true; }
+    ['pointerdown','keydown','touchstart'].forEach(function(ev){ window.addEventListener(ev, arm, {passive:true}); });
+    function live(){ return armed && ctx && ctx.state === 'running'; }
+
+    function shade(dur){
+      if(!live()) return;
+      var t = ctx.currentTime;
+      var src = ctx.createBufferSource(); src.buffer = noiseBuf; src.loop = true;
+      var lp = ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value = 1400;
+      var bp = ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value = 700; bp.Q.value = .6;
+      var g = ctx.createGain(); g.gain.setValueAtTime(0,t);
+      var lfo = ctx.createOscillator(), lg = ctx.createGain(); lfo.frequency.value = 9 + Math.random()*5; lg.gain.value = .12;
+      lfo.connect(lg); lg.connect(g.gain);
+      g.gain.linearRampToValueAtTime(.28, t+.05);
+      g.gain.setValueAtTime(.28, t+dur-.12);
+      g.gain.exponentialRampToValueAtTime(.001, t+dur);
+      src.connect(lp); lp.connect(bp); bp.connect(g); g.connect(master);
+      src.start(t); lfo.start(t); src.stop(t+dur+.05); lfo.stop(t+dur+.05);
+    }
+
+    function turn(){
+      if(!live()) return;
+      var t = ctx.currentTime, dur=.32;
+      var src = ctx.createBufferSource(); src.buffer = noiseBuf;
+      var lp = ctx.createBiquadFilter(); lp.type='lowpass';
+      lp.frequency.setValueAtTime(600,t); lp.frequency.exponentialRampToValueAtTime(3200,t+dur*.5); lp.frequency.exponentialRampToValueAtTime(400,t+dur);
+      var g = ctx.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.5,t+.04); g.gain.exponentialRampToValueAtTime(.001,t+dur);
+      src.connect(lp); lp.connect(g); g.connect(master); src.start(t); src.stop(t+dur);
+    }
+    return {shade:shade, turn:turn, live:live};
+  })();
+
+  var writeTimers = [], writeGen = 0, hint = document.querySelector('.hint-skip');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function prep(view){
+    if(view.dataset.prepped) return; view.dataset.prepped = '1';
+    var walker = document.createTreeWalker(view, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if(!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = n.parentNode;
+        if(p.closest('script,style,.frame .hud,.w')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }});
+    var nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(n){
+      var parts = n.nodeValue.split(/(\s+)/), frag = document.createDocumentFragment();
+      parts.forEach(function(part){
+        if(!part) return;
+        if(/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
+        var sp = document.createElement('span'); sp.className = 'w'; sp.textContent = part; frag.appendChild(sp);
+      });
+      n.parentNode.replaceChild(frag, n);
+    });
+    view.querySelectorAll('figure.plate, .frame, .banner-draw').forEach(function(el){ el.classList.add('dr'); });
+  }
+  function cancelWrite(){ writeTimers.forEach(clearTimeout); writeTimers = []; writeGen++; hint.classList.remove('show'); }
+  function finishWrite(view){
+    cancelWrite();
+    view.querySelectorAll('.w,.dr,.rl').forEach(function(el){ el.classList.add('on'); });
+    document.body.classList.remove('writing');
+  }
+  function writeIn(view){
+    cancelWrite();
+    prep(view);
+    var banner = document.querySelector('.banner');
+    var items = [];
+
+    var seq = document.createTreeWalker(view, NodeFilter.SHOW_ELEMENT, { acceptNode: function(el){
+      if(el.classList.contains('w') || el.classList.contains('dr')) return NodeFilter.FILTER_ACCEPT;
+      if(el.classList.contains('head')) return NodeFilter.FILTER_ACCEPT;
+      return NodeFilter.FILTER_SKIP; }});
+    while(seq.nextNode()) items.push(seq.currentNode);
+    var words = items.filter(function(e){ return e.classList.contains('w'); }).length;
+    if(reduced || words === 0){ finishWrite(view); return; }
+    var per = Math.max(5, Math.min(26, 3000 / words));
+    var gen = ++writeGen, t = 0;
+    document.body.classList.add('writing');
+    view.querySelectorAll('.w,.dr,.rl').forEach(function(el){ el.classList.remove('on'); });
+    banner.classList.remove('on');
+
+    view.querySelectorAll('.head').forEach(function(h){ h.classList.add('rl'); });
+
+    banner.classList.add('dr');
+    writeTimers.push(setTimeout(function(){ if(gen!==writeGen) return; banner.classList.add('on'); Pencil.shade(.9); }, 60));
+    t = 380;
+    var hidden = function(el){ return !el.offsetParent && getComputedStyle(el).position !== 'fixed'; };
+    items.forEach(function(el){
+      if(hidden(el)){ el.classList.add('on'); return; }
+      var delay = t;
+      if(el.classList.contains('w')){
+        var len = el.textContent.length;
+        writeTimers.push(setTimeout(function(){ if(gen!==writeGen) return; el.classList.add('on'); }, delay));
+        t += per + (len > 7 ? per*.5 : 0) + (/[.!?]$/.test(el.textContent) ? per*2 : 0);
+      } else if(el.classList.contains('dr')){
+        writeTimers.push(setTimeout(function(){ if(gen!==writeGen) return; el.classList.add('on'); Pencil.shade(.85); }, delay));
+        t += 420;
+      } else {
+        writeTimers.push(setTimeout(function(){ if(gen!==writeGen) return; el.classList.add('on'); Pencil.shade(.45); }, delay));
+        t += 260;
+      }
+    });
+    writeTimers.push(setTimeout(function(){ if(gen===writeGen){ document.body.classList.remove('writing'); hint.classList.remove('show'); } }, t + 200));
+    writeTimers.push(setTimeout(function(){ if(gen===writeGen) hint.classList.add('show'); }, 900));
+  }
+
+  document.querySelector('.sheet').addEventListener('click', function(e){
+    if(document.body.classList.contains('writing') && !e.target.closest('a,button,summary')){
+      finishWrite(document.querySelector('.view.active'));
+    }
+  });
+
+  var cab = document.querySelector('.cabinet');
+  var closeTimer = null, forceShut = false, lastPt = {x:-1, y:-1};
+
+  function inReach(x, y){
+    var m = document.querySelector('.cabinet .masthead');
+    if(!m) return false;
+    var r = m.getBoundingClientRect();
+    if(x <= r.right + 18 && x >= r.left - 4 && y >= r.top && y <= r.bottom) return true;
+    if(cab.classList.contains('open')){
+      var slots = document.querySelectorAll('.slot');
+      if(slots.length){
+        var a = slots[0].getBoundingClientRect(), z = slots[slots.length - 1].getBoundingClientRect();
+        var right = Math.max(z.right, a.right);
+        if(x >= r.left && x <= right + 10 && y >= a.top - 14 && y <= a.bottom + 14) return true;
+      }
+    }
+    return false;
+  }
+  function openDrawer(){
+    if(forceShut) return;
+    clearTimeout(closeTimer); closeTimer = null;
+    cab.classList.add('open');
+  }
+  function closeDrawer(grace){
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(function(){ cab.classList.remove('open'); closeTimer = null; },
+                            grace === undefined ? 140 : grace);
+  }
+  document.addEventListener('pointermove', function(e){
+    lastPt.x = e.clientX; lastPt.y = e.clientY;
+    if(document.body.classList.contains('burning')) return;
+    var inside = inReach(e.clientX, e.clientY);
+    if(forceShut){ if(!inside) releaseHold(); return; }
+    if(inside) openDrawer(); else if(cab.classList.contains('open')) closeDrawer();
+  }, {passive:true});
+
+  cab.addEventListener('pointerenter', function(){ openDrawer(); });
+  cab.addEventListener('pointerdown', function(){ openDrawer(); });
+  window.addEventListener('blur', function(){ cab.classList.remove('open'); });
+
+  var releaseTimer = null;
+  function releaseHold(){
+    forceShut = false;
+    cab.classList.remove('forceshut');
+    clearTimeout(releaseTimer); releaseTimer = null;
+
+    if(inReach(lastPt.x, lastPt.y)) openDrawer();
+  }
+  function slamShut(){
+    forceShut = true;
+    clearTimeout(closeTimer); closeTimer = null;
+    cab.classList.remove('open');
+    cab.classList.add('forceshut');
+
+    clearTimeout(releaseTimer);
+    releaseTimer = setTimeout(releaseHold, 1100);
+
+    if(document.activeElement && document.activeElement.closest &&
+       document.activeElement.closest('.cabinet')) document.activeElement.blur();
+  }
+
+  var opening = false;
+
+  function layDown(a){
+    var shot = a.querySelector('.shot'), img = shot && shot.querySelector('img');
+    if(!img || reduced) return 0;
+    var r = img.getBoundingClientRect();
+    if(!r.width || !r.height) return 0;
+
+    var aspect = (img.naturalWidth || 460) / (img.naturalHeight || 920);
+    var w0 = r.width, h0 = w0 / aspect;
+    var x0 = r.left, y0 = r.top + (r.height - h0) / 2;
+
+    var sheet = document.querySelector('.sheet').getBoundingClientRect();
+    var H = Math.min(window.innerHeight * 0.84, 860);
+    var W = H * aspect;
+    if(W > sheet.width * 0.8){ W = sheet.width * 0.8; H = W / aspect; }
+    var scale = W / w0;
+    var tx = sheet.left + (sheet.width - W) / 2;
+    var ty = (window.innerHeight - H) / 2;
+
+    var el = document.createElement('div'); el.className = 'laid';
+    el.style.left = x0 + 'px'; el.style.top = y0 + 'px';
+    el.style.width = w0 + 'px'; el.style.height = h0 + 'px';
+    var im = document.createElement('img'); im.src = img.currentSrc || img.src;
+    el.appendChild(im); document.body.appendChild(el);
+    shot.classList.add('emptied');
+
+    requestAnimationFrame(function(){
+
+      el.style.transform = 'translate3d(20px,-16px,0) scale(1.05) rotate(-1.1deg)';
+      setTimeout(function(){
+        el.style.transform = 'translate3d(' + (tx - x0) + 'px,' + (ty - y0) + 'px,0) scale(' +
+                             scale + ') rotate(0deg)';
+      }, 150);
+    });
+    setTimeout(function(){ el.classList.add('fade'); }, 780);
+    setTimeout(function(){ el.remove(); shot.classList.remove('emptied'); }, 1200);
+    return 620;
+  }
+
+  document.querySelectorAll('.file[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var target = a.getAttribute('href');
+      if(opening) return;
+      if(target === location.hash){ e.preventDefault(); slamShut(); return; }
+      e.preventDefault(); opening = true;
+      a.parentNode.classList.add('opening'); Pencil.turn();
+      var cur = document.querySelector('.view.active');
+      if(cur) cur.classList.add('leaving');
+      cancelWrite();
+      var hold = layDown(a);
+      slamShut();
+      setTimeout(function(){
+        a.parentNode.classList.remove('opening'); a.blur();
+        if(cur) cur.classList.remove('leaving');
+        opening = false;
+        location.hash = target;
+      }, hold || 360);
+    });
+  });
+
+  var plates = document.querySelectorAll('.banner .plates img');
+  if(plates.length > 1){
+    var i = Math.floor(Math.random() * plates.length);
+    plates[i].classList.add('on');
+    setInterval(function(){
+      var prev = i; i = (i + 1) % plates.length;
+      plates[i].classList.add('on');
+      setTimeout(function(){ plates[prev].classList.remove('on'); }, 6000);
+    }, 26000);
+  }
+
+  var tc = document.getElementById('tc'), t = 0;
+  if(tc) setInterval(function(){
+    t++; var pad = function(n){ return String(n).padStart(2,'0'); };
+    tc.textContent = pad(Math.floor(t/3600))+':'+pad(Math.floor(t/60)%60)+':'+pad(t%60);
+  }, 1000);
+
+  var VIEWS = [
+    ['assets/dither/vale-01.png','Undercroft — the machine hall'],
+    ['assets/dither/vale-02.png','Service corridor, mainland'],
+    ['assets/dither/vale-03.png','Overgrown gate, dusk rain'],
+    ['assets/dither/vale-04.png','Deep working — candles left burning'],
+    ['assets/dither/vale-05.png','Siltvale — mainland, dusk']
+  ];
+
+  function makeScope(box){
+    var img = box.querySelector('img');
+    var zoom = parseFloat(box.getAttribute('data-zoom')) || 2;
+    var wrap = box.parentNode;
+    var cap = wrap.querySelector('[data-cap]');
+    var idx = VIEWS.findIndex(function(v){ return img.getAttribute('src') === v[0]; });
+    if(idx < 0) idx = 0;
+    var x = 0, y = 0, maxX = 0, maxY = 0, dragging = false, px = 0, py = 0, drift = null, placed = false;
+
+    function clamp(){
+      if(x > 0) x = 0; if(y > 0) y = 0;
+      if(x < maxX) x = maxX; if(y < maxY) y = maxY;
+    }
+    function place(){ img.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)'; }
+    function fit(){
+      var bw = box.clientWidth, bh = box.clientHeight;
+      if(!bw || !bh || !img.naturalWidth) return;
+
+      var base = Math.max(bw / img.naturalWidth, bh / img.naturalHeight);
+      var w = img.naturalWidth * base * zoom, h = img.naturalHeight * base * zoom;
+      img.style.width = w + 'px'; img.style.height = h + 'px';
+      maxX = bw - w; maxY = bh - h;
+
+      if(!placed && !dragging){ x = maxX / 2; y = maxY / 2; placed = (maxX !== 0 || maxY !== 0); }
+      clamp(); place();
+    }
+    img.addEventListener('load', fit);
+    if(img.complete) fit();
+    window.addEventListener('resize', fit);
+
+    if(window.ResizeObserver){ new ResizeObserver(fit).observe(box); }
+    else { var poll = setInterval(function(){ if(box.clientWidth){ fit(); clearInterval(poll); } }, 200); }
+
+    box.addEventListener('pointerdown', function(e){
+      dragging = true; px = e.clientX; py = e.clientY;
+      box.classList.add('drag','touched');
+      box.setPointerCapture && box.setPointerCapture(e.pointerId);
+      clearInterval(drift); drift = null;
+    });
+    box.addEventListener('pointermove', function(e){
+      if(!dragging) return;
+      x += e.clientX - px; y += e.clientY - py;
+      px = e.clientX; py = e.clientY;
+      clamp(); place();
+    });
+    function release(e){
+      if(!dragging) return;
+      dragging = false; box.classList.remove('drag');
+      try{ box.releasePointerCapture && box.releasePointerCapture(e.pointerId); }catch(err){}
+    }
+    box.addEventListener('pointerup', release);
+    box.addEventListener('pointercancel', release);
+    box.addEventListener('pointerleave', release);
+
+    box.setAttribute('tabindex','0');
+    box.addEventListener('keydown', function(e){
+      var d = 40, used = true;
+      if(e.key === 'ArrowLeft') x += d; else if(e.key === 'ArrowRight') x -= d;
+      else if(e.key === 'ArrowUp') y += d; else if(e.key === 'ArrowDown') y -= d;
+      else used = false;
+      if(used){ e.preventDefault(); box.classList.add('touched'); clamp(); place(); }
+    });
+
+    function show(n){
+      idx = (n + VIEWS.length) % VIEWS.length;
+      img.src = VIEWS[idx][0];
+      placed = false;
+      if(cap) cap.textContent = VIEWS[idx][1];
+      box.classList.add('touched');
+    }
+    wrap.querySelectorAll('[data-step]').forEach(function(b){
+      b.addEventListener('click', function(){ show(idx + parseInt(b.getAttribute('data-step'), 10)); });
+    });
+    if(cap && cap.hasAttribute('data-cap')) cap.textContent = VIEWS[idx][1];
+  }
+  document.querySelectorAll('.scope').forEach(makeScope);
+
+  var MONTH_EVENTS = {
+    0:  [[6,'Frost Vigil','Lanterns lit along every settlement wall until dawn.'],
+         [19,'Deep Quiet','The fog does not lift. No expeditions leave the walls.']],
+    1:  [[2,'Thaw Watch','First melt on the mountain. Scouts map what the ice gives back.'],
+         [21,'Ledger Night','Settlements read out what was lost and what was found.']],
+    2:  [[8,'Sowing of the Pale','Planting under the moss. A long day, a longer night.'],
+         [23,'Machine Waking','An old engine is fed power and asked to run.']],
+    3:  [[5,'The Crossing','Boats out to the nearer islands. Trade, and news.'],
+         [17,'Lantern Row','A night market, held between two ruins.']],
+    4:  [[1,'Founding Day','The day the first party came ashore and stayed.'],
+         [26,'Silt Tide','The moss creeps. Walls are scraped back by hand.']],
+    5:  [[9,'Long Light','The shortest dark of the year. Nobody sleeps.'],
+         [22,'Cartographers Meet','Maps are compared, argued over, redrawn.']],
+    6:  [[4,'Salvage Run','Deep expedition into the old machinery.'],
+         [28,'The Reading','Recovered records are read aloud in full.']],
+    7:  [[11,'Storm Watch','Ships are pulled in. The vale is left to itself.'],
+         [30,'Ember Night','A bonfire, and nobody turns their back to the dark.']],
+    8:  [[7,'Harvest of the Ruins','What grew in the rubble is brought in.'],
+         [11,'Archive Day','Every settlement adds a page to the record.'],
+         [24,'Creaking Season','The nights lengthen. The wraiths are heard sooner.']],
+    9:  [[3,'The Wake','For those who did not come back from the mainland.'],
+         [19,'Mask Night','Faces covered. An old habit, kept for its own sake.']],
+    10: [[8,'Banking of the Fires','Fuel counted, rationed, hidden.'],
+         [27,'The Long Count','Names read. Numbers checked. Nothing skipped.']],
+    11: [[14,'Turning of the Record','The archive closes the year and opens the next.'],
+         [31,'Last Watch','One lantern per wall, burning until morning.']]
+  };
+  var MONTHS = ['January','February','March','April','May','June',
+                'July','August','September','October','November','December'];
+
+  (function desk(){
+    var calBody = document.querySelector('#cal tbody');
+    if(!calBody) return;
+    var view = new Date(), today = new Date();
+
+    function drawCal(){
+      var y = view.getFullYear(), m = view.getMonth();
+      document.getElementById('cal-title').textContent = MONTHS[m] + ' ' + y;
+      var first = new Date(y, m, 1).getDay();
+      var days = new Date(y, m + 1, 0).getDate();
+      var prevDays = new Date(y, m, 0).getDate();
+      var evs = MONTH_EVENTS[m] || [];
+      var evDays = {}; evs.forEach(function(e){ evDays[e[0]] = true; });
+      var html = '', cell = 0;
+      for(var w = 0; w < 6; w++){
+        html += '<tr>';
+        for(var d = 0; d < 7; d++, cell++){
+          var n = cell - first + 1, cls = [], label = n;
+          if(n < 1){ cls.push('out'); label = prevDays + n; }
+          else if(n > days){ cls.push('out'); label = n - days; }
+          else {
+            if(evDays[n]) cls.push('ev');
+            if(n === today.getDate() && m === today.getMonth() && y === today.getFullYear()) cls.push('today');
+          }
+          html += '<td class="' + cls.join(' ') + '">' + label + '</td>';
+        }
+        html += '</tr>';
+        if(cell - first + 1 > days) break;
+      }
+      calBody.innerHTML = html;
+
+      var list = document.getElementById('cal-events');
+      if(!evs.length){ list.innerHTML = '<li class="none">Nothing marked this month.</li>'; return; }
+      list.innerHTML = evs.map(function(e){
+        return '<li><b>' + MONTHS[view.getMonth()].slice(0,3) + ' ' + e[0] + ' &middot; ' + e[1] + '</b>' + e[2] + '</li>';
+      }).join('');
+    }
+    document.getElementById('cal-prev').addEventListener('click', function(){
+      view = new Date(view.getFullYear(), view.getMonth() - 1, 1); drawCal();
+    });
+    document.getElementById('cal-next').addEventListener('click', function(){
+      view = new Date(view.getFullYear(), view.getMonth() + 1, 1); drawCal();
+    });
+    drawCal();
+
+    var ART = [
+      ['assets/dither/carta-marina-p.png','Chart of the Scattering','from the island archives'],
+      ['assets/dither/lichenes-p.png','Pale Growth, studied','a returning naturalist'],
+      ['assets/dither/trumpeters-p.png','The Creaking, as drawn','a survivor of the Plague'],
+      ['assets/dither/ship-p.png','Caught in the Ice','of the crossing'],
+      ['assets/dither/melencolia-p.png','The Builder Waiting','unattributed'],
+      ['assets/dither/ramelli-p.png','Machines, Diverse','recovered from the ruins']
+    ];
+    var ai = Math.floor(Math.random() * ART.length);
+    var aImg = document.getElementById('art-img'), aCap = document.getElementById('art-cap'), aBy = document.getElementById('art-by');
+    function drawArt(){ aImg.src = ART[ai][0]; aCap.textContent = ART[ai][1]; aBy.textContent = '— ' + ART[ai][2]; }
+    function step(n){ ai = (ai + n + ART.length) % ART.length; drawArt(); }
+    document.getElementById('art-prev').addEventListener('click', function(){ step(-1); });
+    document.getElementById('art-next').addEventListener('click', function(){ step(1); });
+    drawArt();
+    setInterval(function(){ step(1); }, 14000);
+
+    var LINES = [
+      'Never turn your back.',
+      "Don't look away.",
+      'Once you have been to Siltvale, you will soon look back and find that you are not you anymore.',
+      'Many have attempted to reclaim life and thrive in the vale, but none ever return the same.',
+      'The Plague has ended and the Siltwraiths have become nocturnal.',
+      'Is it just residue of death, or something more with life?',
+      'They may have patterns, behaviors that communicate, or even emotions.',
+      'The homeland was lost, but its history travelled with those who survived.',
+      'Will you trust another foreign soul?',
+      'Every ruin, journal, and landmark may hold a piece of something larger.'
+    ];
+    var qEl = document.getElementById('quote'), qi = Math.floor(Math.random() * LINES.length);
+    function drawQuote(){
+      qEl.textContent = '“' + LINES[qi] + '”';
+      qEl.classList.remove('flick'); void qEl.offsetWidth; qEl.classList.add('flick');
+    }
+    drawQuote();
+    setInterval(function(){ qi = (qi + 1 + Math.floor(Math.random() * (LINES.length - 1))) % LINES.length; drawQuote(); }, 7000);
+
+    var hits = document.getElementById('hits');
+    var n = 1400 + Math.floor(Math.random() * 600);
+    hits.textContent = String(n).padStart(7, '0');
+
+    var TRACKS = [
+      {name:'Siltvale — theme', file:'assets/audio/siltvale-theme.mp3', len:971},
+      {name:'Silt Wind',      base:64,  wind:.30, creak:0,   len:210},
+      {name:'The Creaking',   base:52,  wind:.16, creak:.55, len:240},
+      {name:'Tide of Islands',base:78,  wind:.42, creak:.10, len:195},
+      {name:'Pale Morning',   base:96,  wind:.12, creak:0,   len:180}
+    ];
+
+    var tape = new Audio(); tape.preload = 'none'; tape.volume = .85;
+    tape.addEventListener('ended', function(){ next(); });
+    var ti = 0, actx = null, nodes = null, playing = false, pos = 0, tick = null;
+    var btn = document.getElementById('pl-btn'), fill = document.getElementById('pl-fill');
+    var tName = document.getElementById('pl-track'), tTime = document.getElementById('pl-time');
+
+    function fmt(s){ var m = Math.floor(s / 60); return m + ':' + String(Math.floor(s % 60)).padStart(2,'0'); }
+    function stop(){
+      playing = false; btn.innerHTML = '&#9654;'; btn.setAttribute('aria-label','Play');
+      clearInterval(tick); tick = null;
+      try{ tape.pause(); }catch(e){}
+      if(nodes){ try{ nodes.gain.gain.setTargetAtTime(0, actx.currentTime, .3);
+        var kill = nodes; setTimeout(function(){ kill.srcs.forEach(function(s){ try{ s.stop(); }catch(e){} }); }, 900);
+      }catch(e){} nodes = null; }
+    }
+    function playing_ui(){
+      playing = true; btn.innerHTML = '&#9646;&#9646;'; btn.setAttribute('aria-label','Pause');
+    }
+    function start(){
+      var t0 = TRACKS[ti];
+      if(t0.file){
+        if(tape.getAttribute('src') !== t0.file){ tape.src = t0.file; tape.currentTime = 0; }
+        var pr = tape.play();
+        if(pr && pr.catch) pr.catch(function(){ stop(); });
+        playing_ui();
+        clearInterval(tick);
+        tick = setInterval(function(){
+          var dur = tape.duration || t0.len;
+          pos = tape.currentTime;
+          fill.style.width = (pos / dur * 100) + '%';
+          tTime.textContent = fmt(pos);
+        }, 250);
+        return;
+      }
+      var AC = window.AudioContext || window.webkitAudioContext; if(!AC) return;
+      if(!actx) actx = new AC();
+      if(actx.state !== 'running') actx.resume();
+      var t = TRACKS[ti], now = actx.currentTime;
+      var gain = actx.createGain(); gain.gain.value = 0; gain.connect(actx.destination);
+      gain.gain.setTargetAtTime(.22, now, .8);
+      var srcs = [];
+
+      [0, 7].forEach(function(semi, k){
+        var o = actx.createOscillator(); o.type = 'sawtooth';
+        o.frequency.value = t.base * Math.pow(2, semi / 12);
+        var lp = actx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 320 + k * 90; lp.Q.value = 6;
+        var g = actx.createGain(); g.gain.value = k ? .16 : .26;
+        var lfo = actx.createOscillator(); lfo.frequency.value = .05 + k * .03;
+        var lg = actx.createGain(); lg.gain.value = 70;
+        lfo.connect(lg); lg.connect(lp.frequency);
+        o.connect(lp); lp.connect(g); g.connect(gain);
+        o.start(now); lfo.start(now); srcs.push(o, lfo);
+      });
+
+      var len = actx.sampleRate * 3, buf = actx.createBuffer(1, len, actx.sampleRate), d = buf.getChannelData(0);
+      for(var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+      var nz = actx.createBufferSource(); nz.buffer = buf; nz.loop = true;
+      var bp = actx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 520; bp.Q.value = .7;
+      var ng = actx.createGain(); ng.gain.value = t.wind * .5;
+      var nl = actx.createOscillator(); nl.frequency.value = .07;
+      var nlg = actx.createGain(); nlg.gain.value = t.wind * .34;
+      nl.connect(nlg); nlg.connect(ng.gain);
+      nz.connect(bp); bp.connect(ng); ng.connect(gain);
+      nz.start(now); nl.start(now); srcs.push(nz, nl);
+
+      if(t.creak){
+        var cr = actx.createOscillator(); cr.type = 'triangle'; cr.frequency.value = t.base / 2;
+        var cg = actx.createGain(); cg.gain.value = 0;
+        var cl = actx.createOscillator(); cl.type = 'sine'; cl.frequency.value = .11;
+        var clg = actx.createGain(); clg.gain.value = t.creak * .07;
+        cl.connect(clg); clg.connect(cg.gain);
+        cr.connect(cg); cg.connect(gain);
+        cr.start(now); cl.start(now); srcs.push(cr, cl);
+      }
+      nodes = {gain:gain, srcs:srcs};
+      playing_ui();
+      clearInterval(tick);
+      tick = setInterval(function(){
+        pos += 1;
+        if(pos >= TRACKS[ti].len){ pos = 0; next(); return; }
+        fill.style.width = (pos / TRACKS[ti].len * 100) + '%';
+        tTime.textContent = fmt(pos);
+      }, 1000);
+    }
+    function next(){
+      var was = playing; stop();
+      ti = (ti + 1) % TRACKS.length; pos = 0;
+      tName.textContent = TRACKS[ti].name; fill.style.width = '0%'; tTime.textContent = '0:00';
+      if(was) start();
+    }
+    btn.addEventListener('click', function(){ playing ? stop() : start(); });
+    var skip = document.getElementById('pl-next');
+    skip.addEventListener('click', next);
+    skip.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') next(); });
+    tName.textContent = TRACKS[0].name;
+  })();
+
+  route();
+  burnAway();
+
+  var saved;
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden){ saved = document.title; document.title = "Don't look away."; }
+    else if(saved){ document.title = saved; }
+  });
+})();
+</script>
+</body>
+</html>
