@@ -289,7 +289,7 @@
       },
       {
         "image": "assets/dither/vale-03.png",
-        "caption": "Overgrown gate, dusk rain"
+        "caption": "Militia outpost"
       },
       {
         "image": "assets/dither/vale-04.png",
@@ -301,19 +301,19 @@
       },
       {
         "image": "assets/dither/vale-06.png",
-        "caption": "The carved eye, hillside"
+        "caption": "The eye of Silt, built by the bult."
       },
       {
         "image": "assets/dither/vale-07.png",
-        "caption": "Silt hollow — pale growth"
+        "caption": "Wastestead walls"
       },
       {
         "image": "assets/dither/vale-08.png",
-        "caption": "Timber span over the deep cut"
+        "caption": "Miner's Graveyard"
       },
       {
         "image": "assets/dither/vale-09.png",
-        "caption": "Fallen keep, pale slope"
+        "caption": "Remnants of the past"
       }
     ],
     "peekStart": 0,
