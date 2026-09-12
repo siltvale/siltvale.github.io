@@ -298,6 +298,22 @@
       {
         "image": "assets/dither/vale-05.png",
         "caption": "Siltvale — mainland, dusk"
+      },
+      {
+        "image": "assets/dither/vale-06.png",
+        "caption": "The carved eye, hillside"
+      },
+      {
+        "image": "assets/dither/vale-07.png",
+        "caption": "Silt hollow — pale growth"
+      },
+      {
+        "image": "assets/dither/vale-08.png",
+        "caption": "Timber span over the deep cut"
+      },
+      {
+        "image": "assets/dither/vale-09.png",
+        "caption": "Fallen keep, pale slope"
       }
     ],
     "peekStart": 0,
