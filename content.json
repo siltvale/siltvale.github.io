@@ -1,0 +1,901 @@
+{
+  "site": {
+    "title": "Siltvale SMP",
+    "description": "Siltvale is a lore-focused, ARG-inspired Minecraft SMP. A Minecraft SMP built around its community, its stories, and the strange little world that developed between them.",
+    "discord": "https://discord.gg/MQCfkwVxP5",
+    "mastheadTitle": "SILTVALE",
+    "mastheadSub": "Archive // 01–07",
+    "mastheadFoot": "FILE__01//",
+    "footer": "© Siltvale SMP · This site is a community website",
+    "footerLast": "The Siltwraiths still thrive at night. Never turn your back.",
+    "hiddenTitle": "Don't look away.",
+    "hitsMin": 1400,
+    "hitsMax": 2000
+  },
+  "nav": [
+    {
+      "id": "home",
+      "label": "Home",
+      "cap": "Main index",
+      "color": "#a9b0b5",
+      "preview": "assets/dither/prev-home.png"
+    },
+    {
+      "id": "smp-info",
+      "label": "SMP Info",
+      "cap": "Information",
+      "color": "#d9d3c6",
+      "preview": "assets/dither/prev-info.png"
+    },
+    {
+      "id": "history",
+      "label": "History",
+      "cap": "Archive",
+      "color": "#8e9aa4",
+      "preview": "assets/dither/prev-history.png"
+    },
+    {
+      "id": "applications",
+      "label": "Apply",
+      "cap": "Applications",
+      "color": "#c9ad84",
+      "preview": "assets/dither/prev-apply.png"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ",
+      "cap": "Questions",
+      "color": "#b8b0a1",
+      "preview": "assets/dither/prev-faq.png"
+    },
+    {
+      "id": "acknowledgements",
+      "label": "Acknowledge",
+      "cap": "Credits",
+      "color": "#9aa38f",
+      "preview": "assets/dither/prev-credits.png"
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews",
+      "cap": "Community",
+      "color": "#c7a986",
+      "preview": "assets/dither/prev-reviews.png"
+    },
+    {
+      "id": "discord",
+      "label": "Discord",
+      "cap": "Join Discord",
+      "color": "#b0733f",
+      "preview": "assets/dither/prev-discord.png",
+      "external": true
+    }
+  ],
+  "banner": {
+    "stamp": "Siltvale SMP // Official",
+    "title": "SILTVALE",
+    "small": "Siltvale SMP Official",
+    "plates": [
+      "assets/dither/carta-marina-banner-p.png",
+      "assets/dither/codex-banner-p.png",
+      "assets/dither/trumpeters-banner-p.png",
+      "assets/dither/lichenes-banner-p.png",
+      "assets/dither/ship-banner-p.png",
+      "assets/dither/four-horsemen-banner-p.png",
+      "assets/dither/plague-doctor-banner-p.png",
+      "assets/dither/melencolia-banner-p.png"
+    ]
+  },
+  "home": {
+    "record": "Welcome to the official website",
+    "title": "Silt",
+    "titleItalic": "vale",
+    "lede": "A Minecraft SMP built around its community, its stories, and the strange little world that developed between them.",
+    "status": [
+      {
+        "label": "Status",
+        "value": "Active"
+      },
+      {
+        "label": "Server",
+        "value": "Online"
+      },
+      {
+        "label": "Access",
+        "value": "Community"
+      }
+    ],
+    "aboutRecord": "About Siltvale",
+    "aboutTitle": "What is Siltvale?",
+    "aboutText": "Siltvale is a Minecraft survival multiplayer server built around its players and the world they create together.\n\nThis website serves as an archive of the server: its history, community, information, and everything that makes Siltvale what it is.\n\nMore information about the SMP will be added here once the official details are available.",
+    "cards": [
+      {
+        "title": "Community",
+        "text": "A server is nothing without the people who inhabit it."
+      },
+      {
+        "title": "Lore",
+        "text": "Every world has a history. Siltvale is no different."
+      },
+      {
+        "title": "World",
+        "text": "Explore the world, settlements, builds and stories of Siltvale."
+      },
+      {
+        "title": "People",
+        "text": "Meet the players who make Siltvale what it is."
+      }
+    ],
+    "exploreRecord": "Explore",
+    "explore": [
+      {
+        "no": "02",
+        "target": "#smp-info",
+        "title": "SMP Info",
+        "sub": "Server information / features / details"
+      },
+      {
+        "no": "03",
+        "target": "#history",
+        "title": "History",
+        "sub": "The history and development of Siltvale"
+      },
+      {
+        "no": "04",
+        "target": "#applications",
+        "title": "Apply",
+        "sub": "Find out how to become part of the community"
+      }
+    ],
+    "calendar": {
+      "weekly": [
+        {
+          "day": 0,
+          "color": "ev-a",
+          "label": "OOC Events",
+          "desc": "Out-of-character community events, run every Sunday."
+        },
+        {
+          "day": 3,
+          "color": "ev-b",
+          "label": "Lore Channel Update",
+          "desc": "New lore is posted to the lore channel every Wednesday."
+        }
+      ],
+      "events": []
+    },
+    "linkTitle": "Link us",
+    "linkSnippet": "<a href=\"siltvalesmp.github.io\">",
+    "linkNote": "Feel free to hotlink.",
+    "foundersTitle": "Founders",
+    "founders": [
+      "ELLY",
+      "FUNDERSTORM / ARDEN",
+      "TIMFINN (SILVER)",
+      "ZAY",
+      "FLUTTER",
+      "PHAZMA",
+      "BREADZYY",
+      "VI",
+      "SUI"
+    ],
+    "recordsTitle": "Records",
+    "recordsLabel": "files recovered",
+    "artTitle": "Art from the vale",
+    "art": [
+      {
+        "image": "assets/dither/carta-marina-p.png",
+        "title": "Chart of the Scattering",
+        "by": "from the island archives"
+      },
+      {
+        "image": "assets/dither/lichenes-p.png",
+        "title": "Pale Growth, studied",
+        "by": "a returning naturalist"
+      },
+      {
+        "image": "assets/dither/trumpeters-p.png",
+        "title": "The Creaking, as drawn",
+        "by": "a survivor of the Plague"
+      },
+      {
+        "image": "assets/dither/ship-p.png",
+        "title": "Caught in the Ice",
+        "by": "of the crossing"
+      },
+      {
+        "image": "assets/dither/melencolia-p.png",
+        "title": "The Builder Waiting",
+        "by": "unattributed"
+      },
+      {
+        "image": "assets/dither/ramelli-p.png",
+        "title": "Machines, Diverse",
+        "by": "recovered from the ruins"
+      }
+    ],
+    "quotesTitle": "Overheard",
+    "quotes": [
+      "Never turn your back.",
+      "Don't look away.",
+      "Once you have been to Siltvale, you will soon look back and find that you are not you anymore.",
+      "Many have attempted to reclaim life and thrive in the vale, but none ever return the same.",
+      "The Plague has ended and the Siltwraiths have become nocturnal.",
+      "Is it just residue of death, or something more with life?",
+      "They may have patterns, behaviors that communicate, or even emotions.",
+      "The homeland was lost, but its history travelled with those who survived.",
+      "Will you trust another foreign soul?",
+      "Every ruin, journal, and landmark may hold a piece of something larger."
+    ],
+    "playerTitle": "Wax cylinder",
+    "tracks": [
+      {
+        "name": "Siltvale — theme",
+        "kind": "file",
+        "file": "assets/audio/siltvale-theme.mp3",
+        "len": 971
+      },
+      {
+        "name": "Silt Wind",
+        "kind": "synth",
+        "base": 64,
+        "wind": 0.3,
+        "creak": 0,
+        "len": 210
+      },
+      {
+        "name": "The Creaking",
+        "kind": "synth",
+        "base": 52,
+        "wind": 0.16,
+        "creak": 0.55,
+        "len": 240
+      },
+      {
+        "name": "Tide of Islands",
+        "kind": "synth",
+        "base": 78,
+        "wind": 0.42,
+        "creak": 0.1,
+        "len": 195
+      },
+      {
+        "name": "Pale Morning",
+        "kind": "synth",
+        "base": 96,
+        "wind": 0.12,
+        "creak": 0,
+        "len": 180
+      }
+    ],
+    "peekTitle": "Sneak peek",
+    "views": [
+      {
+        "image": "assets/dither/vale-01.png",
+        "caption": "Undercroft — the machine hall"
+      },
+      {
+        "image": "assets/dither/vale-02.png",
+        "caption": "Service corridor, mainland"
+      },
+      {
+        "image": "assets/dither/vale-03.png",
+        "caption": "Overgrown gate, dusk rain"
+      },
+      {
+        "image": "assets/dither/vale-04.png",
+        "caption": "Deep working — candles left burning"
+      },
+      {
+        "image": "assets/dither/vale-05.png",
+        "caption": "Siltvale — mainland, dusk"
+      }
+    ],
+    "peekStart": 0,
+    "holdsTitle": "In the vale",
+    "holds": [
+      {
+        "name": "Wastestead",
+        "theme": "Desperate attempt of survival"
+      },
+      {
+        "name": "Driftmoor",
+        "theme": "Failed attempt of preservation"
+      },
+      {
+        "name": "Orswyn",
+        "theme": "Rituals and psychological warfare"
+      }
+    ],
+    "joinTitle": "Join",
+    "joinText": "Applications and the server IP go through the Discord.",
+    "joinButton": "Join the Discord"
+  },
+  "info": {
+    "record": "Siltvale SMP / Document 02 — File 02 / 07",
+    "title": "Survive ",
+    "titleItalic": "the Silt.",
+    "lede": "Siltvale is a lore-focused, ARG-inspired Minecraft server built around environmental storytelling, mystery, and immersive roleplay.",
+    "figure": {
+      "image": "assets/dither/ramelli-p.png",
+      "alt": "Dithered title page of a 16th-century book of machines",
+      "caption": "Diverse and artificial machines — a book passed down between generations"
+    },
+    "body": "The world is filled with forgotten settlements, abandoned places, hidden records, and clues left behind by those who came before. Rather than simply telling its story, Siltvale allows players to discover it for themselves.\n\nExplore the world, uncover strange records, solve puzzles and ciphers, and slowly piece together the history of a world that has been lost to time.\n\nEvery ruin, journal, and landmark may hold a piece of something larger.",
+    "cards": [
+      {
+        "title": "Server type",
+        "items": [
+          "Lore-focused",
+          "ARG-inspired",
+          "Survival"
+        ]
+      },
+      {
+        "title": "Core themes",
+        "items": [
+          "Environmental storytelling",
+          "Mystery",
+          "Exploration",
+          "Roleplay",
+          "Community"
+        ]
+      }
+    ],
+    "offerRecord": "What we offer",
+    "offers": [
+      {
+        "title": "Immersive Roleplay",
+        "text": "Take part in collaborative storytelling where players help shape the world and its unfolding narrative."
+      },
+      {
+        "title": "Environmental Lore",
+        "text": "Discover stories hidden within the environment, from forgotten settlements and landmarks to records left behind by earlier inhabitants."
+      },
+      {
+        "title": "Puzzles & Ciphers",
+        "text": "Follow clues, decipher strange messages, and solve ARG-inspired puzzles scattered throughout the world."
+      },
+      {
+        "title": "A World to Explore",
+        "text": "Explore a post-apocalyptic world shaped by discovery, player exploration, and the traces of a civilization that came before."
+      },
+      {
+        "title": "A Welcoming Community",
+        "text": "Siltvale is built around its players, creating a community-driven experience where people can explore, create, and tell stories together."
+      }
+    ],
+    "goalRecord": "The goal of Siltvale",
+    "goalText": "To create a world players will remember, and a place they'll always want to return to."
+  },
+  "history": {
+    "record": "Siltvale archive / Record 003",
+    "title": "The History ",
+    "titleItalic": "of Siltvale.",
+    "lede": "A record of the world before the Plague, the fall of Siltvale, and the generations that eventually returned to reclaim it.",
+    "footageStart": 4,
+    "footageAlt": "Recovered footage of the vale: an overgrown structure beneath a great tree, fog across the ground",
+    "footageLabel": "Siltvale — Mainland",
+    "footageNote": "Recovered footage — the vale as the returning parties found it",
+    "legend": [
+      {
+        "small": "01 / Legend",
+        "title": "The Silt Plague",
+        "text": "The disaster that consumed the old world.",
+        "target": "#age-2"
+      },
+      {
+        "small": "02 / Residue",
+        "title": "The Siltwraiths",
+        "text": "The dead, changed into something beyond death.",
+        "target": "#age-3"
+      },
+      {
+        "small": "03 / Return",
+        "title": "The Reclaiming",
+        "text": "Descendants return to the homeland generations later.",
+        "target": "#age-5"
+      }
+    ],
+    "agesRecord": "Historical record",
+    "ages": [
+      {
+        "num": "Age I",
+        "label": "Before the Silt",
+        "title": "The Age of Discovery",
+        "wraith": false,
+        "body": "Eons ago, during what descendants would eventually call the Renaissance period, the world stood on the brink of an age defined by knowledge and machinery.\n\nThe enlightenment shaped the lives of countless peoples. New discoveries were being made, and technology was beginning to move the world toward a future built upon machinery.\n\nThat momentum would never reach its conclusion."
+      },
+      {
+        "num": "Age II",
+        "label": "The Plague",
+        "title": "The Silt",
+        "wraith": false,
+        "figure": {
+          "image": "assets/dither/lichenes-p.png",
+          "alt": "Dithered plate of pale lichens and mosses",
+          "caption": "Natural record / Silt — pale moss"
+        },
+        "body": "The Silt Plague spread across the world. Gray and faintly fine beneath the sun, the Silt moved across continents and swallowed the homes of different races.\n\nIt brought tides of disease with it. Biomes withered, settlements disappeared, and the vibrance of the world slowly faded beneath the spreading Silt.",
+        "aside": {
+          "small": "Natural record / Silt",
+          "title": "Pale Moss",
+          "text": "Pale moss became one of the remnants associated with the Silt. Life continued to grow within the ruins of the old world, intertwining with abandoned structures and forgotten machinery."
+        }
+      },
+      {
+        "num": "Age III",
+        "label": "The Creaking",
+        "title": "The Siltwraiths",
+        "wraith": true,
+        "figure": {
+          "image": "assets/dither/trumpeters-p.png",
+          "alt": "Dithered woodcut of skeletons sounding trumpets",
+          "caption": "Entity record — the Creaking"
+        },
+        "body": "The Silt did not merely consume lives. Over decades, it acquired enough consciousness — enough residue from those it had claimed — to become something new.\n\nFrom the drifting haze emerged creatures unlike anything the world had previously known.\n\n> Never turn your back.\n-- An old warning passed between survivors\n\n> Don't look away.\n-- The Creaking",
+        "aside": {
+          "small": "Entity record",
+          "title": "The Creaking",
+          "text": "Siltwraiths became the beginning of the apocalypse. They emerged from the haze as the world was already being consumed, turning the remains of the dead against the living."
+        }
+      },
+      {
+        "num": "Age IV",
+        "label": "The Fall",
+        "title": "The End of Siltvale",
+        "wraith": false,
+        "body": "The Silt Plague and the apocalypse of the Siltwraiths eventually consumed Siltvale.\n\nThe survivors had little choice. They fled the choking Silt and scattered across distant islands.\n\nThose scattered populations began forging a thalassocracy — bound together by the ocean and by a shared history that could not be forgotten.\n\n> The homeland was lost, but its history travelled with those who survived."
+      },
+      {
+        "num": "Age V",
+        "label": "Generations later",
+        "title": "The Reclaiming",
+        "wraith": false,
+        "figure": {
+          "image": "assets/dither/ship-p.png",
+          "alt": "Dithered wash drawing of a ship caught among ice",
+          "caption": "The crossing — a vessel of the scattering"
+        },
+        "body": "Generations passed. The descendants of those populations who survived eventually turned their attention back toward the mainland.\n\n> The Plague has ended and the Siltwraiths have become nocturnal. The mainland — our homeland — is to be reclaimed.\n\nWord spread across the islands. The homeland that had been abandoned was no longer unreachable.\n\nThe descendants would return to Siltvale and attempt to reclaim what had been lost."
+      },
+      {
+        "num": "Age VI",
+        "label": "The Return",
+        "title": "What Remains",
+        "wraith": true,
+        "body": "The Siltwraiths still thrive at night. Their existence raises questions that remain unanswered.",
+        "questions": [
+          {
+            "no": "Question / 001",
+            "title": "Residue",
+            "text": "Are the Siltwraiths simply residue left behind by death, or is there something more within them?"
+          },
+          {
+            "no": "Question / 002",
+            "title": "Behavior",
+            "text": "Do they possess patterns, behaviors, communication, or even emotions?"
+          }
+        ],
+        "after": "Whatever the answer may be, the Siltwraiths remain a reminder of the lives lost during the Plague."
+      },
+      {
+        "num": "Age VII",
+        "label": "The New World",
+        "title": "A Shattered World",
+        "wraith": false,
+        "figure": {
+          "image": "assets/dither/codex-p.png",
+          "alt": "Dithered page of machine studies",
+          "caption": "Machine studies — knowledge from before the Plague"
+        },
+        "body": "The reclaiming of Siltvale is not simply a battle against monsters. It is a struggle to survive within a world that no longer resembles the one remembered by history.\n\nMachinery lies abandoned and overgrown, remnants of knowledge from an age that existed before the Plague.\n\nDescendants rediscover these machines and technologies through knowledge passed down between generations.\n\nNature has grown over the remains of civilization. Ruins, machinery, moss, and forgotten technology now exist together."
+      }
+    ],
+    "fate": {
+      "glyph": "&#8761; &#8330; &#10030; . &#8761; &#8330; &#729; &#8901;&#729; &#8761; &#2410; &#734;",
+      "title": "What awaits your fate?",
+      "text": "Islands foreign to one another, yet bound by the same history, set sail toward the land they once all called home.",
+      "questions": [
+        "Will you trust another foreign soul?",
+        "Will you meet a friend?",
+        "Or an enemy?"
+      ]
+    }
+  },
+  "apply": {
+    "record": "Siltvale archive / Record 004",
+    "title": "Applications.",
+    "lede": "Help build the world of Siltvale and become part of the community behind it.",
+    "rolesRecord": "We're looking for",
+    "roles": [
+      {
+        "num": "01 / Builder",
+        "title": "Builders",
+        "text": "Tell stories through architecture, atmosphere, and detail.",
+        "link": "",
+        "linkText": "Apply on Discord"
+      },
+      {
+        "num": "02 / Visionary",
+        "title": "Visionaries",
+        "text": "Help write lore, mysteries, puzzles, ciphers, and environmental storytelling.",
+        "link": "",
+        "linkText": "Apply on Discord"
+      },
+      {
+        "num": "03 / Moderator",
+        "title": "Moderators",
+        "text": "Help keep the community engaged and structured for everyone.",
+        "link": "",
+        "linkText": "Apply on Discord"
+      }
+    ],
+    "noteTitle": "Please note",
+    "noteText": "All staff positions are voluntary and unpaid. We're looking for people who genuinely enjoy collaborating and creating something special together.",
+    "goalGlyph": "&#8761; &#8330; &#10030; . &#8761; &#8330; &#729; &#8901;&#729;",
+    "goalTitle": "Build something worth remembering.",
+    "goalText": "If you want to help build a world people will remember and a community they'll want to come back to, we'd love to have you."
+  },
+  "faq": {
+    "record": "Frequently asked questions / Siltvale community archive",
+    "title": "FAQ",
+    "panels": [
+      {
+        "title": "Reader's note",
+        "text": "If you're new to Siltvale, this record should answer most of the questions you might have."
+      },
+      {
+        "title": "Before you enter",
+        "text": "Siltvale is a community-driven world. There isn't one story waiting for you to follow. You help create it."
+      }
+    ],
+    "groups": [
+      {
+        "title": "General questions",
+        "items": [
+          {
+            "q": "When will Siltvale launch?",
+            "a": "Siltvale is currently in development. An official launch date will be announced once we're confident everything is ready.\n\nAccepted players will receive the server IP before launch."
+          },
+          {
+            "q": "Are there main characters or antagonists?",
+            "a": "No. Siltvale is a community-driven Minecraft server where players contribute to an evolving world through their characters, stories, and interactions.\n\nIt's up to you how you make your story matter."
+          },
+          {
+            "q": "Can I stream or make videos?",
+            "a": "Yes! Content creation is encouraged. We love seeing players create videos, streams, screenshots, artwork, and other content inspired by Siltvale."
+          },
+          {
+            "q": "Do I need roleplay experience?",
+            "a": "Not at all! Previous roleplay experience is helpful but not required.\n\nWe welcome both experienced and new roleplayers."
+          },
+          {
+            "q": "How will we communicate while roleplaying?",
+            "a": "We use both VC and Minecraft chats depending on preference and availability."
+          }
+        ]
+      },
+      {
+        "title": "The world",
+        "items": [
+          {
+            "q": "What's the biome of Siltvale's setting? Is it fully dead?",
+            "a": "Siltvale's settlements have the following biomes: Pale Biome, Dark Forest, Birch Forest, Old Growth Spruce Taiga, and a snowy mountain.\n\nTherefore, Siltvale is not fully dead, considering it's been eons since the Plague and Apocalypse.\n\n\"We will start where most descendants first arrived at Siltvale.\""
+          },
+          {
+            "q": "Are races fully cosmetic?",
+            "a": "There are exceptions, as long as the race is not used to make the OC overpowered or turn them into a \"chosen one\" type of character."
+          },
+          {
+            "q": "Where will the first RP session begin?",
+            "a": "We will start where most descendants first arrived at Siltvale."
+          }
+        ]
+      },
+      {
+        "title": "Groups & civilizations",
+        "items": [
+          {
+            "q": "Can players create their own groups?",
+            "a": "For groups, what actually matters is the lore and background.\n\nIt depends on the situation. For example, a group could have originally disbanded and your OC decides to recruit people to make it active again.\n\nOr it could simply be a group your OC decides to establish from scratch.\n\nNaturally, a recruitment post can then be made for it."
+          },
+          {
+            "q": "Will there be player-made civilizations and factions?",
+            "a": "Since the theme is reclamation, the settlements where players can reside are already made.\n\nPlayers can add their own builds there. Groups can also create their own bases."
+          },
+          {
+            "q": "How do the settlement roles work?",
+            "a": "Settlements already exist as part of Siltvale's reclaimation theme.\n\nRoles such as Settler, Drifter, Pathfinder and others help define how characters interact with the world."
+          }
+        ]
+      },
+      {
+        "title": "Roleplay",
+        "items": [
+          {
+            "q": "How does roleplay actually work? Is it instant?",
+            "a": "As long as you're around people, yes. However, it's completely okay to be idle if you're by yourself.\n\nRoleplay naturally happens around the people and situations you're interacting with."
+          },
+          {
+            "q": "Can I play multiple roles?",
+            "a": "Yes! You can apply for multiple roles, such as lore writer, builder, moderator, and player at the same time.\n\nWe encourage it as long as you're up for the additional responsibility."
+          },
+          {
+            "q": "Will players be able to trade?",
+            "a": "Yes. What players trade for is their choice.\n\nFor example, you could trade one item for another player's item that you need."
+          }
+        ]
+      },
+      {
+        "title": "Need more help?",
+        "items": [
+          {
+            "q": "Who do I contact if I have questions?",
+            "a": "Feel free to open a <a href=\"https://discord.gg/MQCfkwVxP5\" target=\"_blank\" rel=\"noopener\">Ticket</a> or contact a member of the <a href=\"https://discord.gg/MQCfkwVxP5\" target=\"_blank\" rel=\"noopener\">staff team</a>."
+          }
+        ]
+      }
+    ],
+    "goalTitle": "Still have a question?",
+    "goalText": "Siltvale is still being built. Some answers will change as the world, community, and story continue to develop. If something isn't covered here, ask the community."
+  },
+  "ack": {
+    "record": "Siltvale / People who helped make this possible",
+    "title": "Acknowledgements",
+    "lede": "No effort goes unseen.",
+    "statusLabel": "Early Acknowledgements",
+    "statusValue": "Finished",
+    "intro": "Siltvale will continue to grow from here on out, and I want to acknowledge the people who helped carry it. Even when Siltvale was still uncertain, messy, an idea slowly becoming real, these were the people who stayed, created, contributed, and believed in what it could become.",
+    "plateTitle": "Siltvale // Acknowledgements",
+    "plateSub": "No effort goes unseen",
+    "posters": [
+      {
+        "name": "Rogue",
+        "alias": "Vi",
+        "role": "Overseer",
+        "shape": "p-tall",
+        "pending": false,
+        "face": "assets/bounties/vi.png",
+        "facepos": "50% 42%",
+        "rot": -3.2,
+        "l": 4,
+        "t": 4.5,
+        "w": 15,
+        "ack": "Thank you for all of your support behind the scenes within Siltvale. “We’re in this together.” That genuinely meant a lot more than I could put into words!\n\nThank you for trusting in me and keeping up despite my messy pace, for always understanding, hearing me out, and choosing to stay and listen no matter how complicated things seem. I want you to always remember that I appreciate your hard work and I see your efforts."
+      },
+      {
+        "name": "Timfinn",
+        "alias": "Silver",
+        "role": "Visionary",
+        "shape": "p-frame",
+        "pending": false,
+        "face": "assets/bounties/timfinn.png",
+        "facepos": "50% 52%",
+        "rot": 2.1,
+        "l": 20.5,
+        "t": 7,
+        "w": 15,
+        "ack": "Thank you for being one of the earliest people to help shape the direction and atmosphere of Siltvale. Your ideas, support, and presence during development genuinely mattered more than you probably realize."
+      },
+      {
+        "name": "breadzyy_",
+        "alias": "",
+        "role": "Builder",
+        "shape": "p-map",
+        "pending": false,
+        "face": "assets/bounties/breadzyy.png",
+        "facepos": "50% 52%",
+        "rot": -1.4,
+        "l": 36.5,
+        "t": 4,
+        "w": 20,
+        "ack": "Thank you for constantly showing up and bringing life into Siltvale through your assistance and builds. The abandoned factory, sewer entrance, and the atmosphere you helped create became part of what makes the world feel real."
+      },
+      {
+        "name": "Phasma",
+        "alias": "",
+        "role": "Craftwright / Visionary",
+        "shape": "p-scroll",
+        "pending": false,
+        "face": "assets/bounties/phasma.png",
+        "facepos": "44% 48%",
+        "rot": 1.6,
+        "l": 58.5,
+        "t": 4,
+        "w": 15,
+        "ack": "Thank you for contributing not only through builds, but also through the ideas you brought into the world. Your contributions helped expand Siltvale beyond just structures and into something with depth and story.\n\nThank you for pouring your passion in creating into Siltvale! I’m so proud of everything you’ve built. I genuinely appreciate you taking initiatives and contributing so much help!"
+      },
+      {
+        "name": "Zay",
+        "alias": "",
+        "role": "Keeper / Visionary / Builder",
+        "shape": "p-tall",
+        "pending": false,
+        "face": "assets/bounties/zay.png",
+        "facepos": "50% 42%",
+        "rot": 2.4,
+        "l": 4,
+        "t": 51,
+        "w": 15,
+        "ack": "Thank you for the creativity and energy you brought into Siltvale. You pushed yourself to learn a lot of things you didn’t know and gained a lot of experience. Be proud of your achievements!\n\nYou’ve helped lay the foundation of Siltvale in more ways than you realize."
+      },
+      {
+        "name": "Mel",
+        "alias": "",
+        "role": "Foreman",
+        "shape": "p-torn",
+        "pending": false,
+        "face": "",
+        "facepos": "50% 50%",
+        "rot": -2.6,
+        "l": 20.5,
+        "t": 53,
+        "w": 15,
+        "ack": "Thank you for bringing much more stable and reliable hosting to Siltvale. Your support and work within the server have genuinely made the launch much more possible. You took a huge part in taking actions towards launch, and thank you for teaching me a lot as well!"
+      },
+      {
+        "name": "Garcalarci",
+        "alias": "Garlic",
+        "role": "Visionary",
+        "shape": "p-tall",
+        "pending": false,
+        "face": "",
+        "facepos": "50% 50%",
+        "rot": 1.2,
+        "l": 36.5,
+        "t": 50,
+        "w": 15,
+        "ack": "Thank you for bringing more life into Siltvale, not just through its lore but especially within the community. Knowing that you chose to take on this role partly because you believed in me, in Siltvale, and in everything I’ve worked for means more than I can put into words.\n\nI know you’ve given up being “simply a player” to help with something that matters so much to me, and I don’t take that lightly. It means the world to me."
+      },
+      {
+        "name": "Elly",
+        "alias": "",
+        "role": "Visionary",
+        "shape": "p-note",
+        "pending": true,
+        "face": "",
+        "facepos": "50% 50%",
+        "rot": -3.6,
+        "l": 74.5,
+        "t": 6,
+        "w": 12,
+        "ack": "Your acknowledgement is currently being written."
+      },
+      {
+        "name": "Arden",
+        "alias": "",
+        "role": "Funder / Visionary",
+        "shape": "p-note",
+        "pending": true,
+        "face": "",
+        "facepos": "50% 50%",
+        "rot": 3.2,
+        "l": 56,
+        "t": 60,
+        "w": 11,
+        "ack": "Your acknowledgement is currently being written."
+      },
+      {
+        "name": "Jade",
+        "alias": "",
+        "role": "Not yet recorded",
+        "shape": "p-note",
+        "pending": true,
+        "face": "",
+        "facepos": "50% 50%",
+        "rot": 4.4,
+        "l": 87,
+        "t": 4,
+        "w": 10,
+        "ack": "Your acknowledgement is currently being written."
+      },
+      {
+        "name": "Flutter",
+        "alias": "",
+        "role": "Not yet recorded",
+        "shape": "p-note",
+        "pending": true,
+        "face": "",
+        "facepos": "50% 50%",
+        "rot": -3.4,
+        "l": 68,
+        "t": 55,
+        "w": 13,
+        "ack": "Your acknowledgement is currently being written."
+      },
+      {
+        "name": "Fish",
+        "alias": "",
+        "role": "Not yet recorded",
+        "shape": "p-note",
+        "pending": true,
+        "face": "",
+        "facepos": "50% 50%",
+        "rot": 4.6,
+        "l": 85.5,
+        "t": 41,
+        "w": 11.5,
+        "ack": "Your acknowledgement is currently being written."
+      },
+      {
+        "name": "Jan",
+        "alias": "",
+        "role": "Not yet recorded",
+        "shape": "p-note",
+        "pending": true,
+        "face": "",
+        "facepos": "50% 50%",
+        "rot": -4.2,
+        "l": 81.5,
+        "t": 66,
+        "w": 10.5,
+        "ack": "Your acknowledgement is currently being written."
+      },
+      {
+        "name": "Pickel",
+        "alias": "",
+        "role": "Not yet recorded",
+        "shape": "p-note",
+        "pending": true,
+        "face": "",
+        "facepos": "50% 50%",
+        "rot": 2.8,
+        "l": 75.5,
+        "t": 22,
+        "w": 12.5,
+        "ack": "Your acknowledgement is currently being written."
+      }
+    ],
+    "messageTitle": "A message to everyone",
+    "messageText": "Siltvale continues to grow because of everyone’s hard work in turning ideas into action. I’m so proud of what our team has achieved so far, so I genuinely wanted to make sure your efforts did not go unseen. Thank you all for helping turn this project into something real."
+  },
+  "reviews": {
+    "record": "Siltvale / Community archive",
+    "title": "Reviews",
+    "lede": "Words from the people who experienced Siltvale.",
+    "intro": "Siltvale is built around the people who choose to become part of it. These are some of the thoughts, experiences, and words shared by members of the community.",
+    "statusLabel": "Community Reviews",
+    "items": [
+      {
+        "title": "Easily one of the best!",
+        "author": "fluttersnow",
+        "text": "Siltvale is such a unique SMP, especially because of how much thought goes into the lore. It actually feels like you're part of a world with a history rather than just another Minecraft server.\n\nThe community is great, the atmosphere is amazing, and there's always something to look forward to. Definitely a server I'd recommend joining if you're looking for an SMP you can actually get invested in!"
+      },
+      {
+        "title": "Siltvale SMP",
+        "author": "phasmanthusz",
+        "text": "Guys guys you should 100% join this super cool Minecraft server! Everyone's really welcoming and fun and the lore + builds are suuuuper duper awesome!"
+      },
+      {
+        "title": "10/10",
+        "author": "garcalarci",
+        "text": "The people are all so friendly and nice, especially that Garlic fella! Also the OOC events are fun!"
+      },
+      {
+        "title": "IT'S AMAZING!!!",
+        "author": "lejek63",
+        "text": "Great moderation, NO CLUTTER, constant OOC events and did I mention that the moderation's great?\n\nLike, literally, this server's mods are the most helpful people I've ever met. I haven't been a part of this server for too long and I already know that it's great.\n\nYou should absolutely join!!! We're going to have the best lore there is out there!"
+      },
+      {
+        "title": "My Siltvale experience",
+        "author": "funderstorm630tre",
+        "text": "Everyone there is friendly and it is nice to work on something creative with others following the same goal."
+      }
+    ],
+    "goalRecord": "Your experience matters",
+    "goalText": "Every person who joins Siltvale becomes part of its story. Whether you've been here from the beginning or just arrived, your experience helps shape the community and the world we're building together."
+  },
+  "credits": [
+    "Olaus Magnus, <em>Carta Marina</em> (1539). Public domain, via Wikimedia Commons.",
+    "Leonardo da Vinci, <em>Codex Atlanticus</em>, f. 26v. Biblioteca Ambrosiana. Public domain, via Wikimedia Commons.",
+    "Ernst Haeckel, <em>Lichenes</em>, from <em>Kunstformen der Natur</em> (1904). Public domain, via Wikimedia Commons.",
+    "Hans Holbein the Younger, <em>The Trumpeters of Death</em>, from the Dance of Death. Cleveland Museum of Art, CC0.",
+    "Gustave Doré, <em>Navire pris dans les glaces</em>. Public domain, via Wikimedia Commons.",
+    "Albrecht Dürer, <em>The Four Horsemen</em> (1498). National Gallery of Art, CC0.",
+    "Albrecht Dürer, <em>Melencolia I</em> (1514). National Gallery of Art, CC0.",
+    "Paul Fürst, <em>Der Doctor Schnabel von Rom</em> (c. 1656). Public domain, via Wikimedia Commons.",
+    "Agostino Ramelli, <em>Le diverse et artificiose machine</em> (1588), title page. Public domain, via Wikimedia Commons / DPLA.",
+    "All plates reproduced as 1-bit dithers. Footage frame: Siltvale SMP."
+  ]
+}
