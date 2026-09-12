@@ -64,7 +64,7 @@
       }
     }
     else window.scrollTo(0,0);
-    document.title = TITLES[target] || ('Siltvale SMP — ' + target.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}));
+    document.title = TITLES[target] || ('Siltvale SMP | ' + target.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}));
     if(canonical && ROUTES[target]){ try { canonical.href = new URL(ROUTES[target], location.href).href; } catch(e){} }
     var fresh = pages[target];
     refit(fresh);
@@ -645,7 +645,7 @@
     var ART = (window.SILTVALE && SILTVALE.art && SILTVALE.art.length) ? SILTVALE.art : [[(SV.assets || 'assets/') + 'dither/carta-marina-p.png','Untitled','unattributed']];
     var ai = Math.floor(Math.random() * ART.length);
     var aImg = document.getElementById('art-img'), aCap = document.getElementById('art-cap'), aBy = document.getElementById('art-by');
-    function drawArt(){ aImg.src = ART[ai][0]; aCap.textContent = ART[ai][1]; aBy.textContent = '— ' + ART[ai][2]; }
+    function drawArt(){ aImg.src = ART[ai][0]; aCap.textContent = ART[ai][1]; aBy.textContent = ART[ai][2]; }
     function step(n){ ai = (ai + n + ART.length) % ART.length; drawArt(); }
     document.getElementById('art-prev').addEventListener('click', function(){ step(-1); });
     document.getElementById('art-next').addEventListener('click', function(){ step(1); });

@@ -304,7 +304,7 @@ details .a p:last-child{margin-bottom:0}
 .message h4{font-family:var(--pixel);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--sepia);margin-bottom:.5rem}
 .message p{margin:0;font-style:italic;font-size:1.05rem}
 
-/* ══ Pixel tavern — notice-board room ═══════════════════════════════════ */
+/* ══ Pixel tavern / notice-board room ═══════════════════════════════════ */
 .d-tap{display:none}
 @media (hover:none){.d-hover{display:none}.d-tap{display:inline}}
 .room-note{font-family:var(--pixel);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;
@@ -347,7 +347,7 @@ details .a p:last-child{margin-bottom:0}
 .wall.floor .sh{background:rgba(0,0,0,.22)}
 .wall.back .sh{background:rgba(0,0,0,.12)}
 
-/* stepped torch spill — hard bands, no soft gradients */
+/* stepped torch spill, hard bands, no soft gradients */
 .wall .spill{position:absolute;inset:0;pointer-events:none;animation:lampsoft 1.05s steps(1) infinite}
 .wall.back .spill{background:
   radial-gradient(circle at 3% 44%,rgba(255,172,78,.17) 0 18%,rgba(255,150,60,.10) 18% 32%,rgba(255,130,48,.05) 32% 48%,rgba(255,114,38,.02) 48% 64%,transparent 64%),
@@ -606,7 +606,7 @@ details .a p:last-child{margin-bottom:0}
 .review p{color:var(--bone-dim);font-size:.95rem}
 .review cite{display:block;font-style:normal;font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;
   text-transform:uppercase;color:var(--sienna);margin-top:.5rem}
-.review cite::before{content:"— "}
+.review cite::before{content:"- "}
 
 footer{margin-top:2.5rem;padding-top:1rem;max-width:min(100%,84rem);margin-inline:auto;border-top:1px solid var(--slate-600);
   font-family:var(--pixel);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400)}
