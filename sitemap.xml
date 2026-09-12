@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://siltvalemain-alt.github.io/siltvalesmp/</loc>
+    <loc>https://siltvale.github.io/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://siltvalemain-alt.github.io/siltvalesmp/smp-info/</loc>
+    <loc>https://siltvale.github.io/smp-info/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://siltvalemain-alt.github.io/siltvalesmp/history/</loc>
+    <loc>https://siltvale.github.io/history/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://siltvalemain-alt.github.io/siltvalesmp/apply/</loc>
+    <loc>https://siltvale.github.io/apply/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://siltvalemain-alt.github.io/siltvalesmp/faq/</loc>
+    <loc>https://siltvale.github.io/faq/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://siltvalemain-alt.github.io/siltvalesmp/acknowledgements/</loc>
+    <loc>https://siltvale.github.io/acknowledgements/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://siltvalemain-alt.github.io/siltvalesmp/reviews/</loc>
+    <loc>https://siltvale.github.io/reviews/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
