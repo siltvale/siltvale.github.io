@@ -10,7 +10,9 @@
     "footerLast": "The Siltwraiths still thrive at night. Never turn your back.",
     "hiddenTitle": "Don't look away.",
     "hitsMin": 1400,
-    "hitsMax": 2000
+    "hitsMax": 2000,
+    "tagline": "A lore-focused Minecraft SMP",
+    "ogImage": "assets/dither/vale-05.png"
   },
   "nav": [
     {
@@ -18,49 +20,56 @@
       "label": "Home",
       "cap": "Main index",
       "color": "#a9b0b5",
-      "preview": "assets/dither/prev-home.png"
+      "preview": "assets/dither/prev-home.png",
+      "slug": ""
     },
     {
       "id": "smp-info",
       "label": "SMP Info",
       "cap": "Information",
       "color": "#d9d3c6",
-      "preview": "assets/dither/prev-info.png"
+      "preview": "assets/dither/prev-info.png",
+      "slug": "smp-info"
     },
     {
       "id": "history",
       "label": "History",
       "cap": "Archive",
       "color": "#8e9aa4",
-      "preview": "assets/dither/prev-history.png"
+      "preview": "assets/dither/prev-history.png",
+      "slug": "history"
     },
     {
       "id": "applications",
       "label": "Apply",
       "cap": "Applications",
       "color": "#c9ad84",
-      "preview": "assets/dither/prev-apply.png"
+      "preview": "assets/dither/prev-apply.png",
+      "slug": "apply"
     },
     {
       "id": "faq",
       "label": "FAQ",
       "cap": "Questions",
       "color": "#b8b0a1",
-      "preview": "assets/dither/prev-faq.png"
+      "preview": "assets/dither/prev-faq.png",
+      "slug": "faq"
     },
     {
       "id": "acknowledgements",
       "label": "Acknowledge",
       "cap": "Credits",
       "color": "#9aa38f",
-      "preview": "assets/dither/prev-credits.png"
+      "preview": "assets/dither/prev-credits.png",
+      "slug": "acknowledgements"
     },
     {
       "id": "reviews",
       "label": "Reviews",
       "cap": "Community",
       "color": "#c7a986",
-      "preview": "assets/dither/prev-reviews.png"
+      "preview": "assets/dither/prev-reviews.png",
+      "slug": "reviews"
     },
     {
       "id": "discord",
