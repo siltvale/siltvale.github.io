@@ -4,7 +4,7 @@
     "description": "Siltvale is a lore-focused, ARG-inspired Minecraft SMP. A Minecraft SMP built around its community, its stories, and the strange little world that developed between them.",
     "discord": "https://discord.gg/MQCfkwVxP5",
     "mastheadTitle": "SILTVALE",
-    "mastheadSub": "Archive // 01–07",
+    "mastheadSub": "Archive // 01-07",
     "mastheadFoot": "FILE__01//",
     "footer": "© Siltvale SMP · This site is a community website",
     "footerLast": "The Siltwraiths still thrive at night. Never turn your back.",
@@ -239,7 +239,7 @@
     "playerTitle": "Wax cylinder",
     "tracks": [
       {
-        "name": "Siltvale — theme",
+        "name": "Siltvale theme",
         "kind": "file",
         "file": "assets/audio/siltvale-theme.mp3",
         "len": 971
@@ -281,7 +281,7 @@
     "views": [
       {
         "image": "assets/dither/vale-01.png",
-        "caption": "Undercroft — the machine hall"
+        "caption": "The machine hall"
       },
       {
         "image": "assets/dither/vale-02.png",
@@ -293,15 +293,15 @@
       },
       {
         "image": "assets/dither/vale-04.png",
-        "caption": "Deep working — candles left burning"
+        "caption": "Deep underground"
       },
       {
         "image": "assets/dither/vale-05.png",
-        "caption": "Siltvale — mainland, dusk"
+        "caption": "Siltvale, mainland"
       },
       {
         "image": "assets/dither/vale-06.png",
-        "caption": "The eye of Silt, built by the bult."
+        "caption": "The eye of Silt, built by the cult."
       },
       {
         "image": "assets/dither/vale-07.png",
@@ -337,14 +337,14 @@
     "joinButton": "Join the Discord"
   },
   "info": {
-    "record": "Siltvale SMP / Document 02 — File 02 / 07",
+    "record": "Siltvale SMP / Document 02 / File 02 / 07",
     "title": "Survive ",
     "titleItalic": "the Silt.",
     "lede": "Siltvale is a lore-focused, ARG-inspired Minecraft server built around environmental storytelling, mystery, and immersive roleplay.",
     "figure": {
       "image": "assets/dither/ramelli-p.png",
       "alt": "Dithered title page of a 16th-century book of machines",
-      "caption": "Diverse and artificial machines — a book passed down between generations"
+      "caption": "Diverse and artificial machines, a book passed down between generations"
     },
     "body": "The world is filled with forgotten settlements, abandoned places, hidden records, and clues left behind by those who came before. Rather than simply telling its story, Siltvale allows players to discover it for themselves.\n\nExplore the world, uncover strange records, solve puzzles and ciphers, and slowly piece together the history of a world that has been lost to time.\n\nEvery ruin, journal, and landmark may hold a piece of something larger.",
     "cards": [
@@ -400,8 +400,8 @@
     "lede": "A record of the world before the Plague, the fall of Siltvale, and the generations that eventually returned to reclaim it.",
     "footageStart": 4,
     "footageAlt": "Recovered footage of the vale: an overgrown structure beneath a great tree, fog across the ground",
-    "footageLabel": "Siltvale — Mainland",
-    "footageNote": "Recovered footage — the vale as the returning parties found it",
+    "footageLabel": "Siltvale, Mainland",
+    "footageNote": "Recovered footage, the vale as the returning parties found it",
     "legend": [
       {
         "small": "01 / Legend",
@@ -439,7 +439,7 @@
         "figure": {
           "image": "assets/dither/lichenes-p.png",
           "alt": "Dithered plate of pale lichens and mosses",
-          "caption": "Natural record / Silt — pale moss"
+          "caption": "Natural record / Silt / pale moss"
         },
         "body": "The Silt Plague spread across the world. Gray and faintly fine beneath the sun, the Silt moved across continents and swallowed the homes of different races.\n\nIt brought tides of disease with it. Biomes withered, settlements disappeared, and the vibrance of the world slowly faded beneath the spreading Silt.",
         "aside": {
@@ -456,9 +456,9 @@
         "figure": {
           "image": "assets/dither/trumpeters-p.png",
           "alt": "Dithered woodcut of skeletons sounding trumpets",
-          "caption": "Entity record — the Creaking"
+          "caption": "Entity record, the Creaking"
         },
-        "body": "The Silt did not merely consume lives. Over decades, it acquired enough consciousness — enough residue from those it had claimed — to become something new.\n\nFrom the drifting haze emerged creatures unlike anything the world had previously known.\n\n> Never turn your back.\n-- An old warning passed between survivors\n\n> Don't look away.\n-- The Creaking",
+        "body": "The Silt did not merely consume lives. Over decades, it acquired enough consciousness, enough residue from those it had claimed, to become something new.\n\nFrom the drifting haze emerged creatures unlike anything the world had previously known.\n\n> Never turn your back.\n-- An old warning passed between survivors\n\n> Don't look away.\n-- The Creaking",
         "aside": {
           "small": "Entity record",
           "title": "The Creaking",
@@ -470,7 +470,7 @@
         "label": "The Fall",
         "title": "The End of Siltvale",
         "wraith": false,
-        "body": "The Silt Plague and the apocalypse of the Siltwraiths eventually consumed Siltvale.\n\nThe survivors had little choice. They fled the choking Silt and scattered across distant islands.\n\nThose scattered populations began forging a thalassocracy — bound together by the ocean and by a shared history that could not be forgotten.\n\n> The homeland was lost, but its history travelled with those who survived."
+        "body": "The Silt Plague and the apocalypse of the Siltwraiths eventually consumed Siltvale.\n\nThe survivors had little choice. They fled the choking Silt and scattered across distant islands.\n\nThose scattered populations began forging a thalassocracy, bound together by the ocean and by a shared history that could not be forgotten.\n\n> The homeland was lost, but its history travelled with those who survived."
       },
       {
         "num": "Age V",
@@ -480,9 +480,9 @@
         "figure": {
           "image": "assets/dither/ship-p.png",
           "alt": "Dithered wash drawing of a ship caught among ice",
-          "caption": "The crossing — a vessel of the scattering"
+          "caption": "The crossing, a vessel of the scattering"
         },
-        "body": "Generations passed. The descendants of those populations who survived eventually turned their attention back toward the mainland.\n\n> The Plague has ended and the Siltwraiths have become nocturnal. The mainland — our homeland — is to be reclaimed.\n\nWord spread across the islands. The homeland that had been abandoned was no longer unreachable.\n\nThe descendants would return to Siltvale and attempt to reclaim what had been lost."
+        "body": "Generations passed. The descendants of those populations who survived eventually turned their attention back toward the mainland.\n\n> The Plague has ended and the Siltwraiths have become nocturnal. The mainland, our homeland, is to be reclaimed.\n\nWord spread across the islands. The homeland that had been abandoned was no longer unreachable.\n\nThe descendants would return to Siltvale and attempt to reclaim what had been lost."
       },
       {
         "num": "Age VI",
@@ -512,7 +512,7 @@
         "figure": {
           "image": "assets/dither/codex-p.png",
           "alt": "Dithered page of machine studies",
-          "caption": "Machine studies — knowledge from before the Plague"
+          "caption": "Machine studies, knowledge from before the Plague"
         },
         "body": "The reclaiming of Siltvale is not simply a battle against monsters. It is a struggle to survive within a world that no longer resembles the one remembered by history.\n\nMachinery lies abandoned and overgrown, remnants of knowledge from an age that existed before the Plague.\n\nDescendants rediscover these machines and technologies through knowledge passed down between generations.\n\nNature has grown over the remains of civilization. Ruins, machinery, moss, and forgotten technology now exist together."
       }
