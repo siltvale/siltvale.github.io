@@ -1,5 +1,17 @@
 (function(){
   if('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  /* Pin the base to the folder this page was loaded from. Without it, every relative link and
+     every image the script swaps in later would resolve against whatever address the router
+     last wrote into the bar, so links would stack up (/history/reviews/) and images would 404. */
+  (function(){
+    if(document.querySelector('base')) return;
+    var dir = location.href.split(/[?#]/)[0].replace(/[^/]*$/, '');
+    var tag = document.createElement('base');
+    tag.href = dir;
+    document.head.insertBefore(tag, document.head.firstChild);
+  })();
+
   var SV = window.SILTVALE || {};
   var views = document.querySelectorAll('.view');
   var links = document.querySelectorAll('.file[data-view]');
@@ -55,8 +67,20 @@
     document.title = TITLES[target] || ('Siltvale SMP — ' + target.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}));
     if(canonical && ROUTES[target]){ try { canonical.href = new URL(ROUTES[target], location.href).href; } catch(e){} }
     var fresh = pages[target];
+    refit(fresh);
     if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ writeIn(fresh); });
     else writeIn(fresh);
+  }
+  /* Scopes measure themselves against their box, which is zero while the page is hidden.
+     ResizeObserver is not fired by a display:none -> block change, so re-fit on the way in. */
+  function refit(view){
+    if(!view) return;
+    var run = function(){
+      view.querySelectorAll('.scope').forEach(function(s){ if(s._fit) s._fit(); });
+    };
+    run();
+    requestAnimationFrame(run);
+    setTimeout(run, 400);
   }
   function go(view, anchorId, url){
     if(url && url !== location.href){
@@ -493,6 +517,7 @@
     }
     img.addEventListener('load', fit);
     if(img.complete) fit();
+    box._fit = fit;   /* a hidden page has no size to measure; the router calls this when it opens */
     window.addEventListener('resize', fit);
 
     if(window.ResizeObserver){ new ResizeObserver(fit).observe(box); }
