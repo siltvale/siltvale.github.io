@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=03209fff">
+<link rel="stylesheet" href="../assets/site.css?v=86c1cba6">
 </head>
 <body>
 
@@ -652,14 +652,17 @@
       <p class="room-note"><span class="d-hover">Hover a notice &middot; click to pin it open &middot; Esc to release</span><span class="d-tap">Tap a notice to read it &middot; tap again to release</span></p>
 
       <div class="no-write">
-      <div class="room dr" id="notice-room">
+      <div class="room dr" id="notice-room" style="--pan:0">
         <div class="room3d">
           <div class="wall ceil"><span class="spill"></span><span class="sh"></span></div>
           <div class="wall left"><span class="spill"></span><span class="sh"></span></div>
           <div class="wall right"><span class="spill"></span><span class="sh"></span></div>
           <div class="wall floor"><span class="spill"></span><span class="sh"></span></div>
           <div class="wall back">
-            <span class="spill"></span><span class="sh"></span>
+            <span class="sh"></span>
+            <div class="bays">
+          <div class="bay on" style="--i:0" data-bay="0">
+            <span class="spill"></span>
 
             <div class="rboard">
               <span class="beam"></span>
@@ -683,7 +686,7 @@
               <p>Thank you for trusting in me and keeping up despite my messy pace, for always understanding, hearing me out, and choosing to stay and listen no matter how complicated things seem. I want you to always remember that I appreciate your hard work and I see your efforts.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:20.5%;--t:7%;--w:15%">
+            <article class="wp-item" style="--l:22%;--t:6%;--w:15%">
               <button type="button" class="wp p-frame has-face" aria-pressed="false" data-no="02" data-role="Visionary"
                       style="--rot:2.1deg">
                 <span class="tack c"></span>
@@ -699,7 +702,7 @@
                 <p>Thank you for being one of the earliest people to help shape the direction and atmosphere of Siltvale. Your ideas, support, and presence during development genuinely mattered more than you probably realize.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:36.5%;--t:4%;--w:20%">
+            <article class="wp-item" style="--l:39%;--t:6%;--w:20%">
               <button type="button" class="wp p-map has-face" aria-pressed="false" data-no="03" data-role="Builder"
                       style="--rot:-1.4deg">
                 <span class="tape l"></span><span class="tape r"></span><span class="tape bl"></span><span class="tape br"></span>
@@ -715,7 +718,7 @@
                 <p>Thank you for constantly showing up and bringing life into Siltvale through your assistance and builds. The abandoned factory, sewer entrance, and the atmosphere you helped create became part of what makes the world feel real.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:58.5%;--t:4%;--w:15%">
+            <article class="wp-item" style="--l:62.5%;--t:4.5%;--w:15%">
               <button type="button" class="wp p-scroll has-face" aria-pressed="false" data-no="04" data-role="Craftwright / Visionary"
                       style="--rot:1.6deg">
                 <span class="roll t"></span><span class="roll b"></span>
@@ -749,9 +752,9 @@
               <p>You’ve helped lay the foundation of Siltvale in more ways than you realize.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:20.5%;--t:53%;--w:15%">
+            <article class="wp-item" style="--l:22%;--t:50%;--w:16%">
               <button type="button" class="wp p-torn" aria-pressed="false" data-no="06" data-role="Foreman"
-                      style="--rot:-2.6deg">
+                      style="--rot:5.5deg">
                 <span class="tack l"></span><span class="tack r"></span>
                 <span class="paper">
                   <span class="ptop">Wanted</span>
@@ -765,7 +768,7 @@
                 <p>Thank you for bringing much more stable and reliable hosting to Siltvale. Your support and work within the server have genuinely made the launch much more possible. You took a huge part in taking actions towards launch, and thank you for teaching me a lot as well!</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:36.5%;--t:50%;--w:15%">
+            <article class="wp-item" style="--l:40.5%;--t:51%;--w:15%">
               <button type="button" class="wp p-tall" aria-pressed="false" data-no="07" data-role="Visionary"
                       style="--rot:1.2deg">
                 <span class="tack l"></span><span class="tack r"></span>
@@ -782,7 +785,7 @@
               <p>I know you’ve given up being “simply a player” to help with something that matters so much to me, and I don’t take that lightly. It means the world to me.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:74.5%;--t:6%;--w:12%">
+            <article class="wp-item" style="--l:82%;--t:4.5%;--w:12%">
               <button type="button" class="wp p-note pending" aria-pressed="false" data-no="08" data-role="Visionary"
                       style="--rot:-3.6deg">
                 <span class="tack c"></span>
@@ -798,7 +801,7 @@
                 <p>Your acknowledgement is currently being written.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:56%;--t:60%;--w:11%">
+            <article class="wp-item" style="--l:58%;--t:65.5%;--w:11%">
               <button type="button" class="wp p-note pending" aria-pressed="false" data-no="09" data-role="Funder / Visionary"
                       style="--rot:3.2deg">
                 <span class="tack c"></span>
@@ -814,7 +817,7 @@
                 <p>Your acknowledgement is currently being written.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:87%;--t:4%;--w:10%">
+            <article class="wp-item" style="--l:85%;--t:26.5%;--w:10%">
               <button type="button" class="wp p-note pending" aria-pressed="false" data-no="10" data-role="Not yet recorded"
                       style="--rot:4.4deg">
                 <span class="tack c"></span>
@@ -830,7 +833,7 @@
                 <p>Your acknowledgement is currently being written.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:68%;--t:55%;--w:13%">
+            <article class="wp-item" style="--l:67.5%;--t:80.5%;--w:13%">
               <button type="button" class="wp p-note pending" aria-pressed="false" data-no="11" data-role="Not yet recorded"
                       style="--rot:-3.4deg">
                 <span class="tack c"></span>
@@ -846,7 +849,7 @@
                 <p>Your acknowledgement is currently being written.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:85.5%;--t:41%;--w:11.5%">
+            <article class="wp-item" style="--l:75%;--t:60.5%;--w:11.5%">
               <button type="button" class="wp p-note pending" aria-pressed="false" data-no="12" data-role="Not yet recorded"
                       style="--rot:4.6deg">
                 <span class="tack c"></span>
@@ -862,7 +865,7 @@
                 <p>Your acknowledgement is currently being written.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:81.5%;--t:66%;--w:10.5%">
+            <article class="wp-item" style="--l:85.5%;--t:77%;--w:10.5%">
               <button type="button" class="wp p-note pending" aria-pressed="false" data-no="13" data-role="Not yet recorded"
                       style="--rot:-4.2deg">
                 <span class="tack c"></span>
@@ -878,7 +881,7 @@
                 <p>Your acknowledgement is currently being written.</p>
               </div>
             </article>
-            <article class="wp-item" style="--l:75.5%;--t:22%;--w:12.5%">
+            <article class="wp-item" style="--l:78%;--t:44%;--w:12.5%">
               <button type="button" class="wp p-note pending" aria-pressed="false" data-no="14" data-role="Not yet recorded"
                       style="--rot:2.8deg">
                 <span class="tack c"></span>
@@ -921,6 +924,8 @@
             <div class="bx t-crate prop-mid" style="--x:47;--y:11;--z:12;--w:8;--h:8;--d:8;--ry:9deg"><i class="f fr"></i><i class="f lf"></i><i class="f rt"></i><i class="f tp"></i></div>
             <div class="bx t-barrel" style="--x:-2;--y:0;--z:17;--w:11;--h:14;--d:11"><i class="f fr"></i><i class="f lf"></i><i class="f rt"></i><i class="f tp"></i></div>
             <div class="bx t-crate" style="--x:90;--y:0;--z:18;--w:12;--h:12;--d:12;--ry:6deg"><i class="f fr"></i><i class="f lf"></i><i class="f rt"></i><i class="f tp"></i></div>
+          </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1023,6 +1028,6 @@
 <div class="hint-skip" aria-hidden="true">click the page to finish writing</div>
 
 <script>window.SILTVALE = {"page":"history","routes":{"home":"../","smp-info":"../smp-info/","history":"../history/","applications":"../apply/","faq":"../faq/","acknowledgements":"../acknowledgements/","reviews":"../reviews/"},"titles":{"home":"Siltvale SMP | A lore-focused Minecraft SMP","smp-info":"SMP Info | Siltvale SMP","history":"History | Siltvale SMP","applications":"Apply | Siltvale SMP","faq":"FAQ | Siltvale SMP","acknowledgements":"Acknowledge | Siltvale SMP","reviews":"Reviews | Siltvale SMP"},"assets":"../assets/","weekly":{"0":["ev-a","OOC Events","Out-of-character community events, run every Sunday."],"3":["ev-b","Lore Channel Update","New lore is posted to the lore channel every Wednesday."]},"events":[],"art":[["../assets/dither/carta-marina-p.png","Chart of the Scattering","from the island archives"],["../assets/dither/lichenes-p.png","Pale Growth, studied","a returning naturalist"],["../assets/dither/trumpeters-p.png","The Creaking, as drawn","a survivor of the Plague"],["../assets/dither/ship-p.png","Caught in the Ice","of the crossing"],["../assets/dither/melencolia-p.png","The Builder Waiting","unattributed"],["../assets/dither/ramelli-p.png","Machines, Diverse","recovered from the ruins"]],"quotes":["Never turn your back.","Don't look away.","Once you have been to Siltvale, you will soon look back and find that you are not you anymore.","Many have attempted to reclaim life and thrive in the vale, but none ever return the same.","The Plague has ended and the Siltwraiths have become nocturnal.","Is it just residue of death, or something more with life?","They may have patterns, behaviors that communicate, or even emotions.","The homeland was lost, but its history travelled with those who survived.","Will you trust another foreign soul?","Every ruin, journal, and landmark may hold a piece of something larger."],"tracks":[{"name":"Siltvale theme","file":"../assets/audio/siltvale-theme.mp3","len":971},{"name":"Silt Wind","base":64,"wind":0.3,"creak":0,"len":210},{"name":"The Creaking","base":52,"wind":0.16,"creak":0.55,"len":240},{"name":"Tide of Islands","base":78,"wind":0.42,"creak":0.1,"len":195},{"name":"Pale Morning","base":96,"wind":0.12,"creak":0,"len":180}],"views":[["../assets/dither/vale-01.png","The machine hall"],["../assets/dither/vale-02.png","Service corridor, mainland"],["../assets/dither/vale-03.png","Militia outpost"],["../assets/dither/vale-04.png","Deep underground"],["../assets/dither/vale-05.png","Siltvale, mainland"],["../assets/dither/vale-06.png","The eye of Silt, built by the cult."],["../assets/dither/vale-07.png","Wastestead walls"],["../assets/dither/vale-08.png","Miner's Graveyard"],["../assets/dither/vale-09.png","Remnants of the past"]],"hits":{"min":1400,"max":2000},"hiddenTitle":"Don't look away."};</script>
-<script src="../assets/site.js?v=03209fff"></script>
+<script src="../assets/site.js?v=86c1cba6"></script>
 </body>
 </html>

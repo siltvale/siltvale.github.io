@@ -439,6 +439,73 @@ details .a p:last-child{margin-bottom:0}
 .rface::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse at 50% 40%,transparent 0 74%,rgba(0,0,0,.10) 74% 90%,rgba(0,0,0,.2) 90%)}
 
+
+/* ── walking from one board to the next ── */
+/* Every board hangs in its own bay along the back wall. Walking slides the bays past the
+   camera while the wall, floor and ceiling slide with them and the whole room bobs, so it
+   reads as footsteps rather than a panel sliding by. The floor moves further than the wall
+   in the same time because it is nearer, which is what sells the distance. */
+/* --bayspan is how far apart the bays sit on the back wall. The wall is seen at an angle,
+   so on a wide screen one wall-width lands exactly one room-width away, while on a narrow
+   one the wall is drawn smaller and the bays have to stand further apart to clear the view. */
+.room{--walk:.9s;--bob:2.5;--bayspan:100%;--wallstep:-320;--floorstep:-546}
+.bays{position:absolute;inset:0;transform-style:preserve-3d;
+  transform:translate3d(calc(var(--pan,0) * var(--bayspan) * -1),0,0);
+  transition:transform var(--walk) steps(9,end)}
+.bay{position:absolute;left:calc(var(--i) * var(--bayspan));top:0;width:100%;height:100%;transform-style:preserve-3d}
+/* shifted by whole planks, so the texture never shows a seam where a bay ends */
+.wall.back{background-position:calc(var(--pan,0) * var(--px) * var(--wallstep)) 0;
+  transition:background-position var(--walk) steps(9,end)}
+.wall.floor,.wall.ceil{background-position:calc(var(--pan,0) * var(--px) * var(--floorstep)) 0;
+  transition:background-position var(--walk) steps(9,end)}
+.room.walking .room3d{animation:walkbob var(--walk) steps(1,end)}
+/* --bob is how far the room lifts and drops on each footfall, in texels. Raise it for a
+   heavier tread, drop it to 0 for a smooth glide. */
+@keyframes walkbob{
+  0%  {transform:translate3d(0,0,0)}
+  10% {transform:translate3d(0,calc(var(--px) * var(--bob) * -1),0)}
+  22% {transform:translate3d(0,0,0)}
+  34% {transform:translate3d(0,calc(var(--px) * var(--bob) * .8),0)}
+  46% {transform:translate3d(0,0,0)}
+  58% {transform:translate3d(0,calc(var(--px) * var(--bob) * -1),0)}
+  70% {transform:translate3d(0,0,0)}
+  82% {transform:translate3d(0,calc(var(--px) * var(--bob) * .8),0)}
+  100%{transform:translate3d(0,0,0)}
+}
+/* nothing on a board you have walked away from can be hovered or tabbed into */
+.room.many .bay:not(.on) .wp{pointer-events:none}
+
+/* ── the arrows either side of the room ── */
+.rnav{position:absolute;z-index:7;top:78%;padding:0;border:0;cursor:pointer;
+  width:calc(var(--rw) * .042px);height:calc(var(--rw) * .07px);min-width:36px;min-height:54px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(20,13,7,.58);
+  box-shadow:inset 0 0 0 var(--px) rgba(255,179,94,.34),0 calc(var(--px) * 2) 0 rgba(0,0,0,.55);
+  transition:background .18s steps(2,end),box-shadow .18s steps(2,end),opacity .18s steps(2,end)}
+.rnav.prev{left:calc(var(--rw) * .014px)}
+.rnav.next{right:calc(var(--rw) * .014px)}
+.rnav span{display:block;width:42%;height:42%;background:#e6d6b4;
+  clip-path:polygon(0 0,20% 0,20% 10%,30% 10%,30% 20%,40% 20%,40% 30%,50% 30%,50% 40%,60% 40%,
+    60% 60%,50% 60%,50% 70%,40% 70%,40% 80%,30% 80%,30% 90%,20% 90%,20% 100%,0 100%)}
+.rnav.prev span{transform:scaleX(-1)}
+.rnav:hover{background:rgba(46,30,16,.76)}
+.rnav:hover span{background:#ffb35e}
+.rnav:focus-visible{outline:none;box-shadow:inset 0 0 0 calc(var(--px) * 2) #ffb35e}
+.rnav[disabled]{opacity:.22;cursor:default}
+.rnav[disabled]:hover{background:rgba(20,13,7,.58)}
+.rnav[disabled]:hover span{background:#e6d6b4}
+
+/* ── which board you are standing at ── */
+.rdots{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem;margin:.6rem 0 0}
+.rdots button{display:inline-flex;align-items:center;gap:.5em;cursor:pointer;
+  background:none;border:1px solid var(--slate-600);color:var(--slate-400);
+  font-family:var(--pixel);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.5em .75em;transition:color .18s steps(2,end),border-color .18s steps(2,end)}
+.rdots button i{display:block;width:.5em;height:.5em;background:currentColor}
+.rdots button:hover{color:var(--bone-dim);border-color:var(--slate-400)}
+.rdots button.on{color:var(--bone);border-color:var(--sienna)}
+.rdots button.on i{background:var(--sienna)}
+
 /* ── posters ── */
 /* --wp-shift nudges every poster down the board face as a group.
    Raise it to drop them lower, lower it to lift them back up. */
@@ -593,11 +660,17 @@ details .a p:last-child{margin-bottom:0}
   .room-reader{display:block}
   .torch.a{--x:4%!important;--y:56%!important}
   .torch.b{--x:96%!important;--y:56%!important}
+  .room{--bayspan:132%;--wallstep:-208;--floorstep:-364}
+  .rnav{top:72%}
+  .rdots{font-size:.9em}
 }
 @media (prefers-reduced-motion:reduce){
   .torch .flame,.torch .light,.wall .spill{animation:none}
   .wp,.wp::after,.wsheet,.wsheet .shade{transition:none}
   .rcard{animation:none}
+  /* no walk: the next board is simply there */
+  .room{--walk:1ms}
+  .room.walking .room3d{animation:none}
 }
 
 .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.6rem;margin:1.4rem 0}

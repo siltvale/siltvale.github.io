@@ -791,7 +791,7 @@
 })();
 
 
-/* ── pixel tavern: sizing + hover/pin reader ── */
+/* ── pixel tavern: sizing, walking between boards, hover/pin reader ── */
 (function(){
   var room = document.getElementById('notice-room');
   if(!room) return;
@@ -805,11 +805,10 @@
   window.addEventListener('hashchange', function(){ setTimeout(size, 50); });
   size();
 
-  var sheet   = room.querySelector('.wsheet');
-  var stext   = room.querySelector('.wsheet .rtext');
   var reader  = room.parentNode.querySelector('.room-reader');
+  var bays    = Array.prototype.slice.call(room.querySelectorAll('.bay'));
   var posters = Array.prototype.slice.call(room.querySelectorAll('.wp'));
-  var emptyHTML = stext.innerHTML;
+  var emptyHTML = room.querySelector('.wsheet .rtext').innerHTML;
   var pinned = null;
 
   function card(p){
@@ -830,28 +829,112 @@
                                               : (touch ? 'Tap again to pin this notice' : 'Click to pin this notice')) + '</div>'
       + '</div>';
   }
-  function render(p){
+  // Each board has its own parchment hanging beside it, so a notice is read on the sheet
+  // belonging to the board it is pinned to.
+  function sheetOf(p){ var bay = p ? p.closest('.bay') : bays[at]; return bay ? bay.querySelector('.wsheet') : null; }
+  function render(p, bay){
+    var sheet = p ? sheetOf(p) : (bay || bays[at]).querySelector('.wsheet');
     var html = p ? card(p) : emptyHTML;
     var pend = !!(p && p.classList.contains('pending'));
-    stext.innerHTML = html; reader.innerHTML = html;
-    stext.classList.toggle('is-pending', pend); reader.classList.toggle('is-pending', pend);
-    sheet.classList.toggle('fwd', !!p);
+    if(sheet){
+      var stext = sheet.querySelector('.rtext');
+      stext.innerHTML = html;
+      stext.classList.toggle('is-pending', pend);
+      sheet.classList.toggle('fwd', !!p);
+    }
+    if(reader){ reader.innerHTML = html; reader.classList.toggle('is-pending', pend); }
+  }
+  function clearSheets(){
+    bays.forEach(function(b){
+      var s = b.querySelector('.wsheet');
+      if(!s) return;
+      s.classList.remove('fwd');
+      s.querySelector('.rtext').innerHTML = emptyHTML;
+      s.querySelector('.rtext').classList.remove('is-pending');
+    });
+    if(reader){ reader.innerHTML = emptyHTML; reader.classList.remove('is-pending'); }
   }
   function unpin(){ if(!pinned) return; pinned.classList.remove('on'); pinned.setAttribute('aria-pressed','false'); pinned = null; }
 
   posters.forEach(function(p){
     p.addEventListener('pointerenter', function(){ if(!pinned) render(p); });
-    p.addEventListener('pointerleave', function(){ if(!pinned) render(null); });
+    p.addEventListener('pointerleave', function(){ if(!pinned) render(null, p.closest('.bay')); });
     p.addEventListener('focus', function(){ if(!pinned) render(p); });
-    p.addEventListener('blur',  function(){ if(!pinned) render(null); });
+    p.addEventListener('blur',  function(){ if(!pinned) render(null, p.closest('.bay')); });
     p.addEventListener('click', function(){
-      if(pinned === p){ unpin(); render(null); return; }
+      if(pinned === p){ unpin(); render(null, p.closest('.bay')); return; }
       unpin(); pinned = p; p.classList.add('on'); p.setAttribute('aria-pressed','true'); render(p);
-      if(narrow.matches) reader.scrollIntoView({ block:'nearest', behavior: reduced ? 'auto' : 'smooth' });
+      if(narrow.matches && reader) reader.scrollIntoView({ block:'nearest', behavior: reduced ? 'auto' : 'smooth' });
     });
   });
   room.addEventListener('click', function(e){ if(pinned && !e.target.closest('.wp')){ unpin(); render(null); } });
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && pinned){ var was = pinned; unpin(); render(null); was.focus(); }
   });
+
+  /* ── walking to the next board ── */
+  var at = 0, walking = 0;
+  if(bays.length < 2) return;
+
+  var prev = room.querySelector('.rnav.prev');
+  var next = room.querySelector('.rnav.next');
+  var dots = Array.prototype.slice.call(room.parentNode.querySelectorAll('.rdots [data-go]'));
+  var WALK = reduced ? 1 : 900;
+
+  // A board you have walked away from is out of the room as far as the keyboard and
+  // screen readers are concerned, even though it is still on the wall beside you.
+  function mark(){
+    bays.forEach(function(b, i){
+      var here = i === at;
+      b.classList.toggle('on', here);
+      b.setAttribute('aria-hidden', here ? 'false' : 'true');
+      Array.prototype.forEach.call(b.querySelectorAll('.wp'), function(p){
+        if(here) p.removeAttribute('tabindex'); else p.setAttribute('tabindex','-1');
+      });
+    });
+    if(prev) prev.disabled = at === 0;
+    if(next) next.disabled = at === bays.length - 1;
+    dots.forEach(function(d, i){
+      d.classList.toggle('on', i === at);
+      d.setAttribute('aria-selected', i === at ? 'true' : 'false');
+    });
+  }
+  function walk(to){
+    to = Math.max(0, Math.min(bays.length - 1, to));
+    if(to === at) return;
+    unpin(); clearSheets();
+    var keyed = document.activeElement && document.activeElement.closest && document.activeElement.closest('.bay');
+    at = to;
+    room.style.setProperty('--pan', at);
+    // pressing again mid-stride keeps walking rather than being ignored, so the bob has
+    // to be taken off and put back on with a reflow between to start over
+    clearTimeout(walking);
+    room.classList.remove('walking');
+    void room.offsetWidth;
+    room.classList.add('walking');
+    mark();
+    // if the walk was started from a notice, do not leave the keyboard behind on it
+    if(keyed){ var b = next && !next.disabled ? next : prev; if(b && !b.disabled) b.focus(); }
+    walking = setTimeout(function(){ room.classList.remove('walking'); walking = 0; }, WALK + 40);
+  }
+  if(prev) prev.addEventListener('click', function(){ walk(at - 1); });
+  if(next) next.addEventListener('click', function(){ walk(at + 1); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ walk(Number(d.getAttribute('data-go')) || 0); }); });
+  room.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight'){ e.preventDefault(); walk(at + 1); }
+    else if(e.key === 'ArrowLeft'){ e.preventDefault(); walk(at - 1); }
+  });
+  // a flick sideways on a phone walks too
+  var sx = 0, sy = 0, swiping = false;
+  room.addEventListener('touchstart', function(e){
+    if(e.touches.length !== 1){ swiping = false; return; }
+    sx = e.touches[0].clientX; sy = e.touches[0].clientY; swiping = true;
+  }, { passive: true });
+  room.addEventListener('touchend', function(e){
+    if(!swiping) return;
+    swiping = false;
+    var t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+    if(Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.6) walk(at + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+  mark();
 })();
