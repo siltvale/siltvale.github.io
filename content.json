@@ -171,7 +171,15 @@
           "desc": "New lore is posted to the lore channel every Wednesday."
         }
       ],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-25",
+          "time": "",
+          "color": "ev-c",
+          "label": "Vi's b-day",
+          "desc": ""
+        }
+      ]
     },
     "linkTitle": "Link us",
     "linkSnippet": "<a href=\"siltvalesmp.github.io\">",
@@ -704,7 +712,7 @@
             "facepos": "50% 52%",
             "rot": 2.1,
             "l": 22,
-            "t": 6,
+            "t": 12.5,
             "w": 15,
             "ack": "Thank you for being one of the earliest people to help shape the direction and atmosphere of Siltvale. Your ideas, support, and presence during development genuinely mattered more than you probably realize."
           },
@@ -717,8 +725,8 @@
             "face": "assets/bounties/breadzyy.png",
             "facepos": "50% 52%",
             "rot": -1.4,
-            "l": 39,
-            "t": 6,
+            "l": 40,
+            "t": 2,
             "w": 20,
             "ack": "Thank you for constantly showing up and bringing life into Siltvale through your assistance and builds. The abandoned factory, sewer entrance, and the atmosphere you helped create became part of what makes the world feel real."
           },
@@ -731,8 +739,8 @@
             "face": "assets/bounties/phasma.png",
             "facepos": "44% 48%",
             "rot": 1.6,
-            "l": 62.5,
-            "t": 4.5,
+            "l": 63,
+            "t": 6.5,
             "w": 15,
             "ack": "Thank you for contributing not only through builds, but also through the ideas you brought into the world. Your contributions helped expand Siltvale beyond just structures and into something with depth and story.\n\nThank you for pouring your passion in creating into Siltvale! I’m so proud of everything you’ve built. I genuinely appreciate you taking initiatives and contributing so much help!"
           },
@@ -745,8 +753,8 @@
             "face": "assets/bounties/zay.png",
             "facepos": "50% 42%",
             "rot": 2.4,
-            "l": 4,
-            "t": 51,
+            "l": 6.5,
+            "t": 52.5,
             "w": 15,
             "ack": "Thank you for the creativity and energy you brought into Siltvale. You pushed yourself to learn a lot of things you didn’t know and gained a lot of experience. Be proud of your achievements!\n\nYou’ve helped lay the foundation of Siltvale in more ways than you realize."
           },
@@ -759,8 +767,8 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": 5.5,
-            "l": 22,
-            "t": 50,
+            "l": 31.5,
+            "t": 52.5,
             "w": 16,
             "ack": "Thank you for bringing much more stable and reliable hosting to Siltvale. Your support and work within the server have genuinely made the launch much more possible. You took a huge part in taking actions towards launch, and thank you for teaching me a lot as well!"
           },
@@ -773,11 +781,46 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": 1.2,
-            "l": 40.5,
-            "t": 51,
+            "l": 51,
+            "t": 45.5,
             "w": 15,
             "ack": "Thank you for bringing more life into Siltvale, not just through its lore but especially within the community. Knowing that you chose to take on this role partly because you believed in me, in Siltvale, and in everything I’ve worked for means more than I can put into words.\n\nI know you’ve given up being “simply a player” to help with something that matters so much to me, and I don’t take that lightly. It means the world to me."
           },
+          {
+            "name": "Silv",
+            "alias": "",
+            "role": "Website Developer",
+            "shape": "p-map",
+            "pending": false,
+            "face": "",
+            "facepos": "50% 50%",
+            "rot": 2,
+            "l": 74,
+            "t": 50,
+            "w": 15,
+            "ack": "Thank you for putting your time and effort into creating the original website and laying the foundation for what it would eventually become."
+          },
+          {
+            "name": "Tarda",
+            "alias": "",
+            "role": "Siltvale's Developer",
+            "shape": "p-frame",
+            "pending": false,
+            "face": "assets/bounties/screenshot-2026-09-18-132949---edited.png",
+            "facepos": "50% 50%",
+            "rot": 2,
+            "l": 81,
+            "t": 4.5,
+            "w": 15.5,
+            "ack": "Thank you for taking Siltvale and its website further, shaping them as a whole while understanding the vision behind the project. Your work has given life to the core of Siltvale. It means the world."
+          }
+        ]
+      },
+      {
+        "name": "Board 2",
+        "plateTitle": "Siltvale // Acknowledgements",
+        "plateSub": "No effort goes unseen",
+        "posters": [
           {
             "name": "Elly",
             "alias": "",
@@ -787,23 +830,9 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": -3.6,
-            "l": 82,
-            "t": 4.5,
+            "l": 29.5,
+            "t": 8.5,
             "w": 12,
-            "ack": "Your acknowledgement is currently being written."
-          },
-          {
-            "name": "Arden",
-            "alias": "",
-            "role": "Funder / Visionary",
-            "shape": "p-note",
-            "pending": true,
-            "face": "",
-            "facepos": "50% 50%",
-            "rot": 3.2,
-            "l": 58,
-            "t": 65.5,
-            "w": 11,
             "ack": "Your acknowledgement is currently being written."
           },
           {
@@ -815,51 +844,9 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": 4.4,
-            "l": 85,
-            "t": 26.5,
+            "l": 21,
+            "t": 40,
             "w": 10,
-            "ack": "Your acknowledgement is currently being written."
-          },
-          {
-            "name": "Flutter",
-            "alias": "",
-            "role": "Not yet recorded",
-            "shape": "p-note",
-            "pending": true,
-            "face": "",
-            "facepos": "50% 50%",
-            "rot": -3.4,
-            "l": 67.5,
-            "t": 80.5,
-            "w": 13,
-            "ack": "Your acknowledgement is currently being written."
-          },
-          {
-            "name": "Fish",
-            "alias": "",
-            "role": "Not yet recorded",
-            "shape": "p-note",
-            "pending": true,
-            "face": "",
-            "facepos": "50% 50%",
-            "rot": 4.6,
-            "l": 75,
-            "t": 60.5,
-            "w": 11.5,
-            "ack": "Your acknowledgement is currently being written."
-          },
-          {
-            "name": "Jan",
-            "alias": "",
-            "role": "Not yet recorded",
-            "shape": "p-note",
-            "pending": true,
-            "face": "",
-            "facepos": "50% 50%",
-            "rot": -4.2,
-            "l": 85.5,
-            "t": 77,
-            "w": 10.5,
             "ack": "Your acknowledgement is currently being written."
           },
           {
@@ -871,9 +858,65 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": 2.8,
-            "l": 78,
-            "t": 44,
+            "l": 6.5,
+            "t": 71.5,
             "w": 12.5,
+            "ack": "Your acknowledgement is currently being written."
+          },
+          {
+            "name": "Fish",
+            "alias": "",
+            "role": "Not yet recorded",
+            "shape": "p-note",
+            "pending": true,
+            "face": "",
+            "facepos": "50% 50%",
+            "rot": 4.6,
+            "l": 43,
+            "t": 32.5,
+            "w": 11.5,
+            "ack": "Your acknowledgement is currently being written."
+          },
+          {
+            "name": "Flutter",
+            "alias": "",
+            "role": "Not yet recorded",
+            "shape": "p-note",
+            "pending": true,
+            "face": "",
+            "facepos": "50% 50%",
+            "rot": -3.4,
+            "l": 71.5,
+            "t": 36.5,
+            "w": 13,
+            "ack": "Your acknowledgement is currently being written."
+          },
+          {
+            "name": "Jan",
+            "alias": "",
+            "role": "Not yet recorded",
+            "shape": "p-note",
+            "pending": true,
+            "face": "",
+            "facepos": "50% 50%",
+            "rot": -4.2,
+            "l": 41.5,
+            "t": 65,
+            "w": 10.5,
+            "ack": "Your acknowledgement is currently being written."
+          },
+          {
+            "name": "Arden",
+            "alias": "",
+            "role": "Funder / Visionary",
+            "shape": "p-torn",
+            "pending": true,
+            "face": "",
+            "facepos": "50% 50%",
+            "rot": 3.2,
+            "l": 71.5,
+            "t": 78,
+            "w": 11,
             "ack": "Your acknowledgement is currently being written."
           }
         ]
