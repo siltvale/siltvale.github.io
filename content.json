@@ -178,6 +178,20 @@
           "color": "ev-c",
           "label": "Vi's b-day",
           "desc": "HAPPY BIRTHDAY VI!!!!"
+        },
+        {
+          "date": "2027-04-06",
+          "time": "",
+          "color": "ev-a",
+          "label": "Sui's b-day",
+          "desc": "JOLLYY B-DAY SUII:D\n"
+        },
+        {
+          "date": "",
+          "time": "",
+          "color": "ev-a",
+          "label": "New event",
+          "desc": ""
         }
       ]
     },
