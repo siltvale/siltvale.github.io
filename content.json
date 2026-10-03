@@ -243,6 +243,16 @@
         "image": "assets/dither/ramelli-p.png",
         "title": "Machines, Diverse",
         "by": "recovered from the ruins"
+      },
+      {
+        "image": "assets/art/fotothek_df_tg_0006690_mechanik_-_wasserfo-rderung_-_pumpe-p.png",
+        "title": "Water Raising Pump",
+        "by": "EXP-014"
+      },
+      {
+        "image": "",
+        "title": "Untitled",
+        "by": "unattributed"
       }
     ],
     "quotesTitle": "Overheard",
@@ -306,7 +316,7 @@
         "caption": "The machine hall"
       },
       {
-        "image": "assets/dither/vale-02.png",
+        "image": "assets/dither/screenshot-2026-10-03-at-7.14.15-pm-p.png",
         "caption": "Service corridor, mainland"
       },
       {
@@ -330,11 +340,11 @@
         "caption": "Wastestead walls"
       },
       {
-        "image": "assets/dither/vale-08.png",
+        "image": "assets/dither/screenshot-2026-10-03-at-7.15.04-pm-p.png",
         "caption": "Miner's Graveyard"
       },
       {
-        "image": "assets/dither/vale-09.png",
+        "image": "assets/dither/screenshot-2026-10-03-at-7.14.28-pm-p.png",
         "caption": "Remnants of the past"
       }
     ],
