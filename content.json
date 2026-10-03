@@ -642,7 +642,7 @@
         "items": [
           {
             "q": "When will Siltvale launch?",
-            "a": "Siltvale is currently in development. An official launch date will be announced once we're confident everything is ready.\n\nAccepted players will receive the server IP before launch."
+            "a": "Siltvale has officially launched! Accepted players have received the server IP."
           },
           {
             "q": "Are there main characters or antagonists?",
@@ -659,6 +659,10 @@
           {
             "q": "How will we communicate while roleplaying?",
             "a": "We use both VC and Minecraft chats depending on preference and availability."
+          },
+          {
+            "q": "Can I apply for multiple roles?",
+            "a": "Yes! You can apply for multiple roles, such as lore writer, builder, moderator, and player at the same time.\n\nWe encourage it as long as you're up for the additional responsibility."
           }
         ]
       },
@@ -704,10 +708,6 @@
             "a": "As long as you're around people, yes. However, it's completely okay to be idle if you're by yourself.\n\nRoleplay naturally happens around the people and situations you're interacting with."
           },
           {
-            "q": "Can I play multiple roles?",
-            "a": "Yes! You can apply for multiple roles, such as lore writer, builder, moderator, and player at the same time.\n\nWe encourage it as long as you're up for the additional responsibility."
-          },
-          {
             "q": "Will players be able to trade?",
             "a": "Yes. What players trade for is their choice.\n\nFor example, you could trade one item for another player's item that you need."
           }
@@ -734,7 +734,7 @@
     "statusValue": "Finished",
     "intro": "Siltvale will continue to grow from here on out, and I want to acknowledge the people who helped carry it. Even when Siltvale was still uncertain, messy, an idea slowly becoming real, these were the people who stayed, created, contributed, and believed in what it could become.",
     "messageTitle": "A message to everyone",
-    "messageText": "Siltvale continues to grow because of everyone’s hard work in turning ideas into action. I’m so proud of what our team has achieved so far, so I genuinely wanted to make sure your efforts did not go unseen. Thank you all for helping turn this project into something real.",
+    "messageText": "Siltvale continues to grow because of everyone’s hard work in turning ideas into action. I’m so proud of what our team has achieved so far, so I genuinely wanted to make sure your efforts did not go unseen. Thank you all for helping turn this project into something real. ",
     "boards": [
       {
         "name": "Board 1",
@@ -750,8 +750,8 @@
             "face": "assets/bounties/vi.png",
             "facepos": "50% 42%",
             "rot": -3.2,
-            "l": 4,
-            "t": 4.5,
+            "l": 3,
+            "t": 3.5,
             "w": 15,
             "ack": "Thank you for all of your support behind the scenes within Siltvale. “We’re in this together.” That genuinely meant a lot more than I could put into words!\n\nThank you for trusting in me and keeping up despite my messy pace, for always understanding, hearing me out, and choosing to stay and listen no matter how complicated things seem. I want you to always remember that I appreciate your hard work and I see your efforts."
           },
@@ -764,8 +764,8 @@
             "face": "assets/bounties/timfinn.png",
             "facepos": "50% 52%",
             "rot": 2.1,
-            "l": 22,
-            "t": 12.5,
+            "l": 21.5,
+            "t": 8.5,
             "w": 15,
             "ack": "Thank you for being one of the earliest people to help shape the direction and atmosphere of Siltvale. Your ideas, support, and presence during development genuinely mattered more than you probably realize."
           },
@@ -781,7 +781,7 @@
             "l": 40,
             "t": 2,
             "w": 20,
-            "ack": "Thank you for constantly showing up and bringing life into Siltvale through your assistance and builds. The abandoned factory, sewer entrance, and the atmosphere you helped create became part of what makes the world feel real."
+            "ack": "Thank you for constantly showing up and bringing life into Siltvale through your assistance and builds. The abandoned factory, sewer entrance, and the atmosphere you helped create became part of what makes the world feel real.\n\nYou've truly achieved a lot and gained experiences and I'm proud of you!"
           },
           {
             "name": "Phasma",
@@ -805,9 +805,9 @@
             "pending": false,
             "face": "assets/bounties/zay.png",
             "facepos": "50% 42%",
-            "rot": 2.4,
-            "l": 6.5,
-            "t": 52.5,
+            "rot": -6.5,
+            "l": 10,
+            "t": 51,
             "w": 15,
             "ack": "Thank you for the creativity and energy you brought into Siltvale. You pushed yourself to learn a lot of things you didn’t know and gained a lot of experience. Be proud of your achievements!\n\nYou’ve helped lay the foundation of Siltvale in more ways than you realize."
           },
@@ -821,7 +821,7 @@
             "facepos": "50% 50%",
             "rot": 5.5,
             "l": 31.5,
-            "t": 52.5,
+            "t": 50.5,
             "w": 16,
             "ack": "Thank you for bringing much more stable and reliable hosting to Siltvale. Your support and work within the server have genuinely made the launch much more possible. You took a huge part in taking actions towards launch, and thank you for teaching me a lot as well!"
           },
@@ -833,10 +833,10 @@
             "pending": false,
             "face": "",
             "facepos": "50% 50%",
-            "rot": 1.2,
-            "l": 51,
-            "t": 45.5,
-            "w": 15,
+            "rot": -8.5,
+            "l": 55,
+            "t": 52.5,
+            "w": 15.5,
             "ack": "Thank you for bringing more life into Siltvale, not just through its lore but especially within the community. Knowing that you chose to take on this role partly because you believed in me, in Siltvale, and in everything I’ve worked for means more than I can put into words.\n\nI know you’ve given up being “simply a player” to help with something that matters so much to me, and I don’t take that lightly. It means the world to me."
           },
           {
@@ -848,8 +848,8 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": 2,
-            "l": 74,
-            "t": 50,
+            "l": 80.5,
+            "t": 53.5,
             "w": 15,
             "ack": "Thank you for putting your time and effort into creating the original website and laying the foundation for what it would eventually become."
           },
@@ -865,7 +865,7 @@
             "l": 81,
             "t": 4.5,
             "w": 15.5,
-            "ack": "Thank you for taking Siltvale and its website further, shaping them as a whole while understanding the vision behind the project. Your work has given life to the core of Siltvale. It means the world."
+            "ack": "Thank you for taking Siltvale and its website further, shaping them as a whole while understanding the vision behind the project. Your work has truly given life to the core of Siltvale. I admire your passion and creativity, and I want you to know that your work puts people in awe (this website is already amazing but your other works are even more insane)! You’re truly great at what you do, and one day, I’ll be as cool as you!"
           }
         ]
       },
@@ -878,28 +878,28 @@
             "name": "Elly",
             "alias": "",
             "role": "Visionary",
-            "shape": "p-note",
-            "pending": true,
-            "face": "",
+            "shape": "p-map",
+            "pending": false,
+            "face": "assets/bounties/screenshot-2026-10-04-at-12.12.16-am.png",
             "facepos": "50% 50%",
             "rot": -3.6,
-            "l": 29.5,
-            "t": 8.5,
-            "w": 12,
-            "ack": "Your acknowledgement is currently being written."
+            "l": 4,
+            "t": 4,
+            "w": 17,
+            "ack": "Your writings are able to reach other people, making our lore fragments possible. Thank you for choosing to invest time and work on Siltvale. I'm genuinely grateful for your support and contributions, especially during the moments when we needed them most. Your efforts has meant more to than you probably know.\n"
           },
           {
             "name": "Jade",
             "alias": "",
-            "role": "Not yet recorded",
+            "role": "Steward",
             "shape": "p-note",
             "pending": true,
             "face": "",
             "facepos": "50% 50%",
             "rot": 4.4,
-            "l": 21,
+            "l": 12.5,
             "t": 40,
-            "w": 10,
+            "w": 20,
             "ack": "Your acknowledgement is currently being written."
           },
           {
@@ -911,8 +911,8 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": 2.8,
-            "l": 6.5,
-            "t": 71.5,
+            "l": 7,
+            "t": 67.5,
             "w": 12.5,
             "ack": "Your acknowledgement is currently being written."
           },
@@ -925,24 +925,24 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": 4.6,
-            "l": 43,
-            "t": 32.5,
+            "l": 34.5,
+            "t": 10,
             "w": 11.5,
-            "ack": "Your acknowledgement is currently being written."
+            "ack": "incredible work"
           },
           {
             "name": "Flutter",
             "alias": "",
-            "role": "Not yet recorded",
-            "shape": "p-note",
-            "pending": true,
-            "face": "",
+            "role": "Builder",
+            "shape": "p-tall",
+            "pending": false,
+            "face": "assets/bounties/screenshot-2026-10-04-at-12.12.32-am.png",
             "facepos": "50% 50%",
-            "rot": -3.4,
-            "l": 71.5,
-            "t": 36.5,
-            "w": 13,
-            "ack": "Your acknowledgement is currently being written."
+            "rot": -8.5,
+            "l": 72.5,
+            "t": 3.5,
+            "w": 20,
+            "ack": "I'm especially grateful for your work efficiency and understanding of Siltvale's vision. Your initiation really helps out on reaching people as well as organize our shared space so much better! I want you to know that I don't take your efforts lightly and I genuinely appreciate them. \n\nThank you for helping make management lighter."
           },
           {
             "name": "Jan",
@@ -953,24 +953,24 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": -4.2,
-            "l": 41.5,
-            "t": 65,
+            "l": 57.5,
+            "t": 37.5,
             "w": 10.5,
             "ack": "Your acknowledgement is currently being written."
           },
           {
             "name": "Arden",
-            "alias": "",
-            "role": "Funder / Visionary",
-            "shape": "p-torn",
+            "alias": "Funderstorm",
+            "role": "Visionary",
+            "shape": "p-frame",
             "pending": true,
-            "face": "",
+            "face": "assets/bounties/screenshot-2026-10-04-at-12.12.52-am.png",
             "facepos": "50% 50%",
-            "rot": 3.2,
-            "l": 71.5,
-            "t": 78,
-            "w": 11,
-            "ack": "Your acknowledgement is currently being written."
+            "rot": -11.5,
+            "l": 38.5,
+            "t": 57,
+            "w": 16,
+            "ack": "Every ideas brought spark and inspiration for a broader story to be written, you helped make this happen. Thank you for contributing your creative writings!"
           }
         ]
       }
