@@ -458,27 +458,49 @@
         "label": "Before the Silt",
         "title": "The Age of Discovery",
         "wraith": false,
-        "body": "Eons ago, during what descendants would eventually call the Renaissance period, the world stood on the brink of an age defined by knowledge and machinery.\n\nThe enlightenment shaped the lives of countless peoples. New discoveries were being made, and technology was beginning to move the world toward a future built upon machinery.\n\nThat momentum would never reach its conclusion."
+        "body": "Eons ago, during what descendants would eventually call the Renaissance period, the world stood on the brink of an age defined by knowledge and machinery.\n\nThe enlightenment shaped the lives of countless peoples. New discoveries were being made, and technology was beginning to move the world toward a future built upon machinery.",
+        "figure": {
+          "image": "assets/dither/design-for-a-flying-machine2-p.png",
+          "alt": "Fragmented record / The dream of flying / One of the many prototypes",
+          "caption": "Fragmented record / The dream of flying / One of the many prototypes"
+        },
+        "questions": [],
+        "aside": {}
       },
       {
         "num": "Age II",
+        "label": "",
+        "title": "The Silt Plague",
+        "wraith": false,
+        "body": "The momentum was cut short as the Silt Plague spread and brought tides of diseases. \n\nIt is said that they never developed a cure. Along with that, the cause of the disease and how it spread remained unknown. This pushed people to flee to other settlements, then to farther distant parts of the island, contributing to the spread of the plague.\n\nThere were known populations that were saved (for a while), those that were isolated, or those that were trapped for unknown reasons. Our history truly is fragmented.\n",
+        "figure": {
+          "image": "assets/dither/black-death-gettyimages-515359722-p.png",
+          "caption": "The Silt Plauge, illustrated as described by history",
+          "alt": "The Silt Plauge, illustrated as described by history"
+        },
+        "questions": [],
+        "aside": {}
+      },
+      {
+        "num": "Age III",
         "label": "The Plague",
         "title": "The Silt",
         "wraith": false,
         "figure": {
           "image": "assets/dither/lichenes-p.png",
           "alt": "Dithered plate of pale lichens and mosses",
-          "caption": "Natural record / Silt / pale moss"
+          "caption": "Natural record, pale Silt"
         },
-        "body": "The Silt Plague spread across the world. Gray and faintly fine beneath the sun, the Silt moved across continents and swallowed the homes of different races.\n\nIt brought tides of disease with it. Biomes withered, settlements disappeared, and the vibrance of the world slowly faded beneath the spreading Silt.",
+        "body": "Gray and faintly fine beneath the sun, the Silt moved across continents and swallowed the homes of different races.\n\nBiomes withered, settlements disappeared, and the vibrance of the world slowly faded beneath the spreading Silt.",
         "aside": {
           "small": "Natural record / Silt",
           "title": "Pale Moss",
           "text": "Pale moss became one of the remnants associated with the Silt. Life continued to grow within the ruins of the old world, intertwining with abandoned structures and forgotten machinery."
-        }
+        },
+        "questions": []
       },
       {
-        "num": "Age III",
+        "num": "Age IV",
         "label": "The Creaking",
         "title": "The Siltwraiths",
         "wraith": true,
@@ -492,17 +514,21 @@
           "small": "Entity record",
           "title": "The Creaking",
           "text": "Siltwraiths became the beginning of the apocalypse. They emerged from the haze as the world was already being consumed, turning the remains of the dead against the living."
-        }
-      },
-      {
-        "num": "Age IV",
-        "label": "The Fall",
-        "title": "The End of Siltvale",
-        "wraith": false,
-        "body": "The Silt Plague and the apocalypse of the Siltwraiths eventually consumed Siltvale.\n\nThe survivors had little choice. They fled the choking Silt and scattered across distant islands.\n\nThose scattered populations began forging a thalassocracy, bound together by the ocean and by a shared history that could not be forgotten.\n\n> The homeland was lost, but its history travelled with those who survived."
+        },
+        "questions": []
       },
       {
         "num": "Age V",
+        "label": "The Fall",
+        "title": "The End of Siltvale",
+        "wraith": false,
+        "body": "The Silt Plague and the apocalypse of the Siltwraiths eventually consumed Siltvale.\n\nThe survivors had little choice. They fled the choking Silt and scattered across distant islands.\n\nThose scattered populations began forging a thalassocracy, bound together by the ocean and by a shared history that could not be forgotten.\n\n> The homeland was lost, but its history travelled with those who survived.",
+        "figure": {},
+        "questions": [],
+        "aside": {}
+      },
+      {
+        "num": "Age VI",
         "label": "Generations later",
         "title": "The Reclaiming",
         "wraith": false,
@@ -511,10 +537,12 @@
           "alt": "Dithered wash drawing of a ship caught among ice",
           "caption": "The crossing, a vessel of the scattering"
         },
-        "body": "Generations passed. The descendants of those populations who survived eventually turned their attention back toward the mainland.\n\n> The Plague has ended and the Siltwraiths have become nocturnal. The mainland, our homeland, is to be reclaimed.\n\nWord spread across the islands. The homeland that had been abandoned was no longer unreachable.\n\nThe descendants would return to Siltvale and attempt to reclaim what had been lost."
+        "body": "Generations passed. The descendants of those populations who survived eventually turned their attention back toward the mainland.\n\n> The Plague has ended and the Siltwraiths have become nocturnal. The mainland, our homeland, is to be reclaimed.\n\nWord spread across the islands. The homeland that had been abandoned was no longer unreachable.\n\nThe descendants would return to Siltvale and attempt to reclaim what had been lost.",
+        "questions": [],
+        "aside": {}
       },
       {
-        "num": "Age VI",
+        "num": "Age VII",
         "label": "The Return",
         "title": "What Remains",
         "wraith": true,
@@ -531,10 +559,12 @@
             "text": "Do they possess patterns, behaviors, communication, or even emotions?"
           }
         ],
-        "after": "Whatever the answer may be, the Siltwraiths remain a reminder of the lives lost during the Plague."
+        "after": "Whatever the answer may be, the Siltwraiths remain a reminder of the lives lost during the Plague.",
+        "figure": {},
+        "aside": {}
       },
       {
-        "num": "Age VII",
+        "num": "Age VIII",
         "label": "The New World",
         "title": "A Shattered World",
         "wraith": false,
@@ -543,7 +573,9 @@
           "alt": "Dithered page of machine studies",
           "caption": "Machine studies, knowledge from before the Plague"
         },
-        "body": "The reclaiming of Siltvale is not simply a battle against monsters. It is a struggle to survive within a world that no longer resembles the one remembered by history.\n\nMachinery lies abandoned and overgrown, remnants of knowledge from an age that existed before the Plague.\n\nDescendants rediscover these machines and technologies through knowledge passed down between generations.\n\nNature has grown over the remains of civilization. Ruins, machinery, moss, and forgotten technology now exist together."
+        "body": "The reclaiming of Siltvale is not simply a battle against monsters. It is a struggle to survive within a world that no longer resembles the one remembered by history.\n\nMachinery lies abandoned and overgrown, remnants of knowledge from an age that existed before the Plague.\n\nDescendants rediscover these machines and technologies through knowledge passed down between generations.\n\nNature has grown over the remains of civilization. Ruins, machinery, moss, and forgotten technology now exist together.",
+        "questions": [],
+        "aside": {}
       }
     ],
     "fate": {
