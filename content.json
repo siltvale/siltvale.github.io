@@ -806,24 +806,10 @@
             "face": "assets/bounties/zay.png",
             "facepos": "50% 42%",
             "rot": -6.5,
-            "l": 10,
+            "l": 5.5,
             "t": 51,
             "w": 15,
             "ack": "Thank you for the creativity and energy you brought into Siltvale. You pushed yourself to learn a lot of things you didn’t know and gained a lot of experience. Be proud of your achievements!\n\nYou’ve helped lay the foundation of Siltvale in more ways than you realize."
-          },
-          {
-            "name": "Mel",
-            "alias": "",
-            "role": "Foreman",
-            "shape": "p-torn",
-            "pending": false,
-            "face": "",
-            "facepos": "50% 50%",
-            "rot": 5.5,
-            "l": 31.5,
-            "t": 50.5,
-            "w": 16,
-            "ack": "Thank you for bringing much more stable and reliable hosting to Siltvale. Your support and work within the server have genuinely made the launch much more possible. You took a huge part in taking actions towards launch, and thank you for teaching me a lot as well!"
           },
           {
             "name": "Garcalarci",
@@ -866,6 +852,20 @@
             "t": 4.5,
             "w": 15.5,
             "ack": "Thank you for taking Siltvale and its website further, shaping them as a whole while understanding the vision behind the project. Your work has truly given life to the core of Siltvale. I admire your passion and creativity, and I want you to know that your work puts people in awe (this website is already amazing but your other works are even more insane)! You’re truly great at what you do, and one day, I’ll be as cool as you!"
+          },
+          {
+            "name": "Flutter",
+            "alias": "",
+            "role": "Not yet recorded",
+            "shape": "p-tall",
+            "pending": false,
+            "face": "assets/bounties/screenshot-2026-10-31-at-5.37.28-pm.png",
+            "facepos": "50% 50%",
+            "rot": 8,
+            "l": 28,
+            "t": 52,
+            "w": 19,
+            "ack": "I'm especially grateful for your work efficiency and understanding of Siltvale's vision. Your initiation really helps out on reaching people as well as organize our shared space so much better! I want you to know that I don't take your efforts lightly and I genuinely appreciate them. \n\nThank you for helping make management lighter."
           }
         ]
       },
@@ -883,8 +883,8 @@
             "face": "assets/bounties/screenshot-2026-10-04-at-12.12.16-am.png",
             "facepos": "50% 50%",
             "rot": -3.6,
-            "l": 4,
-            "t": 4,
+            "l": 2.5,
+            "t": 5.5,
             "w": 17,
             "ack": "Your writings are able to reach other people, making our lore fragments possible. Thank you for choosing to invest time and work on Siltvale. I'm genuinely grateful for your support and contributions, especially during the moments when we needed them most. Your efforts has meant more to than you probably know.\n"
           },
@@ -897,23 +897,9 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": 4.4,
-            "l": 12.5,
-            "t": 40,
+            "l": 45.5,
+            "t": 2,
             "w": 20,
-            "ack": "Your acknowledgement is currently being written."
-          },
-          {
-            "name": "Pickel",
-            "alias": "",
-            "role": "Not yet recorded",
-            "shape": "p-note",
-            "pending": true,
-            "face": "",
-            "facepos": "50% 50%",
-            "rot": 2.8,
-            "l": 7,
-            "t": 67.5,
-            "w": 12.5,
             "ack": "Your acknowledgement is currently being written."
           },
           {
@@ -925,24 +911,10 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": 4.6,
-            "l": 34.5,
-            "t": 10,
+            "l": 67,
+            "t": 1.5,
             "w": 11.5,
             "ack": "incredible work"
-          },
-          {
-            "name": "Flutter",
-            "alias": "",
-            "role": "Builder",
-            "shape": "p-tall",
-            "pending": false,
-            "face": "assets/bounties/screenshot-2026-10-04-at-12.12.32-am.png",
-            "facepos": "50% 50%",
-            "rot": -8.5,
-            "l": 72.5,
-            "t": 3.5,
-            "w": 20,
-            "ack": "I'm especially grateful for your work efficiency and understanding of Siltvale's vision. Your initiation really helps out on reaching people as well as organize our shared space so much better! I want you to know that I don't take your efforts lightly and I genuinely appreciate them. \n\nThank you for helping make management lighter."
           },
           {
             "name": "Jan",
@@ -953,8 +925,8 @@
             "face": "",
             "facepos": "50% 50%",
             "rot": -4.2,
-            "l": 57.5,
-            "t": 37.5,
+            "l": 80,
+            "t": 1,
             "w": 10.5,
             "ack": "Your acknowledgement is currently being written."
           },
@@ -967,10 +939,38 @@
             "face": "assets/bounties/screenshot-2026-10-04-at-12.12.52-am-2.png",
             "facepos": "50% 50%",
             "rot": 0.5,
-            "l": 37.5,
-            "t": 48,
+            "l": 22,
+            "t": 6,
             "w": 16,
             "ack": "Every ideas brought spark and inspiration for a broader story to be written, you helped make this happen. Thank you for contributing your creative writings!"
+          },
+          {
+            "name": "Armageddon (林玉国)",
+            "alias": "",
+            "role": "Not yet recorded",
+            "shape": "p-note",
+            "pending": true,
+            "face": "",
+            "facepos": "50% 50%",
+            "rot": 2,
+            "l": 5.5,
+            "t": 61,
+            "w": 12,
+            "ack": "Your acknowledgement is currently being written."
+          },
+          {
+            "name": "Samy",
+            "alias": "",
+            "role": "Not yet recorded",
+            "shape": "p-note",
+            "pending": true,
+            "face": "",
+            "facepos": "50% 50%",
+            "rot": 2,
+            "l": 30,
+            "t": 59,
+            "w": 12,
+            "ack": "Your acknowledgement is currently being written."
           }
         ]
       }
